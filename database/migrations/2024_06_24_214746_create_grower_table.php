@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('growers', function (Blueprint $table) {
             $table->id();
-            $table->string('picture', 255);
             $table->string('description', 250);
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             //

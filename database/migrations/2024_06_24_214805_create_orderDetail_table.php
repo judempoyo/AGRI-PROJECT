@@ -17,6 +17,7 @@ return new class extends Migration
             $table->double('unitPrice');
             $table->double('subTotal');
             $table->foreignId('order_id')->constrained('orders')->cascadeOnDelete();
+            $table->foreignId('product_id')->constrained('products')->cascadeOnDelete();
             //
         });
     }
