@@ -18,6 +18,7 @@ return new class extends Migration
             $table->double('total');
             $table->string('state');
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            $table->timestamps();
             //
         });
     }

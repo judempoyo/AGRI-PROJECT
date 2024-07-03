@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('area');
             $table->integer('maxCapacity');
             $table->foreignId('grower_id')->constrained('growers')->cascadeOnDelete();
+            $table->timestamps();
             //
         });
     }
