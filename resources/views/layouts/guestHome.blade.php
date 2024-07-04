@@ -52,8 +52,8 @@
 
 
                     {{-- cart button --}}
-                    <x-nav-link :href="route('login')" :active="request()->routeIs('dashboard')">
-                        <div class="flex">
+                    {{--  <x-nav-link :href="route('login')" :active="request()->routeIs('dashboard')">  --}}
+                        <div class="flex justify-end cursor-pointer text-sm font-medium leading-5 text-gray-900 dark:text-gray-400">
                             <div class="relative py-2">
                                 <div class="left-3 absolute t-0">
                                     <p
@@ -67,9 +67,9 @@
                                 </svg>
                             </div>
                         </div>
-                    </x-nav-link> {{-- end cart button --}}
+                    {{--  </x-nav-link>   --}}{{-- end cart button --}}
 
-
+                    
 
                     {{-- <div class="flex w-full ">
                         <form class="max-w-md mx-auto">

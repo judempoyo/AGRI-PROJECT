@@ -32,12 +32,32 @@
                     </x-nav-link>
                 </div>
                 @endrole
+                @role('grower')
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('/dashboard')" :active="request()->routeIs('grower')"> {{ __('Add a product')
+                        }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('/dashboard')" :active="request()->routeIs('grower')"> {{ __('My Space')
+                        }}
+                    </x-nav-link>
+                </div>
+
+                @endrole
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="url('/dashboard')" :active="request()->routeIs('grower')"> {{ __('Grower space')
+                        }}
+                    </x-nav-link>
+                </div>
             </div>
 
 
             {{-- cart button --}}
-            <x-nav-link :href="route('login')" :active="request()->routeIs('')">
-                <div class="flex">
+            {{-- <x-nav-link :href="route('login')" :active="request()->routeIs('')"> --}}
+                <div
+                    class="flex justify-end cursor-pointer text-sm font-medium leading-5 text-gray-900 dark:text-gray-400">
                     <div class="relative py-2">
                         <div class="left-3 absolute t-0">
                             <p
@@ -51,7 +71,8 @@
                         </svg>
                     </div>
                 </div>
-            </x-nav-link> {{-- end cart button --}}
+                {{--
+            </x-nav-link> --}} {{-- end cart button --}}
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -122,7 +143,29 @@
             </div>
         </div>
         @endrole
-
+        @role('grower')
+        <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
+            <div class="pt-2 pb-3 space-y-1">
+                <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('becomeGrower')">
+                    {{ __('Add product') }}
+                </x-responsive-nav-link>
+            </div>
+        </div>
+        <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
+            <div class="pt-2 pb-3 space-y-1">
+                <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('becomeGrower')">
+                    {{ __('My space') }}
+                </x-responsive-nav-link>
+            </div>
+        </div>
+        @endrole
+        <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
+            <div class="pt-2 pb-3 space-y-1">
+                <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('becomeGrower')">
+                    {{ __('Grower space') }}
+                </x-responsive-nav-link>
+            </div>
+        </div>
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
             <div class="px-4">

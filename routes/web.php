@@ -9,6 +9,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/grower', function () {
+    return view('grower.index');
+})->name('grower');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -19,4 +23,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

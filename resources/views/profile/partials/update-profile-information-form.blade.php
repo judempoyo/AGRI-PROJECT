@@ -61,7 +61,11 @@
         </div>
 
         <div>
+
+
             <!-- Avatar -->
+
+            
             <div class="mt-2">
                 <x-input-label for="avatar" :value="__('Avatar')" class="block" />
                 <span class="sr-only">Choose profile photo</span>
