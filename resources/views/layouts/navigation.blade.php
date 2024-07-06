@@ -34,7 +34,8 @@
                 @endrole
                 @role('grower')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('/dashboard')" :active="request()->routeIs('grower')"> {{ __('Add a product')
+                    <x-nav-link :href="url('/grower.create')" :active="request()->routeIs('grower.create')"> {{ __('Add
+                        a product')
                         }}
                     </x-nav-link>
                 </div>

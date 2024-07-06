@@ -1,13 +1,20 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('grower.create', [Product::class, 'create'])
+        ->name('grower.create');
+});
+
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware(['guest'])->name('home');
+
 
 Route::get('/grower', function () {
     return view('grower.index');
