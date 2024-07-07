@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('country', 50);
             $table->string('area');
             $table->integer('maxCapacity');
-            $table->foreignId('grower_id')->constrained('growers')->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();
             //
         });

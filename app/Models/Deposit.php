@@ -22,9 +22,14 @@ class Deposit extends Model
         'maxCapacity',
     ];
 
-    public function grower()
+    public function user()
     {
-        return $this->belongsTo(Grower::class);
+        return $this->belongsTo(User::class);
+    }
+
+    public function product()
+    {
+        return $this->hasMany(Product::class);
     }
 
 }

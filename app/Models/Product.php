@@ -30,9 +30,9 @@ class Product extends Model
         return $this->belongsTo(Categorie::class);
     }
 
-    public function user()
+    public function deposit()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Deposit::class);
     }
 
     public function productImage()

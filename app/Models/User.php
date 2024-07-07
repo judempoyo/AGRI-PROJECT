@@ -59,9 +59,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(product::class);
     }
-    public function grower()
+    public function deposit()
     {
-        return $this->hasMany(Grower::class);
+        return $this->hasMany(Deposit::class);
+    }
+
+    public function grower() 
+    {
+        return $this->hasOne(Grower::class);
     }
 
     public function order()
