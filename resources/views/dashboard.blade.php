@@ -21,6 +21,7 @@
 
                 </div>
             </div>
+            {{--  <img src="{{ asset('storage/'.Auth::user()->avatar) }}" alt="" srcset="">  --}}
             @endrole
 
         </div>

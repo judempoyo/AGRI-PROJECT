@@ -3,12 +3,14 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Models\Contracts\HasAvatar;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
     use HasFactory, Notifiable;
     use HasRoles;
@@ -50,6 +52,19 @@ class User extends Authenticatable
         ];
     }
 
+    public function getFilamentAvatarUrl(): ?string
+    {
+        return $this->avatar;
+    }
+
+    public function canAccessPanel(\Filament\Panel $panel): bool
+    {
+        return $this->hasRole('super_admin') && $this->hasVerifiedEmail();
+    }
+    /* public function canAccessFilament(): bool
+    {
+        return $this->role('super_admin') && $this->hasVerifiedEmail();
+    } */
     public function adress()
     {
         return $this->hasMany(Adress::class);
@@ -64,7 +79,7 @@ class User extends Authenticatable
         return $this->hasMany(Deposit::class);
     }
 
-    public function grower() 
+    public function grower()
     {
         return $this->hasOne(Grower::class);
     }

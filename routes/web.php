@@ -6,6 +6,13 @@ use Illuminate\Support\Facades\Route;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
+/* Route::get('/{locale?}', function ($locale = null) {
+    if (isset($locale) && in_array($locale, config('app.available_locales'))) {
+        app()->setLocale($locale);
+    }
+    return redirect()->back();
+}); */
+
 Route::middleware(['auth'])->group(function () {
     Route::get('grower.create', [Product::class, 'create'])
         ->name('grower.create');
@@ -17,7 +24,7 @@ Route::get('/', function () {
 
 
 Route::get('/grower', function () {
-    return view('grower.index');
+    return view('grower.deposit.index');
 })->name('grower');
 
 Route::get('/dashboard', function () {
