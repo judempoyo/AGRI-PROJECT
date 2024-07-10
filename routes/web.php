@@ -1,7 +1,13 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Models\Product;
+use App\Http\Controllers\AdressController;
+use App\Http\Controllers\DepositController;
+use App\Http\Controllers\GrowerController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderDetailController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductImageController;
 use Illuminate\Support\Facades\Route;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -13,19 +19,23 @@ use Spatie\Permission\Models\Role;
     return redirect()->back();
 }); */
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('grower.create', [Product::class, 'create'])
-        ->name('grower.create');
-});
+Route::resources([
+    'adresses' => AdressController::class,
+    'deposits' => DepositController::class,
+    'growers' => GrowerController::class,
+    'orders' => OrderController::class,
+    'ordersdetails' => OrderDetailController::class,
+    'products' => ProductController::class,
+    'productsImages' => ProductImageController::class,
+]);
+
 
 Route::get('/', function () {
     return view('welcome');
 })->middleware(['guest'])->name('home');
 
 
-Route::get('/grower', function () {
-    return view('grower.deposit.index');
-})->name('grower');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
