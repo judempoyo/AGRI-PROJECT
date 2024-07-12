@@ -72,7 +72,7 @@ class User extends Authenticatable implements FilamentUser
 
     public function product()
     {
-        return $this->hasMany(product::class);
+        return $this->hasMany(Product::class);
     }
     public function deposit()
     {

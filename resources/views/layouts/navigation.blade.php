@@ -46,7 +46,7 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('deposits')" :active="request()->routeIs('deposits.index')"> {{ __('My
+                    <x-nav-link :href="url('products')" :active="request()->routeIs('products.index')"> {{ __('My
                         Products')
                         }}
                     </x-nav-link>

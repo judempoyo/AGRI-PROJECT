@@ -29,19 +29,19 @@
                                 N°
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Name
+                                {{ __('Name')}}
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Adress
+                                {{ __('Adress')}}
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Country
+                                {{ __('Country')}}
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                area
+                                {{ __('area')}}
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Capacity
+                                {{ __('Capacity')}}
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 <span class="sr-only">Action
