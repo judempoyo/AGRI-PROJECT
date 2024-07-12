@@ -19,7 +19,7 @@ class DepositController extends Controller
     {
         $deposits = Deposit::latest()->paginate(5)->where('user_id', Auth::user()->id);
 
-        return view('grower.deposit.index', compact('deposits'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('deposit.index', compact('deposits'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -27,7 +27,7 @@ class DepositController extends Controller
      */
     public function create(): View
     {
-        return view('grower.deposit.create');
+        return view('deposit.create');
     }
 
     /**
@@ -37,27 +37,37 @@ class DepositController extends Controller
     public function store(StoreDepositRequest $request): RedirectResponse
     {
 
-        dd(Auth::user());
+        //dd($request);
 
         $request->validate([
             'name' => ['required', 'string', 'max:50', 'unique:' . Deposit::class],
-            'adresse' => ['required', 'string', 'max:200'],
+            'adress' => ['required', 'string', 'max:200'],
             'country' => ['required', 'string', 'max:100'],
             'area' => ['required', 'string', 'max:20'],
             'maxCapacity' => ['required', 'string'],
-            //'user_id' => ['required', ]
+            'user_id' => ['required']
         ]);
 
-        Deposit::create([
+        $deposit = Deposit::create([
             'name' => $request->name,
-            'adresse' => $request->adresse,
+            'adress' => $request->adress,
             'country' => $request->country,
             'area' => $request->area,
             'maxCapacity' => $request->maxCapacity,
-            'user_id' => Auth::user()->id,
+            'user_id' => $request->user_id,
+            /* 'created_at' => now(),
+            'updated_at' => now(), */
         ]);
 
-        return redirect(route('deposits.index', absolute: false));
+        $deposit->save();
+
+        //dd($deposit);
+        //dd(Auth::user());
+        //Deposit::save()
+
+
+
+        return redirect(route('deposits.index'));
     }
 
     /**
@@ -65,7 +75,7 @@ class DepositController extends Controller
      */
     public function show(Deposit $deposit)
     {
-        //
+        return view('deposit.show', compact('deposit'));
     }
 
     /**
@@ -73,7 +83,7 @@ class DepositController extends Controller
      */
     public function edit(Deposit $deposit)
     {
-        //
+        return view('deposit.edit', compact('deposit'));
     }
 
     /**
@@ -81,7 +91,23 @@ class DepositController extends Controller
      */
     public function update(UpdateDepositRequest $request, Deposit $deposit)
     {
-        //
+        $request->validate([
+            'name' => ['string', 'max:50'],
+            'adress' => ['string', 'max:200'],
+            'country' => ['string', 'max:100'],
+            'area' => ['string', 'max:20'],
+            'maxCapacity' => ['string'],
+        ]);
+
+        $deposit->update([
+            'name' => $request->name,
+            'adress' => $request->adress,
+            'country' => $request->country,
+            'area' => $request->area,
+            'maxCapacity' => $request->maxCapacity,
+        ]);
+
+        return redirect(route('deposits.index'));
     }
 
     /**
@@ -89,6 +115,8 @@ class DepositController extends Controller
      */
     public function destroy(Deposit $deposit)
     {
-        //
+        $deposit->delete();
+
+        return redirect(route('deposits.index'));
     }
 }

@@ -11,7 +11,7 @@ class UpdateDepositRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class UpdateDepositRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => ['string', 'max:255'],
+            'adress' => ['string', 'max:255'],
+            'country' => ['string', 'max:255'],
+            'area' => ['string', 'max:255'],
+            'maxCapacity' => ['string'],
         ];
     }
 }

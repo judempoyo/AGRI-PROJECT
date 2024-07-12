@@ -27,6 +27,7 @@ class StoreDepositRequest extends FormRequest
             'country' => ['required', 'string', 'max:255'],
             'area' => ['required', 'string', 'max:255'],
             'maxCapacity' => ['required', 'string'],
+            'user_id' => ['required']
         ];
     }
 }

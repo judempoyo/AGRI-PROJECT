@@ -20,6 +20,7 @@ class Deposit extends Model
         'country',
         'area',
         'maxCapacity',
+        'user_id',
     ];
 
     public function user()
@@ -31,5 +32,4 @@ class Deposit extends Model
     {
         return $this->hasMany(Product::class);
     }
-
 }

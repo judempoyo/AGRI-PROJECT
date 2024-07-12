@@ -6,7 +6,7 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-7xl  sm:px-6 lg:px-8">
 
             @can('view_deposit')
             <div class="row text-gray-800 dark:text-gray-200 w-ful flex">
@@ -19,9 +19,9 @@
             @can('create_deposit')
 
             <div class="w-full  md:w-1/2  relative items-center justify-items-center justify-center">
-                <form method="POST" action="{{ route('deposits.store') }}">
+                <form method="post" action="{{ route('deposits.store') }}">
                     @csrf
-
+                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                     <!-- Name -->
                     <div class="m-0 mt-2 w-full">
                         <x-input-label for="name" :value="__('Name')" />
@@ -60,15 +60,11 @@
                             <x-input-label for="maxCapacity" :value="__('Max Capacity')" />
 
                             <x-text-input id="maxCapacity" class="block mt-1 w-full" type="number" name="maxCapacity"
-                                required autocomplete="new-maxCapacity" />
+                                :value="old('maxCapacity')" required autocomplete="new-maxCapacity" />
 
                             <x-input-error :messages="$errors->get('maxCapacity')" class="mt-2" />
                         </div>
                     </div>
-
-
-
-
 
                     @can('create_deposit')
 
@@ -76,8 +72,9 @@
                         {{ __('Create') }}
                     </x-primary-button>
                     @endcan
+
+                </form>
             </div>
-            </form>
 
         </div>
         @endcan
