@@ -16,9 +16,9 @@
             </div>
             @endcan
 
-            @can('create_deposit')
+            @can('update_deposit')
 
-            <div class="w-full  md:w-1/2  relative items-center justify-items-center justify-center">
+            <div class="w-full  md:w-1/2 m-auto relative items-center justify-items-center justify-center">
                 <form method="post" action="{{ route('deposits.update', $deposit->id) }}">
                     @csrf
                     @method('put')
@@ -67,7 +67,6 @@
                     </div>
 
                     @can('create_deposit')
-
                     <x-primary-button class="ms-4 mt-4">
                         {{ __('Update') }}
                     </x-primary-button>

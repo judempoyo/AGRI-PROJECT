@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Deposit;
+use App\Models\Categorie;
+use App\Models\SellUnit;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use Illuminate\View\View;
@@ -17,11 +19,20 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+
+
+    public function __construct(){
+
+    }
     public function index() : View
     {
-        $products = Product::latest()->paginate(5)->where('user_id', Auth::user()->id);;
+        $products = Product::latest()->paginate(5)->where('user_id', Auth::user()->id);
+        $deposits = Deposit::all()->where('user_id', Auth::user()->id);
+        $categories = Categorie::all();
+        $sellUnits = SellUnit::all();
 
-        return view('product.index', compact('products'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('product.index', compact('products','deposits','categories','sellUnits'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -29,7 +40,11 @@ class ProductController extends Controller
      */
     public function create(): View
     {
-        return view('product.create');
+        $deposits = Deposit::all()->where('user_id', Auth::user()->id);
+        $categories = Categorie::all();
+        $sellUnits = SellUnit::all();
+
+        return view('product.create',  compact('deposits','categories','sellUnits'));
     }
 
     /**
@@ -37,13 +52,45 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'string', 'max:50'],
+            'description' => ['required', 'string', 'max:200'],
+            'price' => ['required', 'int'],
+            'quantity' => ['required', 'int'],
+            'deposit_id' => ['required', 'decimal:2'],
+            'category_id' => ['required', 'int'],
+            'sell_unit_id' => ['required', 'int'],
+            'user_id' => ['required']
+        ]);
+
+        $product = Product::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price,
+            'quantity' => $request->quantity,
+            'deposit_id' => $request->deposit_id,
+            'category_id' => $request->category_id,
+            'sell_unit_id' => $request->sell_unit_id,
+            'user_id' => $request->user_id,
+            /* 'created_at' => now(),
+            'updated_at' => now(), */
+        ]);
+
+        $product->save();
+
+        //dd($deposit);
+        //dd(Auth::user());
+        //Deposit::save()
+
+
+
+        return redirect(route('products.index'));
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show(Product $product) : View
     {
         return view('product.show', compact('product'));
     }
@@ -51,9 +98,13 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Product $product)
+    public function edit(Product $product) : View
     {
-        return view('product.edit', compact('product'));
+        $deposits = Deposit::all()->where('user_id', Auth::user()->id);
+        $categories = Categorie::all();
+        $sellUnits = SellUnit::all();
+
+        return view('product.edit', compact('product', 'deposits','categories','sellUnits'));
     }
 
     /**
@@ -61,7 +112,31 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-        //
+
+        //dd($request);
+        $request->validate([
+            'name' => ['string', 'max:50'],
+            'description' => ['string', 'max:200'],
+            'price' => ['decimal:2'],
+            'quantity' => ['int'],
+            'deposit_id' => ['int'],
+            'category_id' => ['int'],
+            'sell_unit_id' => ['int'],
+        ]);
+
+        $product->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price,
+            'quantity' => $request->quantity,
+            'deposit_id' => $request->deposit_id,
+            'category_id' => $request->category_id,
+            'sell_unit_id' => $request->sell_unit_id,
+        ]);
+
+        return redirect(route('products.index'));
+
+
     }
 
     /**
@@ -69,6 +144,8 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return redirect(route('products.index'));
     }
 }

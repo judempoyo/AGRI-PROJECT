@@ -19,6 +19,10 @@ class Product extends Model
         'description',
         'price',
         'quantity',
+        'sell_unit_id',
+        'deposit_id',
+        'category_id',
+        'user_id',
     ];
 
     public function SellUnit()

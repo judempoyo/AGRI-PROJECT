@@ -5,6 +5,8 @@
         </h2>
     </x-slot>
 
+
+
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
 
@@ -63,10 +65,30 @@
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">{{
                                 $product->name }}</th>
-                            <td class="px-6 py-4">{{ $product->adress }}</td>
-                            <td class="px-6 py-4">{{ $product->country }}</td>
-                            <td class="px-6 py-4">{{ $product->area }}</td>
-                            <td class="px-6 py-4">{{ $product->maxCapacity }}</td>
+                            <td class="px-6 py-4">{{ $product->description }}</td>
+                            <td class="px-6 py-4">{{ $product->price }}</td>
+                            <td class="px-6 py-4">{{ $product->Quantity }}</td>
+                            <td class="px-6 py-4"> 
+                                @foreach($deposits as $deposit)
+                                    @if($deposit->id == $product->deposit_id)
+                                    {{ $deposit->name }}
+                                    @endif
+                                @endforeach
+                            </td>
+                            <td class="px-6 py-4">
+                                @foreach($categories as $categorie)
+                                    @if($categorie->id == $product->category_id)
+                                    {{ $categorie->name }}
+                                    @endif
+                                @endforeach
+                            </td>
+                            <td class="px-6 py-4">
+                                @foreach($sellUnits as $sellUnit)
+                                    @if($sellUnit->id == $product->sell_unit_id)
+                                    {{ $sellUnit->name }}
+                                    @endif
+                                @endforeach
+                            </td>
                             <td class="text-right px-6 py-4">
 
                                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">

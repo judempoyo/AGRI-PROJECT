@@ -5,6 +5,12 @@
         </h2>
     </x-slot>
 
+    {{-- @php
+    //dd($deposits);
+    //dd($categories);
+    //dd($sellUnits);
+    @endphp --}}
+
     <div class="py-12">
         <div class="mx-auto max-w-7xl  sm:px-6 lg:px-8">
 
@@ -18,7 +24,7 @@
 
             @can('create_product')
 
-            <div class="w-full  md:w-1/2  relative items-center justify-items-center justify-center">
+            <div class="w-full  md:w-1/2 m-auto relative items-center justify-items-center justify-center">
                 <form method="post" action="{{ route('products.store') }}">
                     @csrf
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
@@ -29,40 +35,82 @@
                             autofocus autocomplete="name" />
                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
                     </div>
-                    <!-- adress -->
+
+                    <!-- description -->
                     <div class="m-0 mt-2 w-full">
-                        <x-input-label for="adress" :value="__('Adress')" />
-                        <x-text-input id="adress" class="block mt-1 w-full" type="text" name="adress"
-                            :value="old('adress')" autofocus autocomplete="adress" />
-                        <x-input-error :messages="$errors->get('adress')" class="mt-2" />
+                        <x-input-label for="description" :value="__('Description')" />
+
+                        <x-textarea id="description" class="block mt-1" rows="4" name="description" autofocus
+                            autocomplete="description">{{ old('description') }}</x-textarea>
+                        <x-input-error :messages="$errors->get('description')" class="mt-2" />
                     </div>
 
-
-                    <!-- country  -->
-                    <div class="mt-2">
-                        <x-input-label for="country" :value="__('Country')" />
-                        <x-text-input id="country" class="block mt-1 w-full" type="text" name="country"
-                            :value="old('country')" autocomplete="country" />
-                        <x-input-error :messages="$errors->get('country')" class="mt-2" />
-                    </div>
-
-                    <div class="mt-2 md:flex md:flex-row">
-                        <!-- area -->
-                        <div class="m-0 mt-2 w-full md:w-1/2">
-                            <x-input-label for="area" :value="__('Area')" />
-                            <x-text-input id="area" class="block mt-1 w-full" type="text" name="area"
-                                :value="old('area')" autofocus autocomplete="area" />
-                            <x-input-error :messages="$errors->get('area')" class="mt-2" />
+                    <div class="w-full mt-2 flex">
+                        <!-- price -->
+                        <div class="mr-1 mt-2 w-full">
+                            <x-input-label for="price" :value="__('Price')" />
+                            <x-text-input id="price" class="block mt-1 w-full" type="number" step="0.01" name="price"
+                                :value="old('price')" autofocus autocomplete="price" />
+                            <x-input-error :messages="$errors->get('price')" class="mt-2" />
                         </div>
 
-                        <!-- maxCapacity -->
-                        <div class="m-0 mt-2 w-full md:w-1/2">
-                            <x-input-label for="maxCapacity" :value="__('Max Capacity')" />
 
-                            <x-text-input id="maxCapacity" class="block mt-1 w-full" type="number" name="maxCapacity"
-                                :value="old('maxCapacity')" required autocomplete="new-maxCapacity" />
+                        <!-- quantity  -->
+                        <div class="mr-1 mt-2 w-full">
+                            <x-input-label for="quantity" :value="__('Quantity')" />
+                            <x-text-input id="quantity" class="block mt-1 w-full" type="number" min="1" name="quantity"
+                                :value="old('quantity')" autocomplete="quantity" />
+                            <x-input-error :messages="$errors->get('quantity')" class="mt-2" />
+                        </div>
 
-                            <x-input-error :messages="$errors->get('maxCapacity')" class="mt-2" />
+                        <!-- sell_unit  -->
+                        <div class="mt-2 w-full">
+                            <x-input-label for="sell_unit_id" :value="__('Sell unit')" />
+                            <x-select id="sell_unit_id" class="block mt-1 w-full" name="sell_unit_id"
+                                autocomplete="sell_unit_id">
+                                <option value="" selected disabled>{{__('-- Select a sell unit --')}}</option>
+                                @foreach($sellUnits as $sellUnit)
+                                <option value="{{ $sellUnit->id }}" @if ($sellUnit->id == old('sell_unit_id')
+                                    ){{'selected'}} @endif
+                                    >{{$sellUnit->name}}</option>
+                                @endforeach
+                            </x-select>
+                            <x-input-error :messages="$errors->get('sell_unit_id')" class="mt-2" />
+                        </div>
+
+                    </div>
+
+                    <div class="mt-2 w-full flex">
+                        <!-- category -->
+                        <div class="mr-2 mt-2 w-full">
+                            <x-input-label for="category_id" :value="__('Category')" />
+                            <x-select id="category_id" class="block mt-1 w-full" name="category_id" autofocus
+                                autocomplete="category_id">
+                                <option value="" selected disabled>{{__('-- Select a categorie --')}}</option>
+                                @foreach($categories as $categorie)
+                                <option value="{{ $categorie->id }}" @if ($categorie->id == old('category_id')
+                                    ){{'selected'}} @endif
+                                    >{{$categorie->name}}</option>
+                                @endforeach
+                            </x-select>
+                            <x-input-error :messages="$errors->get('category_id')" class="mt-2" />
+                        </div>
+
+                        <!-- deposit-->
+                        <div class="mt-2 w-full">
+                            <x-input-label for="deposit_id" :value="__('Deposit')" />
+
+                            <x-select id="deposit_id" class="block mt-1 w-full" name="deposit_id"
+                                autocomplete="new-deposit_id">
+                                <option value="" selected disabled>{{__('-- Select a deposit --')}}</option>
+                                @foreach($deposits as $deposit)
+                                <option value="{{ $deposit->id }}" @if ($deposit->id == old('deposit_id')
+                                    ){{'selected'}} @endif
+                                    >{{$deposit->name}}</option>
+                                @endforeach
+                            </x-select>
+
+                            <x-input-error :messages="$errors->get('deposit_id')" class="mt-2" />
                         </div>
                     </div>
 
@@ -75,6 +123,7 @@
 
                 </form>
             </div>
+
 
         </div>
         @endcan
