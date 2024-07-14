@@ -32,7 +32,7 @@ Route::resources([
 
 Route::get('/', function () {
     return view('welcome');
-})->middleware(['guest'])->name('home');
+})->name('home');
 
 
 

@@ -19,7 +19,7 @@
 <body class="font-sans text-gray-900 antialiased">
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
         <div>
-            <a href="/">
+            <a href="{{ route('home') }}">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
                 <span
                     class=" inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-4xl font-bold leading-5 mb-3 text-gray-500 dark:text-gray-400">{{
