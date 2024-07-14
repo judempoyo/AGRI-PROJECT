@@ -25,7 +25,7 @@
             @can('update_product')
 
 
-            <div class="w-full  md:w-1/2 m-auto relative items-center justify-items-center justify-center">
+            <div class="w-full  md:w-1/2 m-auto flex items-center justify-items-center justify-center">
                 <form method="post" action="{{ route('products.update', $product->id) }}">
                     @csrf
 

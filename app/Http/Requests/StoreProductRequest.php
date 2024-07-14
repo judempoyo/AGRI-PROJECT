@@ -29,7 +29,7 @@ class StoreProductRequest extends FormRequest
             'deposit_id' => ['required', 'int'],
             'category_id' => ['required', 'int'],
             'sell_unit_id' => ['required', 'int'],
-            'user_id' => ['required']
+            'user_id' => ['required'],
         ];
     }
 }

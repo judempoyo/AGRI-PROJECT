@@ -5,9 +5,9 @@
         </h2>
     </x-slot>
 
-    {{-- @php
-    //dd($images)
-    @endphp --}}
+    {{--  @php
+        //dd($images)
+    @endphp  --}}
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
 
         @can('view_product')
@@ -35,29 +35,14 @@
         </div>
 
         <div class="w-1/2  md:w-2/3 m-auto mx-3 items-center justify-items-center justify-center">
-
-
-
-            @foreach($images as $productsImage)
-            <div class="m-5 w-1/4 flex justify-content-between">
-                <img src="{{ asset('storage/images/uploads/products/'.$productsImage->image)}}" width="200" height="200"
-                    alt="{{$productsImage->image}}" class="">
-
-                <form action="{{ route('productsImages.destroy',$productsImage->id) }}" method="POST">
-                    <x-edit-button class="ms-3 mb-3 " href="{{ URL::to('productsImages/'.$productsImage->id.'/edit')}}">
-
-                        </svg>
-                    </x-edit-button>
-                    @csrf
-                    @method('DELETE')
-
-
-                    <x-delete-button class="ms-3 mb-3">
-
-                    </x-delete-button>
-                </form>
+            <div class="row text-gray-800 dark:text-gray-200 w-ful flex">
+                <x-create-button class="ms-3 mb-3  mt-3" :href="route('productImages.create')">
+                    {{__('Add Image')}}
+                </x-create-button>
             </div>
+            @foreach($images as $image)
 
+            <img src="{{$image->image}}" alt="{{$image->image}}" class="">
 
             @endforeach
         </div>

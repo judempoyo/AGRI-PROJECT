@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Deposit;
 use App\Models\Categorie;
 use App\Models\SellUnit;
+use App\Models\ProductImage;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use Illuminate\View\View;
@@ -52,16 +53,19 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        $request->validate([
+
+        //$images = array();
+        //dd($request);
+        /* $request->validate([
             'name' => ['required', 'string', 'max:50'],
             'description' => ['required', 'string', 'max:200'],
-            'price' => ['required', 'int'],
+            'price' => ['required', 'decimal:2'],
             'quantity' => ['required', 'int'],
-            'deposit_id' => ['required', 'decimal:2'],
+            'deposit_id' => ['required', 'iint'],
             'category_id' => ['required', 'int'],
             'sell_unit_id' => ['required', 'int'],
             'user_id' => ['required']
-        ]);
+        ]); */
 
         $product = Product::create([
             'name' => $request->name,
@@ -72,11 +76,29 @@ class ProductController extends Controller
             'category_id' => $request->category_id,
             'sell_unit_id' => $request->sell_unit_id,
             'user_id' => $request->user_id,
-            /* 'created_at' => now(),
-            'updated_at' => now(), */
+            
         ]);
 
         $product->save();
+
+        if($files = $request->file('images')) {
+            foreach ($files as $file) {
+                $name = time().'_'.$file->getClientOriginalName();
+                $file->move('storage/images/uploads/products/', $name);
+                //$images[] = $name;
+
+                ProductImage::create([
+                    'image' => $name,
+                    'product_id' => $product->id,
+                ]);
+                
+
+            }
+        }
+
+        //dd($images);
+
+        
 
         //dd($deposit);
         //dd(Auth::user());
@@ -92,7 +114,9 @@ class ProductController extends Controller
      */
     public function show(Product $product) : View
     {
-        return view('product.show', compact('product'));
+        $product_id = $product->id;
+        $images = ProductImage::all()->where('product_id',$product_id);
+        return view('product.show', compact('product', 'images'));
     }
 
     /**
@@ -114,7 +138,7 @@ class ProductController extends Controller
     {
 
         //dd($request);
-        $request->validate([
+        /* $request->validate([
             'name' => ['string', 'max:50'],
             'description' => ['string', 'max:200'],
             'price' => ['decimal:2'],
@@ -122,7 +146,7 @@ class ProductController extends Controller
             'deposit_id' => ['int'],
             'category_id' => ['int'],
             'sell_unit_id' => ['int'],
-        ]);
+        ]); */
 
         $product->update([
             'name' => $request->name,

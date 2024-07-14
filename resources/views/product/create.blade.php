@@ -21,11 +21,14 @@
                 </x-create-button>
             </div>
             @endcan
+        </div>
+        @can('create_product')
 
-            @can('create_product')
+        <div class="w-full flex">
 
-            <div class="w-full  md:w-1/2 m-auto relative items-center justify-items-center justify-center">
-                <form method="post" action="{{ route('products.store') }}">
+            <div class="w-full  md:w-1/2 m-auto flex items-center justify-items-center justify-center">
+                <form method="post" action="{{ route('products.store') }}" enctype="multipart/form-data">
+
                     @csrf
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                     <!-- Name -->
@@ -114,20 +117,36 @@
                         </div>
                     </div>
 
+                    <!-- images -->
+                    <div class="m-0 mt-2 w-full">
+                        <x-input-label for="images" :value="__('images')" />
+                        <input
+                            class="block w-full text-lg text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            id="large_size" type="file" accept="images/*" name="images[]" multiple autofocus
+                            autocomplete="images" />
+
+                        <x-input-error :messages="$errors->get('images')" class="mt-2" />
+                    </div>
+
                     @can('create_product')
 
                     <x-primary-button class="ms-4 mt-4">
                         {{ __('Create') }}
                     </x-primary-button>
                     @endcan
-
                 </form>
+
             </div>
 
 
+
+
         </div>
+
+
+
+
         @endcan
 
-    </div>
     </div>
 </x-app-layout>

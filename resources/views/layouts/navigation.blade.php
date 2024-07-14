@@ -34,7 +34,8 @@
                 @endrole
                 @role('grower')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('/grower.create')" :active="request()->routeIs('grower.create')"> {{ __('Add
+                    <x-nav-link :href="route('products.create')" :active="request()->routeIs('products.create')"> {{
+                        __('Add
                         a product')
                         }}
                     </x-nav-link>
@@ -159,7 +160,7 @@
         @role('grower')
         <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
             <div class="pt-2 pb-3 space-y-1">
-                <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('becomeGrower')">
+                <x-responsive-nav-link :href="route('products.create')" :active="request()->routeIs('products.create')">
                     {{ __('Add product') }}
                 </x-responsive-nav-link>
             </div>
