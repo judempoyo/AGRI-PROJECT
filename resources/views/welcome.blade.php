@@ -1,85 +1,173 @@
-<x-guestHome-layout>
+<x-app-layout>
     {{-- <img src="{{asset('storage/images/bg.jpg')}}" alt=""> --}}
-    {{-- <div class="bg-white">
-        <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-            <h2 class="text-2xl font-bold tracking-tight text-gray-900">Customers also purchased</h2>
+    @auth
+    <div class="py-12">
+        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+            @role('admin')
+            <div class="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
+                <div class="p-6 text-gray-900 dark:text-gray-100">
+                    {{ __('Admin ' . Auth::user()->name . " You're logged in!") }}
 
-            <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                <div class="group relative">
-                    <div
-                        class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                        <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg"
-                            alt="Front of men&#039;s Basic Tee in black."
-                            class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-                    </div>
-                    <div class="mt-4 flex justify-between">
-                        <div>
-                            <h3 class="text-sm text-gray-700">
-                                <a href="#">
-                                    <span aria-hidden="true" class="absolute inset-0"></span>
-                                    Basic Tee
-                                </a>
-                            </h3>
-                            <p class="mt-1 text-sm text-gray-500">Black</p>
-                        </div>
-                        <p class="text-sm font-medium text-gray-900">$35</p>
-                    </div>
                 </div>
-
-                <!-- More products... -->
             </div>
-        </div>
-    </div> --}}
+            @else
+            <div class="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
+                <div class="p-6 text-gray-900 dark:text-gray-100">
+                    {{ __(Auth::user()->name . " You're logged in!") }}
 
-    <div
-        class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-            <img class="p-8 rounded-t-lg" src="/docs/images/products/apple-watch.png" alt="product image" />
-        </a>
-        <div class="px-5 pb-5">
-            <a href="#">
-                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">Apple Watch Series 7 GPS,
-                    Aluminium Case, Starlight Sport</h5>
-            </a>
-            <div class="flex items-center mt-2.5 mb-5">
-                <div class="flex items-center space-x-1 rtl:space-x-reverse">
-                    <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
-                    <svg class="w-4 h-4 text-gray-200 dark:text-gray-600" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
-                        <path
-                            d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-                    </svg>
                 </div>
-                <span
-                    class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
             </div>
-            <div class="flex items-center justify-between">
-                <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-                <a href="#"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-                    to cart</a>
-            </div>
+            {{-- <img src="{{ asset('storage/'.Auth::user()->avatar) }}" alt="" srcset=""> --}}
+            @endrole
+
         </div>
     </div>
+    @endauth
+
+    <section class="bg-gray-50 py-8 antialiased dark:bg-gray-900 md:py-12">
+        <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
+
+            <div class="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
+
+                @foreach ($products as $product)
+                <div
+                    class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+                    <div class="h-56 w-full">
+                        @foreach ($images as $image )
+                        @if ($image->product_id == $product->id)
+
+                        <a href="{{ URL::to('products/'.$product->id) }}">
+                            <img class="mx-auto h-full dark:hidden"
+                                src="{{asset('storage/images/uploads/products/'.$image->image )}}"
+                                alt="{{ $image->image }}" />
+                            <img class="mx-auto hidden h-full dark:block"
+                                src="{{asset('storage/images/uploads/products/'.$image->image )}}"
+                                alt="{{ $image->image }}" />
+
+                        </a>
+                        @break
+                        @endif
+                        @endforeach
+                    </div>
+
+
+                    <div class="pt-6">
+                        <div class="mb-4 flex items-center justify-between gap-4">
+
+                            <div class="flex items-center justify-end gap-1">
+                                <button type="button" data-tooltip-target="tooltip-quick-look"
+                                    class="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                    <span class="sr-only"> Quick look </span>
+                                    <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-width="2"
+                                            d="M21 12c0 1.2-4.03 6-9 6s-9-4.8-9-6c0-1.2 4.03-6 9-6s9 4.8 9 6Z" />
+                                        <path stroke="currentColor" stroke-width="2"
+                                            d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                    </svg>
+                                </button>
+                                <div id="tooltip-quick-look" role="tooltip"
+                                    class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700"
+                                    data-popper-placement="top">
+                                    Quick look
+                                    <div class="tooltip-arrow" data-popper-arrow=""></div>
+                                </div>
+
+                                <button type="button" data-tooltip-target="tooltip-add-to-favorites"
+                                    class="rounded-lg p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                    <span class="sr-only"> Add to Favorites </span>
+                                    <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="M12 6C6.5 1 1 8 5.8 13l6.2 7 6.2-7C23 8 17.5 1 12 6Z" />
+                                    </svg>
+                                </button>
+                                <div id="tooltip-add-to-favorites" role="tooltip"
+                                    class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700"
+                                    data-popper-placement="top">
+                                    Add to favorites
+                                    <div class="tooltip-arrow" data-popper-arrow=""></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <a href="{{ URL::to('products/'.$product->id) }}"
+                            class="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white">{{$product->name}}</a>
+
+
+
+
+                        <ul class="mt-2 flex items-center gap-4">
+                            <li class="flex items-center gap-2">
+                                <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M13 7h6l2 4m-8-4v8m0-8V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v9h2m8 0H9m4 0h2m4 0h2v-4m0 0h-5m3.5 5.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm-10 0a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z" />
+                                </svg>
+                                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">
+                                    @foreach ($categories as $categorie )
+                                    @if ($categorie->id == $product->category_id)
+                                    {{ $categorie->name }}
+                                    @break
+                                    @endif
+                                    @endforeach
+                                </p>
+                            </li>
+
+                            <li class="flex items-center gap-2">
+                                <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                                        d="M8 7V6c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v7c0 .6-.4 1-1 1h-1M3 18v-7c0-.6.4-1 1-1h11c.6 0 1 .4 1 1v7c0 .6-.4 1-1 1H4a1 1 0 0 1-1-1Zm8-3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
+                                </svg>
+                                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">
+                                    @foreach ($deposits as $deposit )
+                                    @if ($deposit->id == $product->deposit_id)
+                                    {{ $deposit->name }}
+                                    @break
+                                    @endif
+                                    @endforeach
+                                </p>
+                            </li>
+                        </ul>
+
+                        <div class="mt-4 flex items-center justify-between gap-4">
+                            <p class="text-2xl font-extrabold leading-tight text-gray-900 dark:text-white"> {{
+                                $product->price
+                                }}CDF</p>
+
+                            <button type="button"
+                                class="inline-flex items-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4  focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                                <svg class="-ms-2 me-2 h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6" />
+                                </svg>
+                                {{ __('Add to cart') }}
+                            </button>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                @endforeach
+
+            </div>
+            <div class="w-full text-center">
+                <button type="button"
+                    class="rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700">{{
+                    __('Show
+                    more') }}</button>
+            </div>
+        </div>
+
+    </section>
+
 
     {{-- @for ($i = 1; $i < 6; $i++) <div class="row justify-content-center align-items-center g-2">
         <img src="{{asset('storage/images/bg.jpg')}}" class="m-5 rounded-full" width="200" alt="{{ __('') }}">
@@ -88,4 +176,5 @@
 
         @endfor --}}
 
-</x-guestHome-layout>
+
+</x-app-layout>

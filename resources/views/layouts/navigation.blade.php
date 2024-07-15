@@ -1,116 +1,302 @@
-<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
-    <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
+<nav class="bg-white dark:bg-gray-800 antialiased">
+    <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0 py-4">
+        <div class="flex items-center justify-between">
             <!-- Logo -->
-            <div class="shrink-0 flex items-center">
-                <a href="{{ route('home') }}">
-                    <x-application-logo class="inline-block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+            <div class="flex items-center space-x-8">
+                <div class="shrink-0">
+                    <a href="{{ route('home') }}">
+                        <x-application-logo
+                            class="inline-block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
 
-                    <span
-                        class=" inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 dark:text-gray-400">{{
-                        __('AGRI PROJECT') }}</span>
-                </a>
-
-
-            </div>
-            <div class="flex">
-
-
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
+                        <span
+                            class=" inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 dark:text-gray-400">{{
+                            __('AGRI PROJECT') }}</span>
+                    </a>
                 </div>
 
-                <!-- Navigation Links -->
-                @role('customer')
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('/dashboard')" :active="request()->routeIs('becomeGrower')"> {{ __('Become a
-                        grower') }}
-                    </x-nav-link>
-                </div>
-                @endrole
-                @role('grower')
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('products.create')" :active="request()->routeIs('products.create')"> {{
-                        __('Add
-                        a product')
-                        }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('deposits')" :active="request()->routeIs('deposits.index')"> {{ __('My
-                        Space')
-                        }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('products')" :active="request()->routeIs('products.index')"> {{ __('My
-                        Products')
-                        }}
-                    </x-nav-link>
-                </div>
+                <ul class="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 sm:justify-center">
+                    <li>
 
-                @endrole
-
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="url('/dashboard')" :active="request()->routeIs('grower')"> {{ __('Grower space')
-                        }}
-                    </x-nav-link>
-                </div>
-            </div>
-
-
-            {{-- cart button --}}
-            {{-- <x-nav-link :href="route('login')" :active="request()->routeIs('')"> --}}
-                <div
-                    class="flex justify-end cursor-pointer text-sm font-medium leading-5 text-gray-900 dark:text-gray-400">
-                    <div class="relative py-2">
-                        <div class="left-3 absolute t-0">
-                            <p
-                                class="flex justify-center items-center  dark:bg-green-600 text-gray-900 dark:text-gray-200 p-3 rounded-full w-2 h-2 text-xs">
-                                3</p>
+                        <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                                {{ __('Home') }}
+                            </x-nav-link>
                         </div>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="file: mt-4 w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                        </svg>
-                    </div>
-                </div>
-                {{--
-            </x-nav-link> --}} {{-- end cart button --}}
+                    </li>
+                    @role('customer')
+                    <li class="shrink-0">
+                        <div class="hidden sm:-my-px sm:ms-2 sm:flex">
+                            <x-nav-link :href="url('/home')" :active="request()->routeIs('becomeGrower')"> {{
+                                __('Become a
+                                grower') }}
+                            </x-nav-link>
+                        </div>
+                    </li>
+                    @endrole
+                    @role('grower')
+                    <li class="shrink-0">
+                        <div class="hidden sm:-my-px sm:ms-2 sm:flex">
+                            <x-nav-link :href="route('products.create')"
+                                :active="request()->routeIs('products.create')"> {{
+                                __('Add
+                                a product')
+                                }}
+                            </x-nav-link>
+                        </div>
+                    </li>
+                    <li class="shrink-0">
+                        <div class="hidden sm:-my-px sm:ms-2 sm:flex">
+                            <x-nav-link :href="url('deposits')" :active="request()->routeIs('deposits.index')"> {{
+                                __('My
+                                Space')
+                                }}
+                            </x-nav-link>
+                        </div>
+                    <li class="shrink-0">
+                        <div class="hidden sm:-my-px sm:ms-2 sm:flex">
+                            <x-nav-link :href="url('products')" :active="request()->routeIs('products.index')"> {{
+                                __('My
+                                Products')
+                                }}
+                            </x-nav-link>
+                        </div>
+                    </li>
 
-            <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ms-6">
-                <x-dropdown align="right" width="48">
-                    <x-slot name="trigger">
-                        <button
-                            class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                    @endrole
 
-                            {{-- <image src="{{ asset('storage/'.Auth::user()->avatar) }}"
-                                class="w-10 h-10 rounded-full ring-2 ring-gray-300 dark:ring-gray-400 mr-3" width="25"
-                                height="25"></image> --}}
-                            <div>{{ Auth::user()->name }}
-                            </div>
+                    <li class="shrink-0">
+                        <div class="hidden sm:-my-px sm:ms-2 sm:flex">
+                            <x-nav-link :href="url('/home')" :active="request()->routeIs('grower')"> {{ __('Grower
+                                space')
+                                }}
+                            </x-nav-link>
+                        </div>
+                    </li>
 
-                            <div class="ms-1">
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 20 20">
+                    <li class="shrink-0">
+                        <div class="hidden sm:-my-px sm:ms-2 sm:flex">
+                            <x-nav-link :href="url('/')" :active="request()->routeIs('grower')"> {{ __('Today\'s Deals')
+                                }}
+                            </x-nav-link>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="flex items-center lg:space-x-2">
+
+                <button id="myCartDropdownButton1" data-dropdown-toggle="myCartDropdown1" type="button"
+                    class="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white">
+                    <span class="sr-only">
+                        Cart
+                    </span>
+                    <svg class="w-5 h-5 lg:me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
+                    </svg>
+                    <span class="hidden sm:flex">My Cart</span>
+                    <svg class="hidden sm:flex w-4 h-4 text-gray-900 dark:text-white ms-1" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m19 9-7 7-7-7" />
+                    </svg>
+                </button>
+
+                <div id="myCartDropdown1"
+                    class="hidden z-10 mx-auto max-w-sm space-y-4 overflow-hidden rounded-lg bg-white p-4 antialiased shadow-lg dark:bg-gray-800">
+                    <div class="grid grid-cols-2">
+                        <div>
+                            <a href="#"
+                                class="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline">Apple
+                                iPhone 15</a>
+                            <p class="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">$599</p>
+                        </div>
+
+                        <div class="flex items-center justify-end gap-6">
+                            <p class="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">Qty: 1</p>
+
+                            <button data-tooltip-target="tooltipRemoveItem1a" type="button"
+                                class="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600">
+                                <span class="sr-only"> Remove </span>
+                                <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor" viewBox="0 0 24 24">
                                     <path fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"
                                         clip-rule="evenodd" />
                                 </svg>
+                            </button>
+                            <div id="tooltipRemoveItem1a" role="tooltip"
+                                class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
+                                Remove item
+                                <div class="tooltip-arrow" data-popper-arrow></div>
                             </div>
-                        </button>
-                    </x-slot>
+                        </div>
+                    </div>
 
-                    <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
-                        </x-dropdown-link>
+                    <div class="grid grid-cols-2">
+                        <div>
+                            <a href="#"
+                                class="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline">Apple
+                                iPad Air</a>
+                            <p class="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">$499</p>
+                        </div>
+
+                        <div class="flex items-center justify-end gap-6">
+                            <p class="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">Qty: 1</p>
+
+                            <button data-tooltip-target="tooltipRemoveItem2a" type="button"
+                                class="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600">
+                                <span class="sr-only"> Remove </span>
+                                <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <div id="tooltipRemoveItem2a" role="tooltip"
+                                class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
+                                Remove item
+                                <div class="tooltip-arrow" data-popper-arrow></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2">
+                        <div>
+                            <a href="#"
+                                class="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline">Apple
+                                Watch SE</a>
+                            <p class="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">$598</p>
+                        </div>
+
+                        <div class="flex items-center justify-end gap-6">
+                            <p class="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">Qty: 2</p>
+
+                            <button data-tooltip-target="tooltipRemoveItem3b" type="button"
+                                class="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600">
+                                <span class="sr-only"> Remove </span>
+                                <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <div id="tooltipRemoveItem3b" role="tooltip"
+                                class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
+                                Remove item
+                                <div class="tooltip-arrow" data-popper-arrow></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2">
+                        <div>
+                            <a href="#"
+                                class="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline">Sony
+                                Playstation 5</a>
+                            <p class="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">$799</p>
+                        </div>
+
+                        <div class="flex items-center justify-end gap-6">
+                            <p class="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">Qty: 1</p>
+
+                            <button data-tooltip-target="tooltipRemoveItem4b" type="button"
+                                class="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600">
+                                <span class="sr-only"> Remove </span>
+                                <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <div id="tooltipRemoveItem4b" role="tooltip"
+                                class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
+                                Remove item
+                                <div class="tooltip-arrow" data-popper-arrow></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2">
+                        <div>
+                            <a href="#"
+                                class="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline">Apple
+                                iMac 20"</a>
+                            <p class="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">$8,997</p>
+                        </div>
+
+                        <div class="flex items-center justify-end gap-6">
+                            <p class="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">Qty: 3</p>
+
+                            <button data-tooltip-target="tooltipRemoveItem5b" type="button"
+                                class="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600">
+                                <span class="sr-only"> Remove </span>
+                                <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd"
+                                        d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <div id="tooltipRemoveItem5b" role="tooltip"
+                                class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
+                                Remove item
+                                <div class="tooltip-arrow" data-popper-arrow></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" title=""
+                        class="mb-2 me-2 inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        role="button"> Proceed to Checkout </a>
+                </div>
+
+                @if (Route::has('login'))
+                {{-- <nav class="flex justify-center flex-1 -mx-3 "> --}}
+                    @auth
+                    <button id="userDropdownButton1" data-dropdown-toggle="userDropdown1" type="button"
+                        class="inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white">
+                        <svg class="w-5 h-5 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-width="2"
+                                d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        </svg>
+                        {{ Auth::user()->name }}
+                        <svg class="w-4 h-4 text-gray-900 dark:text-white ms-1" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 9-7 7-7-7" />
+                        </svg>
+                    </button>
+
+                    <div id="userDropdown1"
+                        class="hidden z-10 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700">
+                        <ul class="p-2 text-start text-sm font-medium text-gray-900 dark:text-white">
+                            <li>
+                                <x-dropdown-link :href="route('profile.edit')">
+                                    {{ __('Profile') }}
+                                </x-dropdown-link>
+                            </li>
+                            <li>
+                                <x-dropdown-link :href="route('home')">
+                                    {{ __('My orders') }}
+                                </x-dropdown-link>
+                            </li>
+                            <li>
+                                <x-dropdown-link :href="route('home')">
+                                    {{ __('Settings') }}
+                                </x-dropdown-link>
+                            </li>
+                            <li>
+                                <x-dropdown-link :href="route('home')">
+                                    {{ __('Delivery Adresses') }}
+                                </x-dropdown-link>
+                            </li>
+                        </ul>
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
@@ -121,94 +307,103 @@
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
                         </form>
-                    </x-slot>
-                </x-dropdown>
-            </div>
+                    </div>
+                    @else
+                    <div class="hidden sm:-my-px sm:ms-2 sm:flex">
+                        <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
+                            {{ __('Log in') }}
+                        </x-nav-link>
+                    </div>
 
-            <!-- Hamburger -->
-            <div class="-me-2 flex items-center sm:hidden">
-                <button @click="open = ! open"
-                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out">
-                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
+                    @if (Route::has('register'))
+                    <div class="hidden sm:-my-px sm:ms-2 sm:flex">
+                        <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
+                            {{ __('Register') }}
+                        </x-nav-link>
+                    </div>
+                    @endif
+                    @endauth
+                    @endif
 
-    <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-        </div>
-        @role('customer')
-        <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
-            <div class="pt-2 pb-3 space-y-1">
-                <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('becomeGrower')">
-                    {{ __('Become Grower') }}
-                </x-responsive-nav-link>
-            </div>
-        </div>
-        @endrole
-        @role('grower')
-        <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
-            <div class="pt-2 pb-3 space-y-1">
-                <x-responsive-nav-link :href="route('products.create')" :active="request()->routeIs('products.create')">
-                    {{ __('Add product') }}
-                </x-responsive-nav-link>
-            </div>
-        </div>
-        <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
-            <div class="pt-2 pb-3 space-y-1">
-                <x-responsive-nav-link :href="route('deposits.index')" :active="request()->routeIs('deposits.index')">
-                    {{ __('My space') }}
-                </x-responsive-nav-link>
-            </div>
-        </div>
-        <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
-            <div class="pt-2 pb-3 space-y-1">
-                <x-responsive-nav-link :href="route('deposits.index')" :active="request()->routeIs('deposits.index')">
-                    {{ __('My Products') }}
-                </x-responsive-nav-link>
-            </div>
-        </div>
-        @endrole
-        <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
-            <div class="pt-2 pb-3 space-y-1">
-                <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('becomeGrower')">
-                    {{ __('Grower space') }}
-                </x-responsive-nav-link>
-            </div>
-        </div>
-        <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
-            <div class="px-4">
-                <div class="font-medium text-base text-gray-800 dark:text-gray-200">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-            </div>
 
-            <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
-                </x-responsive-nav-link>
 
-                <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-
-                    <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </x-responsive-nav-link>
-                </form>
+                    <button type="button" data-collapse-toggle="ecommerce-navbar-menu-1"
+                        aria-controls="ecommerce-navbar-menu-1" aria-expanded="false"
+                        class="inline-flex lg:hidden items-center justify-center hover:bg-gray-100 rounded-md dark:hover:bg-gray-700 p-2 text-gray-900 dark:text-white">
+                        <span class="sr-only">
+                            Open Menu
+                        </span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                                d="M5 7h14M5 12h14M5 17h14" />
+                        </svg>
+                    </button>
             </div>
+        </div>
+
+        <div id="ecommerce-navbar-menu-1"
+            class="bg-gray-50 dark:bg-gray-700 dark:border-gray-600 border border-gray-200 rounded-lg py-3 hidden px-4 mt-4">
+            <ul class="text-gray-900 dark:text-white text-sm font-mediumspace-y-3">
+                <li>
+                    <div class="pt-2 pb-3 space-y-1">
+                        <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                            {{ __('Home') }}
+                        </x-responsive-nav-link>
+                    </div>
+                </li>
+                @role('customer')
+                <li>
+                    <div class="pt-2 pb-3 space-y-1">
+                        <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('becomeGrower')">
+                            {{ __('Become Grower') }}
+                        </x-responsive-nav-link>
+                    </div>
+                </li>
+                @endrole
+                @role('grower')
+                <li>
+                    <div class="pt-2 pb-3 space-y-1">
+                        <x-responsive-nav-link :href="route('products.create')"
+                            :active="request()->routeIs('products.create')">
+                            {{ __('Add product') }}
+                        </x-responsive-nav-link>
+                    </div>
+                </li>
+                <li>
+                    <div class="pt-2 pb-3 space-y-1">
+                        <x-responsive-nav-link :href="route('deposits.index')"
+                            :active="request()->routeIs('deposits.index')">
+                            {{ __('My space') }}
+                        </x-responsive-nav-link>
+                    </div>
+                </li>
+                <li>
+                    <div class="pt-2 pb-3 space-y-1">
+                        <x-responsive-nav-link :href="route('deposits.index')"
+                            :active="request()->routeIs('deposits.index')">
+                            {{ __('My Products') }}
+                        </x-responsive-nav-link>
+                    </div>
+                </li>
+                @endrole
+                <li>
+                    <div class="pt-2 pb-3 space-y-1">
+                        <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('becomeGrower')">
+                            {{ __('Grower space') }}
+                        </x-responsive-nav-link>
+                    </div>
+                </li>
+                <li>
+                    <div class="pt-2 pb-3 space-y-1">
+                        <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('becomeGrower')">
+                            {{ __('Today\'s Deals') }}
+                        </x-responsive-nav-link>
+                    </div>
+                </li>
+
+
+            </ul>
         </div>
     </div>
 </nav>

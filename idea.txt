@@ -1,0 +1,1522 @@
+<section class="bg-white dark:bg-gray-900 py-8 md:py-16 antialiased">
+  <div class="mx-auto px-4 2xl:px-0 max-w-screen-xl">
+    <h2 class="font-semibold text-gray-900 text-xl sm:text-2xl dark:text-white">Shopping Cart</h2>
+
+    <div class="lg:flex lg:items-start md:gap-6 xl:gap-8 mt-6 sm:mt-8">
+      <div class="flex-none mx-auto w-full lg:max-w-2xl xl:max-w-4xl">
+        <div class="space-y-6">
+          <div class="border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm p-4 md:p-6 border rounded-lg">
+            <div class="md:flex md:justify-between md:items-center md:gap-6 space-y-4 md:space-y-0">
+              <a href="#" class="md:order-1 shrink-0">
+                <img class="dark:hidden w-20 h-20" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg" alt="imac image" />
+                <img class="dark:block hidden w-20 h-20" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg" alt="imac image" />
+              </a>
+
+              <label for="counter-input" class="sr-only">Choose quantity:</label>
+              <div class="flex justify-between md:justify-end items-center md:order-3">
+                <div class="flex items-center">
+                  <button type="button" id="decrement-button" data-input-counter-decrement="counter-input" class="inline-flex justify-center items-center border-gray-300 dark:border-gray-600 bg-gray-100 hover:bg-gray-200 dark:hover:bg-gray-600 dark:bg-gray-700 border rounded-md w-5 h-5 shrink-0 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700">
+                    <svg class="w-2.5 h-2.5 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
+                    </svg>
+                  </button>
+                  <input type="text" id="counter-input" data-input-counter class="border-0 bg-transparent w-10 font-medium text-center text-gray-900 text-sm shrink-0 focus:outline-none focus:ring-0 dark:text-white" placeholder="" value="2" required />
+                  <button type="button" id="increment-button" data-input-counter-increment="counter-input" class="inline-flex justify-center items-center border-gray-300 dark:border-gray-600 bg-gray-100 hover:bg-gray-200 dark:hover:bg-gray-600 dark:bg-gray-700 border rounded-md w-5 h-5 shrink-0 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700">
+                    <svg class="w-2.5 h-2.5 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+                    </svg>
+                  </button>
+                </div>
+                <div class="md:order-4 md:w-32 text-end">
+                  <p class="font-bold text-base text-gray-900 dark:text-white">$1,499</p>
+                </div>
+              </div>
+
+              <div class="flex-1 space-y-4 md:order-2 w-full min-w-0 md:max-w-md">
+                <a href="#" class="font-medium text-base text-gray-900 dark:text-white hover:underline">PC system All in One APPLE iMac (2023) mqrq3ro/a, Apple M3, 24" Retina 4.5K, 8GB, SSD 256GB, 10-core GPU, Keyboard layout INT</a>
+
+                <div class="flex items-center gap-4">
+                  <button type="button" class="inline-flex items-center font-medium text-gray-500 text-sm hover:text-gray-900 dark:hover:text-white dark:text-gray-400 hover:underline">
+                    <svg class="w-5 h-5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z" />
+                    </svg>
+                    Add to Favorites
+                  </button>
+
+                  <button type="button" class="inline-flex items-center font-medium text-red-600 text-sm dark:text-red-500 hover:underline">
+                    <svg class="w-5 h-5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                    </svg>
+                    Remove
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm p-4 md:p-6 border rounded-lg">
+            <div class="md:flex md:justify-between md:items-center md:gap-6 space-y-4 md:space-y-0">
+              <a href="#" class="md:order-1 shrink-0">
+                <img class="dark:hidden w-20 h-20" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/apple-watch-light.svg" alt="imac image" />
+                <img class="dark:block hidden w-20 h-20" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/apple-watch-dark.svg" alt="imac image" />
+              </a>
+
+              <label for="counter-input" class="sr-only">Choose quantity:</label>
+              <div class="flex justify-between md:justify-end items-center md:order-3">
+                <div class="flex items-center">
+                  <button type="button" id="decrement-button-2" data-input-counter-decrement="counter-input-2" class="inline-flex justify-center items-center border-gray-300 dark:border-gray-600 bg-gray-100 hover:bg-gray-200 dark:hover:bg-gray-600 dark:bg-gray-700 border rounded-md w-5 h-5 shrink-0 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700">
+                    <svg class="w-2.5 h-2.5 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
+                    </svg>
+                  </button>
+                  <input type="text" id="counter-input-2" data-input-counter class="border-0 bg-transparent w-10 font-medium text-center text-gray-900 text-sm shrink-0 focus:outline-none focus:ring-0 dark:text-white" placeholder="" value="1" required />
+                  <button type="button" id="increment-button-2" data-input-counter-increment="counter-input-2" class="inline-flex justify-center items-center border-gray-300 dark:border-gray-600 bg-gray-100 hover:bg-gray-200 dark:hover:bg-gray-600 dark:bg-gray-700 border rounded-md w-5 h-5 shrink-0 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700">
+                    <svg class="w-2.5 h-2.5 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+                    </svg>
+                  </button>
+                </div>
+                <div class="md:order-4 md:w-32 text-end">
+                  <p class="font-bold text-base text-gray-900 dark:text-white">$598</p>
+                </div>
+              </div>
+
+              <div class="flex-1 space-y-4 md:order-2 w-full min-w-0 md:max-w-md">
+                <a href="#" class="font-medium text-base text-gray-900 dark:text-white hover:underline">Restored Apple Watch Series 8 (GPS) 41mm Midnight Aluminum Case with Midnight Sport Band</a>
+
+                <div class="flex items-center gap-4">
+                  <button type="button" class="inline-flex items-center font-medium text-gray-500 text-sm hover:text-gray-900 dark:hover:text-white dark:text-gray-400 hover:underline">
+                    <svg class="w-5 h-5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z" />
+                    </svg>
+                    Add to Favorites
+                  </button>
+
+                  <button type="button" class="inline-flex items-center font-medium text-red-600 text-sm dark:text-red-500 hover:underline">
+                    <svg class="w-5 h-5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                    </svg>
+                    Remove
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm p-4 md:p-6 border rounded-lg">
+            <div class="md:flex md:justify-between md:items-center md:gap-6 space-y-4 md:space-y-0">
+              <a href="#" class="md:order-1 shrink-0">
+                <img class="dark:hidden w-20 h-20" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/macbook-pro-light.svg" alt="imac image" />
+                <img class="dark:block hidden w-20 h-20" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/macbook-pro-dark.svg" alt="imac image" />
+              </a>
+
+              <label for="counter-input" class="sr-only">Choose quantity:</label>
+              <div class="flex justify-between md:justify-end items-center md:order-3">
+                <div class="flex items-center">
+                  <button type="button" id="decrement-button-3" data-input-counter-decrement="counter-input-3" class="inline-flex justify-center items-center border-gray-300 dark:border-gray-600 bg-gray-100 hover:bg-gray-200 dark:hover:bg-gray-600 dark:bg-gray-700 border rounded-md w-5 h-5 shrink-0 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700">
+                    <svg class="w-2.5 h-2.5 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
+                    </svg>
+                  </button>
+                  <input type="text" id="counter-input-3" data-input-counter class="border-0 bg-transparent w-10 font-medium text-center text-gray-900 text-sm shrink-0 focus:outline-none focus:ring-0 dark:text-white" placeholder="" value="1" required />
+                  <button type="button" id="increment-button-3" data-input-counter-increment="counter-input-3" class="inline-flex justify-center items-center border-gray-300 dark:border-gray-600 bg-gray-100 hover:bg-gray-200 dark:hover:bg-gray-600 dark:bg-gray-700 border rounded-md w-5 h-5 shrink-0 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700">
+                    <svg class="w-2.5 h-2.5 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+                    </svg>
+                  </button>
+                </div>
+                <div class="md:order-4 md:w-32 text-end">
+                  <p class="font-bold text-base text-gray-900 dark:text-white">$1,799</p>
+                </div>
+              </div>
+
+              <div class="flex-1 space-y-4 md:order-2 w-full min-w-0 md:max-w-md">
+                <a href="#" class="font-medium text-base text-gray-900 dark:text-white hover:underline">Apple - MacBook Pro 16" Laptop, M3 Pro chip, 36GB Memory, 18-core GPU, 512GB SSD, Space Black</a>
+
+                <div class="flex items-center gap-4">
+                  <button type="button" class="inline-flex items-center font-medium text-gray-500 text-sm hover:text-gray-900 dark:hover:text-white dark:text-gray-400 hover:underline">
+                    <svg class="w-5 h-5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z" />
+                    </svg>
+                    Add to Favorites
+                  </button>
+
+                  <button type="button" class="inline-flex items-center font-medium text-red-600 text-sm dark:text-red-500 hover:underline">
+                    <svg class="w-5 h-5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                    </svg>
+                    Remove
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm p-4 md:p-6 border rounded-lg">
+            <div class="md:flex md:justify-between md:items-center md:gap-6 space-y-4 md:space-y-0">
+              <a href="#" class="md:order-1 shrink-0">
+                <img class="dark:hidden w-20 h-20" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/ipad-light.svg" alt="imac image" />
+                <img class="dark:block hidden w-20 h-20" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/ipad-dark.svg" alt="imac image" />
+              </a>
+
+              <label for="counter-input" class="sr-only">Choose quantity:</label>
+              <div class="flex justify-between md:justify-end items-center md:order-3">
+                <div class="flex items-center">
+                  <button type="button" id="decrement-button-4" data-input-counter-decrement="counter-input-4" class="inline-flex justify-center items-center border-gray-300 dark:border-gray-600 bg-gray-100 hover:bg-gray-200 dark:hover:bg-gray-600 dark:bg-gray-700 border rounded-md w-5 h-5 shrink-0 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700">
+                    <svg class="w-2.5 h-2.5 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
+                    </svg>
+                  </button>
+                  <input type="text" id="counter-input-4" data-input-counter class="border-0 bg-transparent w-10 font-medium text-center text-gray-900 text-sm shrink-0 focus:outline-none focus:ring-0 dark:text-white" placeholder="" value="1" required />
+                  <button type="button" id="increment-button-4" data-input-counter-increment="counter-input-4" class="inline-flex justify-center items-center border-gray-300 dark:border-gray-600 bg-gray-100 hover:bg-gray-200 dark:hover:bg-gray-600 dark:bg-gray-700 border rounded-md w-5 h-5 shrink-0 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700">
+                    <svg class="w-2.5 h-2.5 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+                    </svg>
+                  </button>
+                </div>
+                <div class="md:order-4 md:w-32 text-end">
+                  <p class="font-bold text-base text-gray-900 dark:text-white">$699</p>
+                </div>
+              </div>
+
+              <div class="flex-1 space-y-4 md:order-2 w-full min-w-0 md:max-w-md">
+                <a href="#" class="font-medium text-base text-gray-900 dark:text-white hover:underline">Tablet APPLE iPad Pro 12.9" 6th Gen, 128GB, Wi-Fi, Gold</a>
+
+                <div class="flex items-center gap-4">
+                  <button type="button" class="inline-flex items-center font-medium text-gray-500 text-sm hover:text-gray-900 dark:hover:text-white dark:text-gray-400 hover:underline">
+                    <svg class="w-5 h-5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z" />
+                    </svg>
+                    Add to Favorites
+                  </button>
+
+                  <button type="button" class="inline-flex items-center font-medium text-red-600 text-sm dark:text-red-500 hover:underline">
+                    <svg class="w-5 h-5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                    </svg>
+                    Remove
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm p-4 md:p-6 border rounded-lg">
+            <div class="md:flex md:justify-between md:items-center md:gap-6 space-y-4 md:space-y-0">
+              <a href="#" class="md:order-1 w-20 shrink-0">
+                <img class="dark:hidden w-20 h-20" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/iphone-light.svg" alt="imac image" />
+                <img class="dark:block hidden w-20 h-20" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/iphone-dark.svg" alt="imac image" />
+              </a>
+
+              <label for="counter-input" class="sr-only">Choose quantity:</label>
+              <div class="flex justify-between md:justify-end items-center md:order-3">
+                <div class="flex items-center">
+                  <button type="button" id="decrement-button-5" data-input-counter-decrement="counter-input-5" class="inline-flex justify-center items-center border-gray-300 dark:border-gray-600 bg-gray-100 hover:bg-gray-200 dark:hover:bg-gray-600 dark:bg-gray-700 border rounded-md w-5 h-5 shrink-0 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700">
+                    <svg class="w-2.5 h-2.5 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
+                    </svg>
+                  </button>
+                  <input type="text" id="counter-input-5" data-input-counter class="border-0 bg-transparent w-10 font-medium text-center text-gray-900 text-sm shrink-0 focus:outline-none focus:ring-0 dark:text-white" placeholder="" value="3" required />
+                  <button type="button" id="increment-button-5" data-input-counter-increment="counter-input-5" class="inline-flex justify-center items-center border-gray-300 dark:border-gray-600 bg-gray-100 hover:bg-gray-200 dark:hover:bg-gray-600 dark:bg-gray-700 border rounded-md w-5 h-5 shrink-0 focus:outline-none focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700">
+                    <svg class="w-2.5 h-2.5 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+                    </svg>
+                  </button>
+                </div>
+                <div class="md:order-4 md:w-32 text-end">
+                  <p class="font-bold text-base text-gray-900 dark:text-white">$2,997</p>
+                </div>
+              </div>
+
+              <div class="flex-1 space-y-4 md:order-2 w-full min-w-0 md:max-w-md">
+                <a href="#" class="font-medium text-base text-gray-900 dark:text-white hover:underline">APPLE iPhone 15 5G phone, 256GB, Gold</a>
+
+                <div class="flex items-center gap-4">
+                  <button type="button" class="inline-flex items-center font-medium text-gray-500 text-sm hover:text-gray-900 dark:hover:text-white dark:text-gray-400 hover:underline">
+                    <svg class="w-5 h-5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z" />
+                    </svg>
+                    Add to Favorites
+                  </button>
+
+                  <button type="button" class="inline-flex items-center font-medium text-red-600 text-sm dark:text-red-500 hover:underline">
+                    <svg class="w-5 h-5 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6" />
+                    </svg>
+                    Remove
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="xl:block hidden xl:mt-8">
+          <h3 class="font-semibold text-2xl text-gray-900 dark:text-white">People also bought</h3>
+          <div class="gap-4 grid grid-cols-3 mt-6 sm:mt-8">
+            <div class="space-y-6 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm p-6 border rounded-lg overflow-hidden">
+              <a href="#" class="rounded overflow-hidden">
+                <img class="dark:hidden mx-auto w-44 h-44" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg" alt="imac image" />
+                <img class="dark:block hidden mx-auto w-44 h-44" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg" alt="imac image" />
+              </a>
+              <div>
+                <a href="#" class="font-semibold text-gray-900 text-lg dark:text-white hover:underline leading-tight">iMac 27”</a>
+                <p class="mt-2 font-normal text-base text-gray-500 dark:text-gray-400">This generation has some improvements, including a longer continuous battery life.</p>
+              </div>
+              <div>
+                <p class="font-bold text-gray-900 text-lg dark:text-white">
+                  <span class="line-through"> $399,99 </span>
+                </p>
+                <p class="font-bold text-lg text-red-600 dark:text-red-500 leading-tight">$299</p>
+              </div>
+              <div class="flex items-center gap-2.5 mt-6">
+                <button data-tooltip-target="favourites-tooltip-1" type="button" class="inline-flex focus:z-10 justify-center items-center gap-2 border-gray-200 dark:border-gray-600 bg-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:bg-gray-800 p-2.5 border rounded-lg font-medium text-gray-900 text-sm hover:text-primary-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:hover:text-white dark:text-gray-400 dark:focus:ring-gray-700">
+                  <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6C6.5 1 1 8 5.8 13l6.2 7 6.2-7C23 8 17.5 1 12 6Z"></path>
+                  </svg>
+                </button>
+                <div id="favourites-tooltip-1" role="tooltip" class="inline-block z-10 absolute bg-gray-900 dark:bg-gray-700 opacity-0 shadow-sm px-3 py-2 rounded-lg font-medium text-sm text-white transition-opacity duration-300 invisible tooltip">
+                  Add to favourites
+                  <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+                <button type="button" class="inline-flex justify-center items-center bg-primary-700 hover:bg-primary-800 dark:hover:bg-primary-700 dark:bg-primary-600 px-5 py-2.5 rounded-lg w-full font-medium text-sm text-white focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
+                  <svg class="w-5 h-5 -ms-2 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7h-1M8 7h-.688M13 5v4m-2-2h4" />
+                  </svg>
+                  Add to cart
+                </button>
+              </div>
+            </div>
+            <div class="space-y-6 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm p-6 border rounded-lg overflow-hidden">
+              <a href="#" class="rounded overflow-hidden">
+                <img class="dark:hidden mx-auto w-44 h-44" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/ps5-light.svg" alt="imac image" />
+                <img class="dark:block hidden mx-auto w-44 h-44" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/ps5-dark.svg" alt="imac image" />
+              </a>
+              <div>
+                <a href="#" class="font-semibold text-gray-900 text-lg dark:text-white hover:underline leading-tight">Playstation 5</a>
+                <p class="mt-2 font-normal text-base text-gray-500 dark:text-gray-400">This generation has some improvements, including a longer continuous battery life.</p>
+              </div>
+              <div>
+                <p class="font-bold text-gray-900 text-lg dark:text-white">
+                  <span class="line-through"> $799,99 </span>
+                </p>
+                <p class="font-bold text-lg text-red-600 dark:text-red-500 leading-tight">$499</p>
+              </div>
+              <div class="flex items-center gap-2.5 mt-6">
+                <button data-tooltip-target="favourites-tooltip-2" type="button" class="inline-flex focus:z-10 justify-center items-center gap-2 border-gray-200 dark:border-gray-600 bg-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:bg-gray-800 p-2.5 border rounded-lg font-medium text-gray-900 text-sm hover:text-primary-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:hover:text-white dark:text-gray-400 dark:focus:ring-gray-700">
+                  <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6C6.5 1 1 8 5.8 13l6.2 7 6.2-7C23 8 17.5 1 12 6Z"></path>
+                  </svg>
+                </button>
+                <div id="favourites-tooltip-2" role="tooltip" class="inline-block z-10 absolute bg-gray-900 dark:bg-gray-700 opacity-0 shadow-sm px-3 py-2 rounded-lg font-medium text-sm text-white transition-opacity duration-300 invisible tooltip">
+                  Add to favourites
+                  <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+                <button type="button" class="inline-flex justify-center items-center bg-primary-700 hover:bg-primary-800 dark:hover:bg-primary-700 dark:bg-primary-600 px-5 py-2.5 rounded-lg w-full font-medium text-sm text-white focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
+                  <svg class="w-5 h-5 -ms-2 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7h-1M8 7h-.688M13 5v4m-2-2h4" />
+                  </svg>
+                  Add to cart
+                </button>
+              </div>
+            </div>
+            <div class="space-y-6 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm p-6 border rounded-lg overflow-hidden">
+              <a href="#" class="rounded overflow-hidden">
+                <img class="dark:hidden mx-auto w-44 h-44" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/apple-watch-light.svg" alt="imac image" />
+                <img class="dark:block hidden mx-auto w-44 h-44" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/apple-watch-dark.svg" alt="imac image" />
+              </a>
+              <div>
+                <a href="#" class="font-semibold text-gray-900 text-lg dark:text-white hover:underline leading-tight">Apple Watch Series 8</a>
+                <p class="mt-2 font-normal text-base text-gray-500 dark:text-gray-400">This generation has some improvements, including a longer continuous battery life.</p>
+              </div>
+              <div>
+                <p class="font-bold text-gray-900 text-lg dark:text-white">
+                  <span class="line-through"> $1799,99 </span>
+                </p>
+                <p class="font-bold text-lg text-red-600 dark:text-red-500 leading-tight">$1199</p>
+              </div>
+              <div class="flex items-center gap-2.5 mt-6">
+                <button data-tooltip-target="favourites-tooltip-3" type="button" class="inline-flex focus:z-10 justify-center items-center gap-2 border-gray-200 dark:border-gray-600 bg-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:bg-gray-800 p-2.5 border rounded-lg font-medium text-gray-900 text-sm hover:text-primary-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:hover:text-white dark:text-gray-400 dark:focus:ring-gray-700">
+                  <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6C6.5 1 1 8 5.8 13l6.2 7 6.2-7C23 8 17.5 1 12 6Z"></path>
+                  </svg>
+                </button>
+                <div id="favourites-tooltip-3" role="tooltip" class="inline-block z-10 absolute bg-gray-900 dark:bg-gray-700 opacity-0 shadow-sm px-3 py-2 rounded-lg font-medium text-sm text-white transition-opacity duration-300 invisible tooltip">
+                  Add to favourites
+                  <div class="tooltip-arrow" data-popper-arrow></div>
+                </div>
+
+                <button type="button" class="inline-flex justify-center items-center bg-primary-700 hover:bg-primary-800 dark:hover:bg-primary-700 dark:bg-primary-600 px-5 py-2.5 rounded-lg w-full font-medium text-sm text-white focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">
+                  <svg class="w-5 h-5 -ms-2 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7h-1M8 7h-.688M13 5v4m-2-2h4" />
+                  </svg>
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-1 space-y-6 mx-auto mt-6 lg:mt-0 lg:w-full max-w-4xl">
+        <div class="space-y-4 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm p-4 sm:p-6 border rounded-lg">
+          <p class="font-semibold text-gray-900 text-xl dark:text-white">Order summary</p>
+
+          <div class="space-y-4">
+            <div class="space-y-2">
+              <dl class="flex justify-between items-center gap-4">
+                <dt class="font-normal text-base text-gray-500 dark:text-gray-400">Original price</dt>
+                <dd class="font-medium text-base text-gray-900 dark:text-white">$7,592.00</dd>
+              </dl>
+
+              <dl class="flex justify-between items-center gap-4">
+                <dt class="font-normal text-base text-gray-500 dark:text-gray-400">Savings</dt>
+                <dd class="font-medium text-base text-green-600">-$299.00</dd>
+              </dl>
+
+              <dl class="flex justify-between items-center gap-4">
+                <dt class="font-normal text-base text-gray-500 dark:text-gray-400">Store Pickup</dt>
+                <dd class="font-medium text-base text-gray-900 dark:text-white">$99</dd>
+              </dl>
+
+              <dl class="flex justify-between items-center gap-4">
+                <dt class="font-normal text-base text-gray-500 dark:text-gray-400">Tax</dt>
+                <dd class="font-medium text-base text-gray-900 dark:text-white">$799</dd>
+              </dl>
+            </div>
+
+            <dl class="flex justify-between items-center gap-4 border-gray-200 dark:border-gray-700 pt-2 border-t">
+              <dt class="font-bold text-base text-gray-900 dark:text-white">Total</dt>
+              <dd class="font-bold text-base text-gray-900 dark:text-white">$8,191.00</dd>
+            </dl>
+          </div>
+
+          <a href="#" class="flex justify-center items-center bg-primary-700 hover:bg-primary-800 dark:hover:bg-primary-700 dark:bg-primary-600 px-5 py-2.5 rounded-lg w-full font-medium text-sm text-white focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">Proceed to Checkout</a>
+
+          <div class="flex justify-center items-center gap-2">
+            <span class="font-normal text-gray-500 text-sm dark:text-gray-400"> or </span>
+            <a href="#" title="" class="inline-flex items-center gap-2 font-medium text-primary-700 text-sm dark:text-primary-500 underline hover:no-underline">
+              Continue Shopping
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="space-y-4 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm p-4 sm:p-6 border rounded-lg">
+          <form class="space-y-4">
+            <div>
+              <label for="voucher" class="block mb-2 font-medium text-gray-900 text-sm dark:text-white"> Do you have a voucher or gift card? </label>
+              <input type="text" id="voucher" class="block border-gray-300 focus:border-primary-500 dark:focus:border-primary-500 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 border rounded-lg w-full text-gray-900 text-sm focus:ring-primary-500 dark:text-white dark:placeholder:text-gray-400 dark:focus:ring-primary-500" placeholder="" required />
+            </div>
+            <button type="submit" class="flex justify-center items-center bg-primary-700 hover:bg-primary-800 dark:hover:bg-primary-700 dark:bg-primary-600 px-5 py-2.5 rounded-lg w-full font-medium text-sm text-white focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">Apply Code</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+///categorie
+
+<section class="bg-gray-50 dark:bg-gray-900 py-8 md:py-16 antialiased">
+  <div class="mx-auto px-4 2xl:px-0 max-w-screen-xl">
+    <div class="flex justify-between items-center gap-4 mb-4 md:mb-8">
+      <h2 class="font-semibold text-gray-900 text-xl sm:text-2xl dark:text-white">Shop by category</h2>
+
+      <a href="#" title="" class="flex items-center font-medium text-base text-primary-700 dark:text-primary-500 hover:underline">
+        See more categories
+        <svg class="w-5 h-5 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4" />
+        </svg>
+      </a>
+    </div>
+
+    <div class="gap-4 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v5m-3 0h6M4 11h16M5 15h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1Z"></path>
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Computer &amp; Office</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.872 9.687 20 6.56 17.44 4 4 17.44 6.56 20 16.873 9.687Zm0 0-2.56-2.56M6 7v2m0 0v2m0-2H4m2 0h2m7 7v2m0 0v2m0-2h-2m2 0h2M8 4h.01v.01H8V4Zm2 2h.01v.01H10V6Zm2-2h.01v.01H12V4Zm8 8h.01v.01H20V12Zm-2 2h.01v.01H18V14Zm2 2h.01v.01H20V16Z"></path>
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Collectibles &amp; Toys</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v13H7a2 2 0 0 0-2 2Zm0 0a2 2 0 0 0 2 2h12M9 3v14m7 0v4"></path>
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Books</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z"></path>
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Fashion/Clothes</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M4.37 7.657c2.063.528 2.396 2.806 3.202 3.87 1.07 1.413 2.075 1.228 3.192 2.644 1.805 2.289 1.312 5.705 1.312 6.705M20 15h-1a4 4 0 0 0-4 4v1M8.587 3.992c0 .822.112 1.886 1.515 2.58 1.402.693 2.918.351 2.918 2.334 0 .276 0 2.008 1.972 2.008 2.026.031 2.026-1.678 2.026-2.008 0-.65.527-.9 1.177-.9H20M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Sports &amp; Outdoors</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7h.01m3.486 1.513h.01m-6.978 0h.01M6.99 12H7m9 4h2.706a1.957 1.957 0 0 0 1.883-1.325A9 9 0 1 0 3.043 12.89 9.1 9.1 0 0 0 8.2 20.1a8.62 8.62 0 0 0 3.769.9 2.013 2.013 0 0 0 2.03-2v-.857A2.036 2.036 0 0 1 16 16Z"></path>
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Painting &amp; Hobby</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 9a3 3 0 0 1 3-3m-2 15h4m0-3c0-4.1 4-4.9 4-9A6 6 0 1 0 6 9c0 4 4 5 4 9h4Z"></path>
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Electronics</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 12c.263 0 .524-.06.767-.175a2 2 0 0 0 .65-.491c.186-.21.333-.46.433-.734.1-.274.15-.568.15-.864a2.4 2.4 0 0 0 .586 1.591c.375.422.884.659 1.414.659.53 0 1.04-.237 1.414-.659A2.4 2.4 0 0 0 12 9.736a2.4 2.4 0 0 0 .586 1.591c.375.422.884.659 1.414.659.53 0 1.04-.237 1.414-.659A2.4 2.4 0 0 0 16 9.736c0 .295.052.588.152.861s.248.521.434.73a2 2 0 0 0 .649.488 1.809 1.809 0 0 0 1.53 0 2.03 2.03 0 0 0 .65-.488c.185-.209.332-.457.433-.73.1-.273.152-.566.152-.861 0-.974-1.108-3.85-1.618-5.121A.983.983 0 0 0 17.466 4H6.456a.986.986 0 0 0-.93.645C5.045 5.962 4 8.905 4 9.736c.023.59.241 1.148.611 1.567.37.418.865.667 1.389.697Zm0 0c.328 0 .651-.091.94-.266A2.1 2.1 0 0 0 7.66 11h.681a2.1 2.1 0 0 0 .718.734c.29.175.613.266.942.266.328 0 .651-.091.94-.266.29-.174.537-.427.719-.734h.681a2.1 2.1 0 0 0 .719.734c.289.175.612.266.94.266.329 0 .652-.091.942-.266.29-.174.536-.427.718-.734h.681c.183.307.43.56.719.734.29.174.613.266.941.266a1.819 1.819 0 0 0 1.06-.351M6 12a1.766 1.766 0 0 1-1.163-.476M5 12v7a1 1 0 0 0 1 1h2v-5h3v5h7a1 1 0 0 0 1-1v-7m-5 3v2h2v-2h-2Z"
+          ></path>
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Food &amp; Grocery</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M20 16v-4a8 8 0 1 0-16 0v4m16 0v2a2 2 0 0 1-2 2h-2v-6h2a2 2 0 0 1 2 2ZM4 16v2a2 2 0 0 0 2 2h2v-6H6a2 2 0 0 0-2 2Z"></path>
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Music</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 16H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v1M9 12H4m8 8V9h8v11h-8Zm0 0H9m8-4a1 1 0 1 0-2 0 1 1 0 0 0 2 0Z"></path>
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">TV/Projectors</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.041 13.862A4.999 4.999 0 0 1 17 17.831V21M7 3v3.169a5 5 0 0 0 1.891 3.916M17 3v3.169a5 5 0 0 1-2.428 4.288l-5.144 3.086A5 5 0 0 0 7 17.831V21M7 5h10M7.399 8h9.252M8 16h8.652M7 19h10"></path>
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Health &amp; beauty</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"></path>
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Home Air Quality</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.079 6.839a3 3 0 0 0-4.255.1M13 20h1.083A3.916 3.916 0 0 0 18 16.083V9A6 6 0 1 0 6 9v7m7 4v-1a1 1 0 0 0-1-1h-1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1Zm-7-4v-6H5a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h1Zm12-6h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1v-6Z" />
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Gaming/Consoles</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h6l2 4m-8-4v8m0-8V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v9h2m8 0H9m4 0h2m4 0h2v-4m0 0h-5m3.5 5.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm-10 0a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Z"></path>
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Car &amp; Motorbike</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M4 18V8a1 1 0 0 1 1-1h1.5l1.707-1.707A1 1 0 0 1 8.914 5h6.172a1 1 0 0 1 .707.293L17.5 7H19a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z"></path>
+          <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Photo/Video</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 12a28.076 28.076 0 0 1-1.091 9M7.231 4.37a8.994 8.994 0 0 1 12.88 3.73M2.958 15S3 14.577 3 12a8.949 8.949 0 0 1 1.735-5.307m12.84 3.088A5.98 5.98 0 0 1 18 12a30 30 0 0 1-.464 6.232M6 12a6 6 0 0 1 9.352-4.974M4 21a5.964 5.964 0 0 1 1.01-3.328 5.15 5.15 0 0 0 .786-1.926m8.66 2.486a13.96 13.96 0 0 1-.962 2.683M7.5 19.336C9 17.092 9 14.845 9 12a3 3 0 1 1 6 0c0 .749 0 1.521-.031 2.311M12 12c0 3 0 6-2 9"
+          />
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Security & Wi-Fi</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="square" stroke-width="2" d="M8 15h7.01v.01H15L8 15Z" />
+          <path stroke="currentColor" stroke-linecap="square" stroke-width="2" d="M20 6H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1Z" />
+          <path stroke="currentColor" stroke-linecap="square" stroke-width="2" d="M6 9h.01v.01H6V9Zm0 3h.01v.01H6V12Zm0 3h.01v.01H6V15Zm3-6h.01v.01H9V9Zm0 3h.01v.01H9V12Zm3-3h.01v.01H12V9Zm0 3h.01v.01H12V12Zm3 0h.01v.01H15V12Zm3 0h.01v.01H18V12Zm0 3h.01v.01H18V15Zm-3-6h.01v.01H15V9Zm3 0h.01v.01H18V9Z" />
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Computer Peripherals</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5Zm16 14a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2ZM4 13a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6Zm16-2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v6Z" />
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Phone Accessories</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Watches</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M16.444 18H19a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h2.556M17 11V5a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v6h10ZM7 15h10v4a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-4Z" />
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Printers</span>
+      </a>
+
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1Zm0 0-4 4m5 0H4m1 0 4-4m1 4 4-4m-4 7v6l4-3-4-3Z" />
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Projectors</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z" />
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Skin Care</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M4 18V8a1 1 0 0 1 1-1h1.5l1.707-1.707A1 1 0 0 1 8.914 5h6.172a1 1 0 0 1 .707.293L17.5 7H19a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z"></path>
+          <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Photo/Video</span>
+      </a>
+      <a href="#" class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
+        <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M10 12v1h4v-1m4 7H6a1 1 0 0 1-1-1V9h14v9a1 1 0 0 1-1 1ZM4 5h16a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" />
+        </svg>
+        <span class="font-medium text-gray-900 text-sm dark:text-white">Office Supplies</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+//navbars
+<nav class="bg-white dark:bg-gray-800 antialiased">
+  <div class="mx-auto px-4 2xl:px-0 py-4 max-w-screen-xl">
+    <div class="flex justify-between items-center">
+
+      <div class="flex items-center space-x-8">
+        <div class="shrink-0">
+          <a href="#" title="" class="">
+            <img class="block dark:hidden w-auto h-8" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full.svg" alt="">
+            <img class="dark:block hidden w-auto h-8" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/logo-full-dark.svg" alt="">
+          </a>
+        </div>
+
+        <ul class="lg:flex justify-start sm:justify-center items-center gap-6 md:gap-8 hidden py-3">
+          <li>
+            <a href="#" title="" class="flex font-medium text-gray-900 text-sm hover:text-primary-700 dark:hover:text-primary-500 dark:text-white">
+              Home
+            </a>
+          </li>
+          <li class="shrink-0">
+            <a href="#" title="" class="flex font-medium text-gray-900 text-sm hover:text-primary-700 dark:hover:text-primary-500 dark:text-white">
+              Best Sellers
+            </a>
+          </li>
+          <li class="shrink-0">
+            <a href="#" title="" class="flex font-medium text-gray-900 text-sm hover:text-primary-700 dark:hover:text-primary-500 dark:text-white">
+              Gift Ideas
+            </a>
+          </li>
+          <li class="shrink-0">
+            <a href="#" title="" class="font-medium text-gray-900 text-sm hover:text-primary-700 dark:hover:text-primary-500 dark:text-white">
+              Today's Deals
+            </a>
+          </li>
+          <li class="shrink-0">
+            <a href="#" title="" class="font-medium text-gray-900 text-sm hover:text-primary-700 dark:hover:text-primary-500 dark:text-white">
+              Sell
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="flex items-center lg:space-x-2">
+
+        <button id="myCartDropdownButton1" data-dropdown-toggle="myCartDropdown1" type="button" class="inline-flex justify-center items-center hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded-lg font-medium text-gray-900 text-sm dark:text-white leading-none">
+          <span class="sr-only">
+            Cart
+          </span>
+          <svg class="w-5 h-5 lg:me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+          </svg>
+          <span class="sm:flex hidden">My Cart</span>
+          <svg class="sm:flex hidden w-4 h-4 text-gray-900 dark:text-white ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+          </svg>
+        </button>
+
+        <div id="myCartDropdown1" class="z-10 space-y-4 hidden bg-white dark:bg-gray-800 shadow-lg mx-auto p-4 rounded-lg max-w-sm antialiased overflow-hidden">
+          <div class="grid grid-cols-2">
+            <div>
+              <a href="#" class="font-semibold text-gray-900 text-sm dark:text-white hover:underline truncate leading-none">Apple iPhone 15</a>
+              <p class="mt-0.5 font-normal text-gray-500 text-sm dark:text-gray-400 truncate">$599</p>
+            </div>
+
+            <div class="flex justify-end items-center gap-6">
+              <p class="font-normal text-gray-500 text-sm dark:text-gray-400 leading-none">Qty: 1</p>
+
+              <button data-tooltip-target="tooltipRemoveItem1a" type="button" class="text-red-600 hover:text-red-700 dark:hover:text-red-600 dark:text-red-500">
+                <span class="sr-only"> Remove </span>
+                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z" clip-rule="evenodd" />
+                </svg>
+              </button>
+              <div id="tooltipRemoveItem1a" role="tooltip" class="inline-block z-10 absolute bg-gray-900 dark:bg-gray-700 opacity-0 shadow-sm px-3 py-2 rounded-lg font-medium text-sm text-white transition-opacity duration-300 invisible tooltip">
+                Remove item
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2">
+            <div>
+              <a href="#" class="font-semibold text-gray-900 text-sm dark:text-white hover:underline truncate leading-none">Apple iPad Air</a>
+              <p class="mt-0.5 font-normal text-gray-500 text-sm dark:text-gray-400 truncate">$499</p>
+            </div>
+
+            <div class="flex justify-end items-center gap-6">
+              <p class="font-normal text-gray-500 text-sm dark:text-gray-400 leading-none">Qty: 1</p>
+
+              <button data-tooltip-target="tooltipRemoveItem2a" type="button" class="text-red-600 hover:text-red-700 dark:hover:text-red-600 dark:text-red-500">
+                <span class="sr-only"> Remove </span>
+                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z" clip-rule="evenodd" />
+                </svg>
+              </button>
+              <div id="tooltipRemoveItem2a" role="tooltip" class="inline-block z-10 absolute bg-gray-900 dark:bg-gray-700 opacity-0 shadow-sm px-3 py-2 rounded-lg font-medium text-sm text-white transition-opacity duration-300 invisible tooltip">
+                Remove item
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2">
+            <div>
+              <a href="#" class="font-semibold text-gray-900 text-sm dark:text-white hover:underline truncate leading-none">Apple Watch SE</a>
+              <p class="mt-0.5 font-normal text-gray-500 text-sm dark:text-gray-400 truncate">$598</p>
+            </div>
+
+            <div class="flex justify-end items-center gap-6">
+              <p class="font-normal text-gray-500 text-sm dark:text-gray-400 leading-none">Qty: 2</p>
+
+              <button data-tooltip-target="tooltipRemoveItem3b" type="button" class="text-red-600 hover:text-red-700 dark:hover:text-red-600 dark:text-red-500">
+                <span class="sr-only"> Remove </span>
+                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z" clip-rule="evenodd" />
+                </svg>
+              </button>
+              <div id="tooltipRemoveItem3b" role="tooltip" class="inline-block z-10 absolute bg-gray-900 dark:bg-gray-700 opacity-0 shadow-sm px-3 py-2 rounded-lg font-medium text-sm text-white transition-opacity duration-300 invisible tooltip">
+                Remove item
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2">
+            <div>
+              <a href="#" class="font-semibold text-gray-900 text-sm dark:text-white hover:underline truncate leading-none">Sony Playstation 5</a>
+              <p class="mt-0.5 font-normal text-gray-500 text-sm dark:text-gray-400 truncate">$799</p>
+            </div>
+
+            <div class="flex justify-end items-center gap-6">
+              <p class="font-normal text-gray-500 text-sm dark:text-gray-400 leading-none">Qty: 1</p>
+
+              <button data-tooltip-target="tooltipRemoveItem4b" type="button" class="text-red-600 hover:text-red-700 dark:hover:text-red-600 dark:text-red-500">
+                <span class="sr-only"> Remove </span>
+                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z" clip-rule="evenodd" />
+                </svg>
+              </button>
+              <div id="tooltipRemoveItem4b" role="tooltip" class="inline-block z-10 absolute bg-gray-900 dark:bg-gray-700 opacity-0 shadow-sm px-3 py-2 rounded-lg font-medium text-sm text-white transition-opacity duration-300 invisible tooltip">
+                Remove item
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2">
+            <div>
+              <a href="#" class="font-semibold text-gray-900 text-sm dark:text-white hover:underline truncate leading-none">Apple iMac 20"</a>
+              <p class="mt-0.5 font-normal text-gray-500 text-sm dark:text-gray-400 truncate">$8,997</p>
+            </div>
+
+            <div class="flex justify-end items-center gap-6">
+              <p class="font-normal text-gray-500 text-sm dark:text-gray-400 leading-none">Qty: 3</p>
+
+              <button data-tooltip-target="tooltipRemoveItem5b" type="button" class="text-red-600 hover:text-red-700 dark:hover:text-red-600 dark:text-red-500">
+                <span class="sr-only"> Remove </span>
+                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z" clip-rule="evenodd" />
+                </svg>
+              </button>
+              <div id="tooltipRemoveItem5b" role="tooltip" class="inline-block z-10 absolute bg-gray-900 dark:bg-gray-700 opacity-0 shadow-sm px-3 py-2 rounded-lg font-medium text-sm text-white transition-opacity duration-300 invisible tooltip">
+                Remove item
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" title="" class="inline-flex justify-center items-center bg-primary-700 hover:bg-primary-800 dark:hover:bg-primary-700 dark:bg-primary-600 mb-2 px-5 py-2.5 rounded-lg w-full font-medium text-sm text-white me-2 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800" role="button"> Proceed to Checkout </a>
+        </div>
+
+        <button id="userDropdownButton1" data-dropdown-toggle="userDropdown1" type="button" class="inline-flex justify-center items-center hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded-lg font-medium text-gray-900 text-sm dark:text-white leading-none">
+          <svg class="w-5 h-5 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+          </svg>
+          Account
+          <svg class="w-4 h-4 text-gray-900 dark:text-white ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+          </svg>
+        </button>
+
+        <div id="userDropdown1" class="z-10 hidden bg-white dark:bg-gray-700 shadow rounded-lg divide-y divide-gray-100 dark:divide-gray-600 w-56 antialiased overflow-hidden overflow-y-auto">
+          <ul class="p-2 font-medium text-gray-900 text-sm text-start dark:text-white">
+            <li><a href="#" title="" class="inline-flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 px-3 py-2 rounded-md w-full text-sm"> My Account </a></li>
+            <li><a href="#" title="" class="inline-flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 px-3 py-2 rounded-md w-full text-sm"> My Orders </a></li>
+            <li><a href="#" title="" class="inline-flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 px-3 py-2 rounded-md w-full text-sm"> Settings </a></li>
+            <li><a href="#" title="" class="inline-flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 px-3 py-2 rounded-md w-full text-sm"> Favourites </a></li>
+            <li><a href="#" title="" class="inline-flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 px-3 py-2 rounded-md w-full text-sm"> Delivery Addresses </a></li>
+            <li><a href="#" title="" class="inline-flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 px-3 py-2 rounded-md w-full text-sm"> Billing Data </a></li>
+          </ul>
+
+          <div class="p-2 font-medium text-gray-900 text-sm dark:text-white">
+            <a href="#" title="" class="inline-flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-600 px-3 py-2 rounded-md w-full text-sm"> Sign Out </a>
+          </div>
+        </div>
+
+        <button type="button" data-collapse-toggle="ecommerce-navbar-menu-1" aria-controls="ecommerce-navbar-menu-1" aria-expanded="false" class="inline-flex justify-center items-center lg:hidden hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded-md text-gray-900 dark:text-white">
+          <span class="sr-only">
+            Open Menu
+          </span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="ecommerce-navbar-menu-1" class="border-gray-200 dark:border-gray-600 hidden bg-gray-50 dark:bg-gray-700 mt-4 px-4 py-3 border rounded-lg">
+      <ul class="space-y-3 font-medium text-gray-900 text-sm dark:text-white dark:text-white">
+        <li>
+          <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Home</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Best Sellers</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Gift Ideas</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Games</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Electronics</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-primary-700 dark:hover:text-primary-500">Home & Garden</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a","950":"#172554"}
+        }
+      },
+      fontFamily: {
+        'body': [
+      'Inter',
+      'ui-sans-serif',
+      'system-ui',
+      '-apple-system',
+      'system-ui',
+      'Segoe UI',
+      'Roboto',
+      'Helvetica Neue',
+      'Arial',
+      'Noto Sans',
+      'sans-serif',
+      'Apple Color Emoji',
+      'Segoe UI Emoji',
+      'Segoe UI Symbol',
+      'Noto Color Emoji'
+    ],
+        'sans': [
+      'Inter',
+      'ui-sans-serif',
+      'system-ui',
+      '-apple-system',
+      'system-ui',
+      'Segoe UI',
+      'Roboto',
+      'Helvetica Neue',
+      'Arial',
+      'Noto Sans',
+      'sans-serif',
+      'Apple Color Emoji',
+      'Segoe UI Emoji',
+      'Segoe UI Symbol',
+      'Noto Color Emoji'
+    ]
+      }
+    }
+  }
+
+
+js
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('myCartDropdownButton1').click();
+});
+
+///detail produit
+
+<section class="bg-white dark:bg-gray-900 py-8 md:py-16 antialiased">
+    <div class="mx-auto px-4 2xl:px-0 max-w-screen-xl">
+      <div class="lg:gap-8 xl:gap-16 lg:grid lg:grid-cols-2">
+        <div class="mx-auto max-w-md lg:max-w-lg shrink-0">
+          <img class="dark:hidden w-full" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front.svg" alt="" />
+          <img class="dark:block hidden w-full" src="https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg" alt="" />
+        </div>
+
+        <div class="mt-6 sm:mt-8 lg:mt-0">
+          <h1
+            class="font-semibold text-gray-900 text-xl sm:text-2xl dark:text-white"
+          >
+            Apple iMac 24" All-In-One Computer, Apple M1, 8GB RAM, 256GB SSD,
+            Mac OS, Pink
+          </h1>
+          <div class="sm:flex sm:items-center sm:gap-4 mt-4">
+            <p
+              class="font-extrabold text-2xl text-gray-900 sm:text-3xl dark:text-white"
+            >
+              $1,249.99
+            </p>
+
+            <div class="flex items-center gap-2 mt-2 sm:mt-0">
+              <div class="flex items-center gap-1">
+                <svg
+                  class="w-4 h-4 text-yellow-300"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                  />
+                </svg>
+                <svg
+                  class="w-4 h-4 text-yellow-300"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                  />
+                </svg>
+                <svg
+                  class="w-4 h-4 text-yellow-300"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                  />
+                </svg>
+                <svg
+                  class="w-4 h-4 text-yellow-300"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                  />
+                </svg>
+                <svg
+                  class="w-4 h-4 text-yellow-300"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"
+                  />
+                </svg>
+              </div>
+              <p
+                class="font-medium text-gray-500 text-sm dark:text-gray-400 leading-none"
+              >
+                (5.0)
+              </p>
+              <a
+                href="#"
+                class="font-medium text-gray-900 text-sm dark:text-white underline hover:no-underline leading-none"
+              >
+                345 Reviews
+              </a>
+            </div>
+          </div>
+
+          <div class="sm:flex sm:items-center sm:gap-4 mt-6 sm:mt-8">
+            <a
+              href="#"
+              title=""
+              class="focus:z-10 flex justify-center items-center border-gray-200 dark:border-gray-600 bg-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:bg-gray-800 px-5 py-2.5 border rounded-lg font-medium text-gray-900 text-sm focus:outline-none hover:text-primary-700 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:hover:text-white dark:text-gray-400"
+              role="button"
+            >
+              <svg
+                class="w-5 h-5 -ms-2 me-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
+                />
+              </svg>
+              Add to favorites
+            </a>
+
+            <a
+              href="#"
+              title=""
+              class="flex justify-center items-center bg-primary-700 hover:bg-primary-800 dark:hover:bg-primary-700 dark:bg-primary-600 mt-4 sm:mt-0 px-5 py-2.5 rounded-lg text-white focus:ring-4 focus:ring-primary-300 font-medium text-sm focus:outline-none dark:focus:ring-primary-800"
+              role="button"
+            >
+              <svg
+                class="w-5 h-5 -ms-2 me-2"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
+                />
+              </svg>
+
+              Add to cart
+            </a>
+          </div>
+
+          <hr class="border-gray-200 dark:border-gray-800 my-6 md:my-8" />
+
+          <p class="mb-6 text-gray-500 dark:text-gray-400">
+            Studio quality three mic array for crystal clear calls and voice
+            recordings. Six-speaker sound system for a remarkably robust and
+            high-quality audio experience. Up to 256GB of ultrafast SSD storage.
+          </p>
+
+          <p class="text-gray-500 dark:text-gray-400">
+            Two Thunderbolt USB 4 ports and up to two USB 3 ports. Ultrafast
+            Wi-Fi 6 and Bluetooth 5.0 wireless. Color matched Magic Mouse with
+            Magic Keyboard or Magic Keyboard with Touch ID.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  ///Checkout
+  <section class="bg-white dark:bg-gray-900 py-8 md:py-16 antialiased">
+  <form action="#" class="mx-auto px-4 2xl:px-0 max-w-screen-xl">
+    <ol class="flex items-center w-full max-w-2xl font-medium text-center text-gray-500 text-sm sm:text-base dark:text-gray-400">
+      <li class="sm:after:inline-block flex items-center sm:after:content-[''] after:border-1 after:border-gray-200 dark:after:border-gray-700 after:hidden xl:after:mx-10 after:mx-6 after:border-b md:w-full after:w-full after:h-1 text-primary-700 dark:text-primary-500">
+        <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
+          <svg class="w-4 sm:w-5 h-4 sm:h-5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+          </svg>
+          Cart
+        </span>
+      </li>
+
+      <li class="sm:after:inline-block flex items-center sm:after:content-[''] after:border-1 after:border-gray-200 dark:after:border-gray-700 after:hidden xl:after:mx-10 after:mx-6 after:border-b md:w-full after:w-full after:h-1 text-primary-700 dark:text-primary-500">
+        <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
+          <svg class="w-4 sm:w-5 h-4 sm:h-5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+          </svg>
+          Checkout
+        </span>
+      </li>
+
+      <li class="flex items-center shrink-0">
+        <svg class="w-4 sm:w-5 h-4 sm:h-5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        </svg>
+        Order summary
+      </li>
+    </ol>
+
+    <div class="lg:flex lg:items-start lg:gap-12 xl:gap-16 mt-6 sm:mt-8">
+      <div class="flex-1 space-y-8 min-w-0">
+        <div class="space-y-4">
+          <h2 class="font-semibold text-gray-900 text-xl dark:text-white">Delivery Details</h2>
+
+          <div class="gap-4 grid grid-cols-1 sm:grid-cols-2">
+            <div>
+              <label for="your_name" class="block mb-2 font-medium text-gray-900 text-sm dark:text-white"> Your name </label>
+              <input type="text" id="your_name" class="block border-gray-300 focus:border-primary-500 dark:focus:border-primary-500 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 border rounded-lg w-full text-gray-900 text-sm focus:ring-primary-500 dark:text-white dark:placeholder:text-gray-400 dark:focus:ring-primary-500" placeholder="Bonnie Green" required />
+            </div>
+
+            <div>
+              <label for="your_email" class="block mb-2 font-medium text-gray-900 text-sm dark:text-white"> Your email* </label>
+              <input type="email" id="your_email" class="block border-gray-300 focus:border-primary-500 dark:focus:border-primary-500 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 border rounded-lg w-full text-gray-900 text-sm focus:ring-primary-500 dark:text-white dark:placeholder:text-gray-400 dark:focus:ring-primary-500" placeholder="name@flowbite.com" required />
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <label for="select-country-input-3" class="block font-medium text-gray-900 text-sm dark:text-white"> Country* </label>
+              </div>
+              <select id="select-country-input-3" class="block border-gray-300 focus:border-primary-500 dark:focus:border-primary-500 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 border rounded-lg w-full text-gray-900 text-sm focus:ring-primary-500 dark:text-white dark:placeholder:text-gray-400 dark:focus:ring-primary-500">
+                <option selected>United States</option>
+                <option value="AS">Australia</option>
+                <option value="FR">France</option>
+                <option value="ES">Spain</option>
+                <option value="UK">United Kingdom</option>
+              </select>
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2 mb-2">
+                <label for="select-city-input-3" class="block font-medium text-gray-900 text-sm dark:text-white"> City* </label>
+              </div>
+              <select id="select-city-input-3" class="block border-gray-300 focus:border-primary-500 dark:focus:border-primary-500 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 border rounded-lg w-full text-gray-900 text-sm focus:ring-primary-500 dark:text-white dark:placeholder:text-gray-400 dark:focus:ring-primary-500">
+                <option selected>San Francisco</option>
+                <option value="NY">New York</option>
+                <option value="LA">Los Angeles</option>
+                <option value="CH">Chicago</option>
+                <option value="HU">Houston</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="phone-input-3" class="block mb-2 font-medium text-gray-900 text-sm dark:text-white"> Phone Number* </label>
+              <div class="flex items-center">
+                <button id="dropdown-phone-button-3" data-dropdown-toggle="dropdown-phone-3" class="inline-flex z-10 items-center border-gray-300 dark:border-gray-600 bg-gray-100 hover:bg-gray-200 dark:hover:bg-gray-600 dark:bg-gray-700 px-4 py-2.5 border rounded-s-lg font-medium text-center text-gray-900 text-sm shrink-0 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:text-white dark:focus:ring-gray-700" type="button">
+                  <svg fill="none" aria-hidden="true" class="w-4 h-4 me-2" viewBox="0 0 20 15">
+                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                    <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0" maskUnits="userSpaceOnUse">
+                      <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                    </mask>
+                    <g mask="url(#a)">
+                      <path fill="#D02F44" fill-rule="evenodd" d="M19.6.5H0v.933h19.6V.5zm0 1.867H0V3.3h19.6v-.933zM0 4.233h19.6v.934H0v-.934zM19.6 6.1H0v.933h19.6V6.1zM0 7.967h19.6V8.9H0v-.933zm19.6 1.866H0v.934h19.6v-.934zM0 11.7h19.6v.933H0V11.7zm19.6 1.867H0v.933h19.6v-.933z" clip-rule="evenodd" />
+                      <path fill="#46467F" d="M0 .5h8.4v6.533H0z" />
+                      <g filter="url(#filter0_d_343_121520)">
+                        <path
+                          fill="url(#paint0_linear_343_121520)"
+                          fill-rule="evenodd"
+                          d="M1.867 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.866 0a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM7.467 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zM2.333 3.3a.467.467 0 100-.933.467.467 0 000 .933zm2.334-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.4.467a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm-2.334.466a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.466a.467.467 0 11-.933 0 .467.467 0 01.933 0zM1.4 4.233a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM6.533 4.7a.467.467 0 11-.933 0 .467.467 0 01.933 0zM7 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zM3.267 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0z"
+                          clip-rule="evenodd"
+                        />
+                      </g>
+                    </g>
+                    <defs>
+                      <linearGradient id="paint0_linear_343_121520" x1=".933" x2=".933" y1="1.433" y2="6.1" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#fff" />
+                        <stop offset="1" stop-color="#F0F0F0" />
+                      </linearGradient>
+                      <filter id="filter0_d_343_121520" width="6.533" height="5.667" x=".933" y="1.433" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                        <feOffset dy="1" />
+                        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_343_121520" />
+                        <feBlend in="SourceGraphic" in2="effect1_dropShadow_343_121520" result="shape" />
+                      </filter>
+                    </defs>
+                  </svg>
+                  +1
+                  <svg class="w-4 h-4 -me-0.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7" />
+                  </svg>
+                </button>
+                <div id="dropdown-phone-3" class="z-10 hidden bg-white dark:bg-gray-700 shadow rounded-lg divide-y divide-gray-100 w-56">
+                  <ul class="p-2 font-medium text-gray-700 text-sm dark:text-gray-200" aria-labelledby="dropdown-phone-button-2">
+                    <li>
+                      <button type="button" class="inline-flex hover:bg-gray-100 dark:hover:bg-gray-600 px-3 py-2 rounded-md w-full text-gray-500 text-sm hover:text-gray-900 dark:hover:text-white dark:text-gray-400" role="menuitem">
+                        <span class="inline-flex items-center">
+                          <svg fill="none" aria-hidden="true" class="w-4 h-4 me-2" viewBox="0 0 20 15">
+                            <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                            <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0" maskUnits="userSpaceOnUse">
+                              <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                            </mask>
+                            <g mask="url(#a)">
+                              <path fill="#D02F44" fill-rule="evenodd" d="M19.6.5H0v.933h19.6V.5zm0 1.867H0V3.3h19.6v-.933zM0 4.233h19.6v.934H0v-.934zM19.6 6.1H0v.933h19.6V6.1zM0 7.967h19.6V8.9H0v-.933zm19.6 1.866H0v.934h19.6v-.934zM0 11.7h19.6v.933H0V11.7zm19.6 1.867H0v.933h19.6v-.933z" clip-rule="evenodd" />
+                              <path fill="#46467F" d="M0 .5h8.4v6.533H0z" />
+                              <g filter="url(#filter0_d_343_121520)">
+                                <path
+                                  fill="url(#paint0_linear_343_121520)"
+                                  fill-rule="evenodd"
+                                  d="M1.867 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.866 0a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM7.467 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zM2.333 3.3a.467.467 0 100-.933.467.467 0 000 .933zm2.334-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.4.467a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm-2.334.466a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.466a.467.467 0 11-.933 0 .467.467 0 01.933 0zM1.4 4.233a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM6.533 4.7a.467.467 0 11-.933 0 .467.467 0 01.933 0zM7 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zM3.267 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0z"
+                                  clip-rule="evenodd"
+                                />
+                              </g>
+                            </g>
+                            <defs>
+                              <linearGradient id="paint0_linear_343_121520" x1=".933" x2=".933" y1="1.433" y2="6.1" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#fff" />
+                                <stop offset="1" stop-color="#F0F0F0" />
+                              </linearGradient>
+                              <filter id="filter0_d_343_121520" width="6.533" height="5.667" x=".933" y="1.433" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                <feOffset dy="1" />
+                                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                                <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_343_121520" />
+                                <feBlend in="SourceGraphic" in2="effect1_dropShadow_343_121520" result="shape" />
+                              </filter>
+                            </defs>
+                          </svg>
+                          United States (+1)
+                        </span>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="inline-flex hover:bg-gray-100 dark:hover:bg-gray-600 px-3 py-2 rounded-md w-full text-gray-500 text-sm hover:text-gray-900 dark:hover:text-white dark:text-gray-400" role="menuitem">
+                        <span class="inline-flex items-center">
+                          <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
+                            <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                            <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0" maskUnits="userSpaceOnUse">
+                              <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                            </mask>
+                            <g mask="url(#a)">
+                              <path fill="#0A17A7" d="M0 .5h19.6v14H0z" />
+                              <path fill="#fff" fill-rule="evenodd" d="M-.898-.842L7.467 4.8V-.433h4.667V4.8l8.364-5.642L21.542.706l-6.614 4.46H19.6v4.667h-4.672l6.614 4.46-1.044 1.549-8.365-5.642v5.233H7.467V10.2l-8.365 5.642-1.043-1.548 6.613-4.46H0V5.166h4.672L-1.941.706-.898-.842z" clip-rule="evenodd" />
+                              <path stroke="#DB1F35" stroke-linecap="round" stroke-width=".667" d="M13.067 4.933L21.933-.9M14.009 10.088l7.947 5.357M5.604 4.917L-2.686-.67M6.503 10.024l-9.189 6.093" />
+                              <path fill="#E6273E" fill-rule="evenodd" d="M0 8.9h8.4v5.6h2.8V8.9h8.4V6.1h-8.4V.5H8.4v5.6H0v2.8z" clip-rule="evenodd" />
+                            </g>
+                          </svg>
+                          United Kingdom (+44)
+                        </span>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="inline-flex hover:bg-gray-100 dark:hover:bg-gray-600 px-3 py-2 rounded-md w-full text-gray-500 text-sm hover:text-gray-900 dark:hover:text-white dark:text-gray-400" role="menuitem">
+                        <span class="inline-flex items-center">
+                          <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                            <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0" maskUnits="userSpaceOnUse">
+                              <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                            </mask>
+                            <g mask="url(#a)">
+                              <path fill="#0A17A7" d="M0 .5h19.6v14H0z" />
+                              <path fill="#fff" stroke="#fff" stroke-width=".667" d="M0 .167h-.901l.684.586 3.15 2.7v.609L-.194 6.295l-.14.1v1.24l.51-.319L3.83 5.033h.73L7.7 7.276a.488.488 0 00.601-.767L5.467 4.08v-.608l2.987-2.134a.667.667 0 00.28-.543V-.1l-.51.318L4.57 2.5h-.73L.66.229.572.167H0z" />
+                              <path fill="url(#paint0_linear_374_135177)" fill-rule="evenodd" d="M0 2.833V4.7h3.267v2.133c0 .369.298.667.666.667h.534a.667.667 0 00.666-.667V4.7H8.2a.667.667 0 00.667-.667V3.5a.667.667 0 00-.667-.667H5.133V.5H3.267v2.333H0z" clip-rule="evenodd" />
+                              <path fill="url(#paint1_linear_374_135177)" fill-rule="evenodd" d="M0 3.3h3.733V.5h.934v2.8H8.4v.933H4.667v2.8h-.934v-2.8H0V3.3z" clip-rule="evenodd" />
+                              <path
+                                fill="#fff"
+                                fill-rule="evenodd"
+                                d="M4.2 11.933l-.823.433.157-.916-.666-.65.92-.133.412-.834.411.834.92.134-.665.649.157.916-.823-.433zm9.8.7l-.66.194.194-.66-.194-.66.66.193.66-.193-.193.66.193.66-.66-.194zm0-8.866l-.66.193.194-.66-.194-.66.66.193.66-.193-.193.66.193.66-.66-.193zm2.8 2.8l-.66.193.193-.66-.193-.66.66.193.66-.193-.193.66.193.66-.66-.193zm-5.6.933l-.66.193.193-.66-.193-.66.66.194.66-.194-.193.66.193.66-.66-.193zm4.2 1.167l-.33.096.096-.33-.096-.33.33.097.33-.097-.097.33.097.33-.33-.096z"
+                                clip-rule="evenodd"
+                              />
+                            </g>
+                            <defs>
+                              <linearGradient id="paint0_linear_374_135177" x1="0" x2="0" y1=".5" y2="7.5" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#fff" />
+                                <stop offset="1" stop-color="#F0F0F0" />
+                              </linearGradient>
+                              <linearGradient id="paint1_linear_374_135177" x1="0" x2="0" y1=".5" y2="7.033" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FF2E3B" />
+                                <stop offset="1" stop-color="#FC0D1B" />
+                              </linearGradient>
+                            </defs>
+                          </svg>
+                          Australia (+61)
+                        </span>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="inline-flex hover:bg-gray-100 dark:hover:bg-gray-600 px-3 py-2 rounded-md w-full text-gray-500 text-sm hover:text-gray-900 dark:hover:text-white dark:text-gray-400" role="menuitem">
+                        <span class="inline-flex items-center">
+                          <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
+                            <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                            <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0" maskUnits="userSpaceOnUse">
+                              <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
+                            </mask>
+                            <g mask="url(#a)">
+                              <path fill="#262626" fill-rule="evenodd" d="M0 5.167h19.6V.5H0v4.667z" clip-rule="evenodd" />
+                              <g filter="url(#filter0_d_374_135180)">
+                                <path fill="#F01515" fill-rule="evenodd" d="M0 9.833h19.6V5.167H0v4.666z" clip-rule="evenodd" />
+                              </g>
+                              <g filter="url(#filter1_d_374_135180)">
+                                <path fill="#FFD521" fill-rule="evenodd" d="M0 14.5h19.6V9.833H0V14.5z" clip-rule="evenodd" />
+                              </g>
+                            </g>
+                            <defs>
+                              <filter id="filter0_d_374_135180" width="19.6" height="4.667" x="0" y="5.167" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                <feOffset />
+                                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                                <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_374_135180" />
+                                <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180" result="shape" />
+                              </filter>
+                              <filter id="filter1_d_374_135180" width="19.6" height="4.667" x="0" y="9.833" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                <feOffset />
+                                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                                <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_374_135180" />
+                                <feBlend in="SourceGraphic" in2="effect1_dropShadow_374_135180" result="shape" />
+                              </filter>
+                            </defs>
+                          </svg>
+                          Germany (+49)
+                        </span>
+                      </button>
+                    </li>
+                    <li>
+                      <button type="button" class="inline-flex hover:bg-gray-100 dark:hover:bg-gray-600 px-3 py-2 rounded-md w-full text-gray-500 text-sm hover:text-gray-900 dark:hover:text-white dark:text-gray-400" role="menuitem">
+                        <span class="inline-flex items-center">
+                          <svg class="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
+                            <rect width="19.1" height="13.5" x=".25" y=".75" fill="#fff" stroke="#F5F5F5" stroke-width=".5" rx="1.75" />
+                            <mask id="a" style="mask-type:luminance" width="20" height="15" x="0" y="0" maskUnits="userSpaceOnUse">
+                              <rect width="19.1" height="13.5" x=".25" y=".75" fill="#fff" stroke="#fff" stroke-width=".5" rx="1.75" />
+                            </mask>
+                            <g mask="url(#a)">
+                              <path fill="#F44653" d="M13.067.5H19.6v14h-6.533z" />
+                              <path fill="#1035BB" fill-rule="evenodd" d="M0 14.5h6.533V.5H0v14z" clip-rule="evenodd" />
+                            </g>
+                          </svg>
+                          France (+33)
+                        </span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="relative w-full">
+                  <input type="text" id="phone-input" class="block z-20 border-gray-300 border-s-0 focus:border-primary-500 dark:focus:border-primary-500 dark:border-gray-600 dark:border-s-gray-700 bg-gray-50 dark:bg-gray-700 p-2.5 border rounded-e-lg w-full text-gray-900 text-sm focus:ring-primary-500 dark:text-white dark:placeholder:text-gray-400" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required />
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="block mb-2 font-medium text-gray-900 text-sm dark:text-white"> Email </label>
+              <input type="email" id="email" class="block border-gray-300 focus:border-primary-500 dark:focus:border-primary-500 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 border rounded-lg w-full text-gray-900 text-sm focus:ring-primary-500 dark:text-white dark:placeholder:text-gray-400 dark:focus:ring-primary-500" placeholder="name@flowbite.com" required />
+            </div>
+
+            <div>
+              <label for="company_name" class="block mb-2 font-medium text-gray-900 text-sm dark:text-white"> Company name </label>
+              <input type="text" id="company_name" class="block border-gray-300 focus:border-primary-500 dark:focus:border-primary-500 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 border rounded-lg w-full text-gray-900 text-sm focus:ring-primary-500 dark:text-white dark:placeholder:text-gray-400 dark:focus:ring-primary-500" placeholder="Flowbite LLC" required />
+            </div>
+
+            <div>
+              <label for="vat_number" class="block mb-2 font-medium text-gray-900 text-sm dark:text-white"> VAT number </label>
+              <input type="text" id="vat_number" class="block border-gray-300 focus:border-primary-500 dark:focus:border-primary-500 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 border rounded-lg w-full text-gray-900 text-sm focus:ring-primary-500 dark:text-white dark:placeholder:text-gray-400 dark:focus:ring-primary-500" placeholder="DE42313253" required />
+            </div>
+
+            <div class="sm:col-span-2">
+              <button type="submit" class="focus:z-10 flex justify-center items-center gap-2 border-gray-200 dark:border-gray-600 bg-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:bg-gray-800 px-5 py-2.5 border rounded-lg w-full font-medium text-gray-900 text-sm hover:text-primary-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:hover:text-white dark:text-gray-400 dark:focus:ring-gray-700">
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5" />
+                </svg>
+                Add new address
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <h3 class="font-semibold text-gray-900 text-xl dark:text-white">Payment</h3>
+
+          <div class="gap-4 grid grid-cols-1 md:grid-cols-3">
+            <div class="border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 p-4 border rounded-lg ps-4">
+              <div class="flex items-start">
+                <div class="flex items-center h-5">
+                  <input id="credit-card" aria-describedby="credit-card-text" type="radio" name="payment-method" value="" class="border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 w-4 h-4 text-primary-600 focus:ring-2 focus:ring-primary-600 dark:ring-offset-gray-800 dark:focus:ring-primary-600" checked />
+                </div>
+
+                <div class="text-sm ms-4">
+                  <label for="credit-card" class="font-medium text-gray-900 dark:text-white leading-none"> Credit Card </label>
+                  <p id="credit-card-text" class="mt-1 font-normal text-gray-500 text-xs dark:text-gray-400">Pay with your credit card</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-2 mt-4">
+                <button type="button" class="font-medium text-gray-500 text-sm hover:text-gray-900 dark:hover:text-white dark:text-gray-400">Delete</button>
+
+                <div class="bg-gray-200 dark:bg-gray-700 w-px h-3 shrink-0"></div>
+
+                <button type="button" class="font-medium text-gray-500 text-sm hover:text-gray-900 dark:hover:text-white dark:text-gray-400">Edit</button>
+              </div>
+            </div>
+
+            <div class="border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 p-4 border rounded-lg ps-4">
+              <div class="flex items-start">
+                <div class="flex items-center h-5">
+                  <input id="pay-on-delivery" aria-describedby="pay-on-delivery-text" type="radio" name="payment-method" value="" class="border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 w-4 h-4 text-primary-600 focus:ring-2 focus:ring-primary-600 dark:ring-offset-gray-800 dark:focus:ring-primary-600" />
+                </div>
+
+                <div class="text-sm ms-4">
+                  <label for="pay-on-delivery" class="font-medium text-gray-900 dark:text-white leading-none"> Payment on delivery </label>
+                  <p id="pay-on-delivery-text" class="mt-1 font-normal text-gray-500 text-xs dark:text-gray-400">+$15 payment processing fee</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-2 mt-4">
+                <button type="button" class="font-medium text-gray-500 text-sm hover:text-gray-900 dark:hover:text-white dark:text-gray-400">Delete</button>
+
+                <div class="bg-gray-200 dark:bg-gray-700 w-px h-3 shrink-0"></div>
+
+                <button type="button" class="font-medium text-gray-500 text-sm hover:text-gray-900 dark:hover:text-white dark:text-gray-400">Edit</button>
+              </div>
+            </div>
+
+            <div class="border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 p-4 border rounded-lg ps-4">
+              <div class="flex items-start">
+                <div class="flex items-center h-5">
+                  <input id="paypal-2" aria-describedby="paypal-text" type="radio" name="payment-method" value="" class="border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 w-4 h-4 text-primary-600 focus:ring-2 focus:ring-primary-600 dark:ring-offset-gray-800 dark:focus:ring-primary-600" />
+                </div>
+
+                <div class="text-sm ms-4">
+                  <label for="paypal-2" class="font-medium text-gray-900 dark:text-white leading-none"> Paypal account </label>
+                  <p id="paypal-text" class="mt-1 font-normal text-gray-500 text-xs dark:text-gray-400">Connect to your account</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-2 mt-4">
+                <button type="button" class="font-medium text-gray-500 text-sm hover:text-gray-900 dark:hover:text-white dark:text-gray-400">Delete</button>
+
+                <div class="bg-gray-200 dark:bg-gray-700 w-px h-3 shrink-0"></div>
+
+                <button type="button" class="font-medium text-gray-500 text-sm hover:text-gray-900 dark:hover:text-white dark:text-gray-400">Edit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <h3 class="font-semibold text-gray-900 text-xl dark:text-white">Delivery Methods</h3>
+
+          <div class="gap-4 grid grid-cols-1 md:grid-cols-3">
+            <div class="border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 p-4 border rounded-lg ps-4">
+              <div class="flex items-start">
+                <div class="flex items-center h-5">
+                  <input id="dhl" aria-describedby="dhl-text" type="radio" name="delivery-method" value="" class="border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 w-4 h-4 text-primary-600 focus:ring-2 focus:ring-primary-600 dark:ring-offset-gray-800 dark:focus:ring-primary-600" checked />
+                </div>
+
+                <div class="text-sm ms-4">
+                  <label for="dhl" class="font-medium text-gray-900 dark:text-white leading-none"> $15 - DHL Fast Delivery </label>
+                  <p id="dhl-text" class="mt-1 font-normal text-gray-500 text-xs dark:text-gray-400">Get it by Tommorow</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 p-4 border rounded-lg ps-4">
+              <div class="flex items-start">
+                <div class="flex items-center h-5">
+                  <input id="fedex" aria-describedby="fedex-text" type="radio" name="delivery-method" value="" class="border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 w-4 h-4 text-primary-600 focus:ring-2 focus:ring-primary-600 dark:ring-offset-gray-800 dark:focus:ring-primary-600" />
+                </div>
+
+                <div class="text-sm ms-4">
+                  <label for="fedex" class="font-medium text-gray-900 dark:text-white leading-none"> Free Delivery - FedEx </label>
+                  <p id="fedex-text" class="mt-1 font-normal text-gray-500 text-xs dark:text-gray-400">Get it by Friday, 13 Dec 2023</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 p-4 border rounded-lg ps-4">
+              <div class="flex items-start">
+                <div class="flex items-center h-5">
+                  <input id="express" aria-describedby="express-text" type="radio" name="delivery-method" value="" class="border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 w-4 h-4 text-primary-600 focus:ring-2 focus:ring-primary-600 dark:ring-offset-gray-800 dark:focus:ring-primary-600" />
+                </div>
+
+                <div class="text-sm ms-4">
+                  <label for="express" class="font-medium text-gray-900 dark:text-white leading-none"> $49 - Express Delivery </label>
+                  <p id="express-text" class="mt-1 font-normal text-gray-500 text-xs dark:text-gray-400">Get it today</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label for="voucher" class="block mb-2 font-medium text-gray-900 text-sm dark:text-white"> Enter a gift card, voucher or promotional code </label>
+          <div class="flex items-center gap-4 max-w-md">
+            <input type="text" id="voucher" class="block border-gray-300 focus:border-primary-500 dark:focus:border-primary-500 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 border rounded-lg w-full text-gray-900 text-sm focus:ring-primary-500 dark:text-white dark:placeholder:text-gray-400 dark:focus:ring-primary-500" placeholder="" required />
+            <button type="button" class="flex justify-center items-center bg-primary-700 hover:bg-primary-800 dark:hover:bg-primary-700 dark:bg-primary-600 px-5 py-2.5 rounded-lg font-medium text-sm text-white focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">Apply</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-6 mt-6 sm:mt-8 lg:mt-0 w-full xl:max-w-md lg:max-w-xs">
+        <div class="flow-root">
+          <div class="-my-3 divide-y divide-gray-200 dark:divide-gray-800">
+            <dl class="flex justify-between items-center gap-4 py-3">
+              <dt class="font-normal text-base text-gray-500 dark:text-gray-400">Subtotal</dt>
+              <dd class="font-medium text-base text-gray-900 dark:text-white">$8,094.00</dd>
+            </dl>
+
+            <dl class="flex justify-between items-center gap-4 py-3">
+              <dt class="font-normal text-base text-gray-500 dark:text-gray-400">Savings</dt>
+              <dd class="font-medium text-base text-green-500">0</dd>
+            </dl>
+
+            <dl class="flex justify-between items-center gap-4 py-3">
+              <dt class="font-normal text-base text-gray-500 dark:text-gray-400">Store Pickup</dt>
+              <dd class="font-medium text-base text-gray-900 dark:text-white">$99</dd>
+            </dl>
+
+            <dl class="flex justify-between items-center gap-4 py-3">
+              <dt class="font-normal text-base text-gray-500 dark:text-gray-400">Tax</dt>
+              <dd class="font-medium text-base text-gray-900 dark:text-white">$199</dd>
+            </dl>
+
+            <dl class="flex justify-between items-center gap-4 py-3">
+              <dt class="font-bold text-base text-gray-900 dark:text-white">Total</dt>
+              <dd class="font-bold text-base text-gray-900 dark:text-white">$8,392.00</dd>
+            </dl>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <button type="submit" class="flex justify-center items-center bg-primary-700 hover:bg-primary-800 dark:hover:bg-primary-700 dark:bg-primary-600 px-5 py-2.5 rounded-lg w-full font-medium text-sm text-white focus:outline-none focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-800">Proceed to Payment</button>
+
+          <p class="font-normal text-gray-500 text-sm dark:text-gray-400">One or more items in your cart require an account. <a href="#" title="" class="font-medium text-primary-700 dark:text-primary-500 underline hover:no-underline">Sign in or create an account now.</a>.</p>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>

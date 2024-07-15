@@ -29,7 +29,7 @@
                 <div class="flex justify-between h-16">
                     <!-- Logo -->
                     <div class="shrink-0 flex items-center">
-                        <a href="{{ route('dashboard') }}">
+                        <a href="{{ route('home') }}">
                             <x-application-logo
                                 class="inline-block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
 
@@ -44,7 +44,7 @@
 
 
                         {{-- @for ($i = 1; $i < 6; $i++) <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                            <x-nav-link :href="url('/dashboard')" :active="request()->routeIs('dashboard')"> {{
+                            <x-nav-link :href="url('/dashboard')" :active="request()->routeIs('home')"> {{
                                 __('Navigation ' . $i) }}
                             </x-nav-link>
                     </div>
@@ -52,8 +52,9 @@
 
 
                     {{-- cart button --}}
-                    {{--  <x-nav-link :href="route('login')" :active="request()->routeIs('dashboard')">  --}}
-                        <div class="flex justify-end cursor-pointer text-sm font-medium leading-5 text-gray-900 dark:text-gray-400">
+                    {{-- <x-nav-link :href="route('login')" :active="request()->routeIs('home')"> --}}
+                        <div
+                            class="flex justify-end cursor-pointer text-sm font-medium leading-5 text-gray-900 dark:text-gray-400">
                             <div class="relative py-2">
                                 <div class="left-3 absolute t-0">
                                     <p
@@ -67,9 +68,10 @@
                                 </svg>
                             </div>
                         </div>
-                    {{--  </x-nav-link>   --}}{{-- end cart button --}}
+                        {{--
+                    </x-nav-link> --}}{{-- end cart button --}}
 
-                    
+
 
                     {{-- <div class="flex w-full ">
                         <form class="max-w-md mx-auto">
@@ -96,20 +98,20 @@
                     {{-- <nav class="flex justify-center flex-1 -mx-3 "> --}}
                         @auth
                         <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                            <x-nav-link :href="url('/dashboard')" :active="request()->routeIs('dashboard')"> {{
+                            <x-nav-link :href="url('/home')" :active="request()->routeIs('home')"> {{
                                 __('Dashboard') }}
                             </x-nav-link>
                         </div>
                         @else
                         <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                            <x-nav-link :href="route('login')" :active="request()->routeIs('dashboard')">
+                            <x-nav-link :href="route('login')" :active="request()->routeIs('home')">
                                 {{ __('Log in') }}
                             </x-nav-link>
                         </div>
 
                         @if (Route::has('register'))
                         <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                            <x-nav-link :href="route('register')" :active="request()->routeIs('dashboard')">
+                            <x-nav-link :href="route('register')" :active="request()->routeIs('home')">
                                 {{ __('Register') }}
                             </x-nav-link>
                         </div>
@@ -139,7 +141,7 @@
             <!-- Responsive Navigation Menu -->
             <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
                 <div class="pt-2 pb-3 space-y-1">
-                    <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
                         {{ __('Dashboard') }}
                     </x-responsive-nav-link>
                 </div>
@@ -149,7 +151,7 @@
             @guest
             <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
                 <div class="pt-2 pb-3 space-y-1">
-                    <x-responsive-nav-link :href="route('login')" :active="request()->routeIs('dashboard')">
+                    <x-responsive-nav-link :href="route('login')" :active="request()->routeIs('home')">
                         {{ __('Log in') }}
                     </x-responsive-nav-link>
                 </div>
@@ -157,7 +159,7 @@
             @if (Route::has('register'))
             <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
                 <div class="pt-2 pb-3 space-y-1">
-                    <x-responsive-nav-link :href="route('register')" :active="request()->routeIs('dashboard')">
+                    <x-responsive-nav-link :href="route('register')" :active="request()->routeIs('home')">
                         {{ __('Register') }}
                     </x-responsive-nav-link>
                 </div>
@@ -174,6 +176,7 @@
         class="min-h-screen w-full px-6 py-4  bg-gray-100 dark:bg-gray-900  text-gray-900 dark:text-gray-100 shadow-md overflow-hidden">
         {{ $slot }}
     </div>
+
 </body>
 
 </html>

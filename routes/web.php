@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdressController;
 use App\Http\Controllers\DepositController;
 use App\Http\Controllers\GrowerController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderDetailController;
 use App\Http\Controllers\ProductController;
@@ -29,18 +30,25 @@ Route::resources([
     'productsImages' => ProductImageController::class,
 ]);
 
+Route::resource('home', HomeController::class)->only([
+    'index', 'show'
+]);
 
-Route::get('/', function () {
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+
+/* Route::get('/', function () {
     return view('welcome');
-})->name('home');
+})->name('home'); */
 
 
 
 
-
+/* 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard'); */
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

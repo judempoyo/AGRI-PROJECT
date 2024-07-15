@@ -31,7 +31,7 @@
                     }}
                 </h1>
             </div>
-            @endcan
+
         </div>
 
         <div class="w-1/2  md:w-2/3 m-auto mx-3 items-center justify-items-center justify-center">
@@ -61,5 +61,6 @@
 
             @endforeach
         </div>
+        @endcan
     </div>
 </x-app-layout>
