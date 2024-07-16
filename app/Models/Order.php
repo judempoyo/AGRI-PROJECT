@@ -19,6 +19,8 @@ class Order extends Model
         'date',
         'total',
         'state',
+        'customer_id',
+        'grower_id',
     ];
 
     public function user()

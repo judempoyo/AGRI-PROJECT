@@ -17,7 +17,8 @@ return new class extends Migration
             $table->date('date');
             $table->double('total');
             $table->string('state');
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            $table->foreignId('customer_id')->constrained('users')->cascadeOnDelete();
+            $table->foreignId('grower_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();
             //
         });

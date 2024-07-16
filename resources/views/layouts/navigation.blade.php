@@ -105,6 +105,8 @@
 
                 <div id="myCartDropdown1"
                     class="hidden z-10 mx-auto max-w-sm space-y-4 overflow-hidden rounded-lg bg-white p-4 antialiased shadow-lg dark:bg-gray-800">
+
+
                     <div class="grid grid-cols-2">
                         <div>
                             <a href="#"
@@ -282,7 +284,7 @@
                                 </x-dropdown-link>
                             </li>
                             <li>
-                                <x-dropdown-link :href="route('home')">
+                                <x-dropdown-link :href="route('orders.index')">
                                     {{ __('My orders') }}
                                 </x-dropdown-link>
                             </li>
