@@ -18,7 +18,9 @@ class Deposit extends Model
         'name',
         'adress',
         'country',
+        'description',
         'area',
+        'image',
         'maxCapacity',
         'user_id',
     ];

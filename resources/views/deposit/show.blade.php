@@ -14,12 +14,14 @@
         </div>
 
 
+
         <div class="w-1/2  md:w-1/2  relative items-center justify-items-center justify-center">
 
             <div class="row">
                 <h1 class=" text-gray-800 dark:text-gray-200 text-lg">{{ __('Name : ') }}{{ $deposit->name }}</h1>
                 <h1 class=" text-gray-800 dark:text-gray-200 text-lg">{{ __('Adress : ') }}{{ $deposit->adress }}</h1>
                 <h1 class=" text-gray-800 dark:text-gray-200 text-lg">{{ __('Country : ') }}{{ $deposit->country }}</h1>
+                <h1 class=" text-gray-800 dark:text-gray-200 text-lg">{{ __('Country : ') }}{{ $deposit->description }}</h1>
                 <h1 class=" text-gray-800 dark:text-gray-200 text-lg">{{ __('Area : ') }}{{ $deposit->area }}</h1>
                 <h1 class=" text-gray-800 dark:text-gray-200 text-lg">{{ __('Capacity : ') }}{{ $deposit->maxCapacity }}
                 </h1>

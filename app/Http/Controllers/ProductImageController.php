@@ -18,7 +18,6 @@ class ProductImageController extends Controller
     public function create()
     {
         return view('productImage.create');
-
     }
 
     /**
@@ -26,6 +25,7 @@ class ProductImageController extends Controller
      */
     public function store(StoreProductImageRequest $request)
     {
+        //dd($request);
         $ProductImage = ProductImage::create([
             'image' => $request->image,
 
@@ -56,10 +56,10 @@ class ProductImageController extends Controller
     public function update(UpdateProductImageRequest $request, ProductImage $productsImage)
     {
         //dd($productsImage);
-        File::delete('storage/images/uploads/products/'. $productsImage->image );
+        File::delete('storage/images/uploads/products/' . $productsImage->image);
 
         $file = $request->file('image');
-        $name = time().'_'. $file->getClientOriginalName();
+        $name = time() . '_' . $file->getClientOriginalName();
         //dd($name);
 
         $file->move('storage/images/uploads/products/', $name);
@@ -69,7 +69,7 @@ class ProductImageController extends Controller
             'image' => $name,
         ]);
 
-       
+
 
 
         return back();
@@ -80,11 +80,10 @@ class ProductImageController extends Controller
      */
     public function destroy(ProductImage $productsImage)
     {
-        File::delete('storage/images/uploads/products/'. $productsImage->image );
+        File::delete('storage/images/uploads/products/' . $productsImage->image);
 
         $productsImage->delete();
 
         return back();
-        
     }
 }

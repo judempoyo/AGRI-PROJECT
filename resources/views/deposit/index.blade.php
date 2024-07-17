@@ -38,6 +38,9 @@
                                 {{ __('Country')}}
                             </th>
                             <th scope="col" class="px-6 py-3">
+                                {{ __('Description')}}
+                            </th>
+                            <th scope="col" class="px-6 py-3">
                                 {{ __('area')}}
                             </th>
                             <th scope="col" class="px-6 py-3">
@@ -59,17 +62,18 @@
                                 $deposit->name }}</th>
                             <td class="px-6 py-4">{{ $deposit->adress }}</td>
                             <td class="px-6 py-4">{{ $deposit->country }}</td>
+                            <td class="px-6 py-4">{{ $deposit->description }}</td>
                             <td class="px-6 py-4">{{ $deposit->area }}</td>
                             <td class="px-6 py-4">{{ $deposit->maxCapacity }}</td>
                             <td class="text-right px-6 py-4">
 
                                 <form action="{{ route('deposits.destroy',$deposit->id) }}" method="POST">
                                     <x-view-button class="ms-3 mb-3 " href="{{ URL::to('deposits/'.$deposit->id) }}">
-                                       
+
                                     </x-view-button>
                                     @can('update_deposit')
                                     <x-edit-button class="ms-3 mb-3 " href="{{ URL::to('deposits/'.$deposit->id.'/edit')}}">
-                                        
+
                                     </x-edit-button>
                                     @endcan
                                     @csrf
@@ -79,7 +83,7 @@
 
 
                                     <x-delete-button class="ms-3 mb-3">
-                                        
+
                                     </x-delete-button>
                                     @endcan
                                 </form>

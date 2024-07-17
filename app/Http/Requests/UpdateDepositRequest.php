@@ -25,7 +25,9 @@ class UpdateDepositRequest extends FormRequest
             'name' => ['string', 'max:255'],
             'adress' => ['string', 'max:255'],
             'country' => ['string', 'max:255'],
+            'description' => ['string', 'max:1000'],
             'area' => ['string', 'max:255'],
+            'image' => ['file'],
             'maxCapacity' => ['string'],
         ];
     }

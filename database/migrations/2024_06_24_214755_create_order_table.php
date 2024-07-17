@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('ref', 20)->unique();
             $table->date('date');
             $table->double('total');
+            $table->string('payment_method',50);
+            $table->string('delivery_method',50);
+            $table->string('delivery_adress',250);
             $table->string('state');
             $table->foreignId('customer_id')->constrained('users')->cascadeOnDelete();
             $table->foreignId('grower_id')->constrained('users')->cascadeOnDelete();

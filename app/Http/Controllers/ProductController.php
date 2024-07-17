@@ -116,7 +116,10 @@ class ProductController extends Controller
     {
         $product_id = $product->id;
         $images = ProductImage::all()->where('product_id',$product_id);
-        return view('product.show', compact('product', 'images'));
+        $deposits = Deposit::all()->where('user_id', Auth::user()->id);
+        $categories = Categorie::all();
+        $sellUnits = SellUnit::all();
+        return view('product.show', compact('product', 'images','categories','deposits','sellUnits'));
     }
 
     /**

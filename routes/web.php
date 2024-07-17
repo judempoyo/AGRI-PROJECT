@@ -44,6 +44,11 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/category/{id_cat}', [HomeController::class, 'show_product_by_category'])->name('product_by_category');
 
 Route::get('/add_to_cart', [HomeController::class, 'add_to_cart'])->name('add_to_cart');
+Route::get('/show_cart', [HomeController::class, 'show_cart'])->name('show_cart');
+Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout')->middleware('auth');
+
+
+Route::get('/show_deposits', [HomeController::class, 'show_deposits'])->name('show_deposits');
 
 Route::get('/show_product/{id}', function ($id) {
     $product = Product::findOrFail($id);
@@ -52,6 +57,15 @@ Route::get('/show_product/{id}', function ($id) {
     $images = ProductImage::all();
     return view('home.show_product', compact('product', 'categories', 'sellUnits', 'images'));
 })->name('show_product');
+
+Route::get('/show_product_by_deposit/{id}', function ($id) {
+    $products = Product::all()->where('deposit_id', $id);
+    $categories = Categorie::all();
+    $deposits = Deposit::all();
+    $sellUnits = SellUnit::all();
+    $images = ProductImage::all();
+    return view('welcome', compact('products', 'categories', 'sellUnits', 'images', 'deposits'));
+})->name('show_product_by_deposit');
 
 
 /* Route::get('/', function () {

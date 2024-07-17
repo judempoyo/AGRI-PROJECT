@@ -28,6 +28,7 @@
 
 
                     </div>
+                    @if($product->Quantity)
 
                     <div class="sm:flex sm:items-center sm:gap-4 mt-6 sm:mt-8">
                         <a href="#" title=""
@@ -55,6 +56,10 @@
                             {{__('Add to cart')}}
                         </a>
                     </div>
+                    @else
+                    <p class="text-5xl center uppercase  font-extrabold leading-tight text-red-900 dark:text-red">
+                        {{__('Sold out')}}</p>
+                    @endif
 
                     <hr class="border-gray-200 dark:border-gray-800 my-6 md:my-8" />
 
@@ -67,7 +72,7 @@
         </div>
     </section>
 
-    
+
 
 
 </x-app-layout>

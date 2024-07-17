@@ -63,6 +63,13 @@
                     </li>
 
                     @endrole
+                    <li class="shrink-0">
+                        <div class="hidden sm:-my-px sm:ms-2 sm:flex">
+                            <x-nav-link :href="url('/show_deposits')" :active="request()->routeIs('show_deposits')"> {{ __('Deposits')
+                                }}
+                            </x-nav-link>
+                        </div>
+                    </li>
 
                     <li class="shrink-0">
                         <div class="hidden sm:-my-px sm:ms-2 sm:flex">
@@ -252,7 +259,7 @@
                         </div>
                     </div>
 
-                    <a href="#" title=""
+                    <a href="{{route('show_cart')}}" title=""
                         class="mb-2 me-2 inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                         role="button"> Proceed to Checkout </a>
                 </div>
@@ -389,6 +396,13 @@
                     </div>
                 </li>
                 @endrole
+                <li>
+                    <div class="pt-2 pb-3 space-y-1">
+                        <x-responsive-nav-link :href="route('show_deposits')" :active="request()->routeIs('show_deposits')">
+                            {{ __('Deposits') }}
+                        </x-responsive-nav-link>
+                    </div>
+                </li>
                 <li>
                     <div class="pt-2 pb-3 space-y-1">
                         <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('becomeGrower')">

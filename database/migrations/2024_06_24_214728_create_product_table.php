@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50)->unique();
-            $table->string('description', 250);
+            $table->string('description', 1000);
             $table->double('price');
             $table->integer('Quantity');
             $table->foreignId('deposit_id')->constrained('deposits')->cascadeOnDelete();

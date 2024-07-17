@@ -30,6 +30,21 @@ class HomeController extends Controller
         return view('welcome', compact('products', 'deposits', 'categories', 'sellUnits', 'images'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
+    public function show_cart()
+    {
+        return view('home.show_cart');
+    }
+
+    public function checkout()
+    {
+        return view('home.checkout');
+    }
+
+    public function show_deposits()
+    {
+        $deposits = Deposit::all();
+        return view('home.show_deposits', compact('deposits'));
+    }
     public function add_to_cart(Request $request)
     {
 

@@ -15,10 +15,10 @@ class Adress extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'street',
-        'neighborhood',
-        'town',
+        'adress',
         'city',
+        'state',
+        'user_id',
     ];
 
     public function user()

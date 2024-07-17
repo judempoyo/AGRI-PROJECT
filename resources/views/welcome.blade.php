@@ -94,7 +94,14 @@
 
 
                         <a href="{{ URL::to('/show_product/'.$product->id) }}"
-                            class="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white">{{$product->name}}</a>
+                            class="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white">{{$product->name}}
+                            @foreach ($sellUnits as $sellUnit )
+                            @if ($sellUnit->id == $product->sell_unit_id)
+                            {{ '['.$sellUnit->name.']' }}
+                            @break
+                            @endif
+                            @endforeach
+                        </a>
 
 
 
@@ -133,7 +140,7 @@
                                 </p>
                             </li>
                         </ul>
-
+                        @if($product->Quantity)
                         <div class="mt-4 flex items-center justify-between gap-4">
                             <p class="text-2xl font-extrabold leading-tight text-gray-900 dark:text-white"> {{
                                 $product->price
@@ -152,6 +159,18 @@
 
 
                         </div>
+                        @else
+                        <div class="mt-4 flex items-center justify-between gap-4">
+                            <p
+                                class="text-5xl center uppercase  font-extrabold leading-tight text-red-900 dark:text-red">
+                                {{__('Sold out')}}</p>
+
+
+
+                        </div>
+
+                        @endif
+
 
                     </div>
                 </div>

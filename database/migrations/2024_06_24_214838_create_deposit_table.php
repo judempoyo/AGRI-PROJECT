@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('name', 50);
             $table->string('adress', 100);
             $table->string('country', 50);
+            $table->string('description', 1000);
             $table->string('area');
+            $table->string('image', 255);
             $table->integer('maxCapacity');
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();

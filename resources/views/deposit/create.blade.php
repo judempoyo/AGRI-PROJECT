@@ -46,6 +46,15 @@
                         <x-input-error :messages="$errors->get('country')" class="mt-2" />
                     </div>
 
+                    <!-- description -->
+                    <div class="m-0 mt-2 w-full">
+                        <x-input-label for="description" :value="__('Description')" />
+
+                        <x-textarea id="description" class="block mt-1" rows="6" name="description" autofocus
+                            autocomplete="description">{{ old('description') }}</x-textarea>
+                        <x-input-error :messages="$errors->get('description')" class="mt-2" />
+                    </div>
+
                     <div class="mt-2 md:flex md:flex-row">
                         <!-- area -->
                         <div class="m-0 mt-2 w-full md:w-1/2">
@@ -64,6 +73,15 @@
 
                             <x-input-error :messages="$errors->get('maxCapacity')" class="mt-2" />
                         </div>
+                    </div>
+
+                    <!-- image -->
+                    <div class="m-0 mt-2 w-full">
+                        <x-input-label for="image" :value="__('image')" />
+                        <input
+                            class="block w-full text-lg text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                            id="large_size" type="file" accept="images/*" name="image" autofocus autocomplete="image" />
+                        <x-input-error :messages="$errors->get('image')" class="mt-2" />
                     </div>
 
                     @can('create_deposit')
