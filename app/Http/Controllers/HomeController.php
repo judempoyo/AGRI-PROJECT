@@ -8,8 +8,6 @@ use App\Models\Deposit;
 use App\Models\Categorie;
 use App\Models\SellUnit;
 use App\Models\ProductImage;
-use App\Http\Requests\StoreProductRequest;
-use App\Http\Requests\UpdateProductRequest;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
@@ -27,23 +25,18 @@ class HomeController extends Controller
         $sellUnits = SellUnit::all();
         $images = ProductImage::all();
 
-        return view('welcome', compact('products', 'deposits', 'categories', 'sellUnits', 'images'))->with('i', (request()->input('page', 1) - 1) * 5);
-    }
-
-    public function show_cart()
-    {
-        return view('home.show_cart');
+        return View('welcome', compact('products', 'deposits', 'categories', 'sellUnits', 'images'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function checkout()
     {
-        return view('home.checkout');
+        return View('home.checkout');
     }
 
     public function show_deposits()
     {
         $deposits = Deposit::all();
-        return view('home.show_deposits', compact('deposits'));
+        return View('home.show_deposits', compact('deposits'));
     }
     public function add_to_cart(Request $request)
     {
@@ -75,7 +68,7 @@ class HomeController extends Controller
         $sellUnits = SellUnit::all();
         $images = ProductImage::all();
 
-        return view('welcome', compact('products', 'deposits', 'categories', 'sellUnits', 'images'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return View('welcome', compact('products', 'deposits', 'categories', 'sellUnits', 'images'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function show_product()

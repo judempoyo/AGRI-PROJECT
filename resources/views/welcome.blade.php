@@ -1,7 +1,7 @@
 <x-app-layout>
     {{-- <img src="{{asset('storage/images/bg.jpg')}}" alt=""> --}}
     @auth
-    <div class="py-12">
+    <div class="py-3">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             @role('admin')
             <div class="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
@@ -24,7 +24,34 @@
     </div>
     @endauth
 
-    <section class="bg-gray-50 py-8 antialiased dark:bg-gray-900 md:py-12">
+    @if(isset($deposit))
+    <div class="mb-3 mx-3">
+        <x-create-button href="{{route('show_deposits')}}">{{__('Back')}}</x-create-button>
+    </div>
+    <div class="mb-4 mx-2 grid gap-4 sm:grid-cols-1 md:mb-4 lg:grid-cols-1 xl:grid-cols-1">
+
+        <div class="rounded-lg border border-gray-100 p-6 shadow-sm dark:border-gray-700 ">
+            <div class="pt-1">
+                <P class="text-lg font-semibold leading-tight text-gray-900 dark:text-white">
+                    {{$deposit->name}}
+                </P>
+                <P class="text-sm font-semibold leading-tight text-gray-900 dark:text-white">
+                    {{$deposit->adress.' / '.$deposit->country}}
+                </P>
+                <P class="text-sm font-semibold leading-tight text-gray-900 dark:text-white">
+                    {{$deposit->area.' m'}}<sup>2</sup>
+                </P>
+                <P class="text-sm font-semibold leading-tight text-gray-900 dark:text-white">
+                    {{$deposit->description}}
+                </P>
+
+            </div>
+        </div>
+
+
+    </div>
+    @endif
+    <section class="bg-gray-50 py-4 antialiased dark:bg-gray-900 md:py-6">
         <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
 
             <div class="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
@@ -146,16 +173,50 @@
                                 $product->price
                                 }}CDF</p>
 
-                            <a href="{{route('add_to_cart')}}"
-                                class="inline-flex items-center rounded-lg bg-green-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4  focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
-                                <svg class="-ms-2 me-2 h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6" />
-                                </svg>
-                                {{ __('Add to cart') }}
-                            </a>
+
+                        </div>
+                        <div class="mt-3">
+
+                            <form method="post" action="{{route('cart.add',$product)}}">
+
+                                @csrf
+                                <x-checkout-button 
+                                    class="">
+                                    <svg class="-ms-2 me-2 h-5 w-5" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                        viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6" />
+                                    </svg>
+                                    {{ __('Add to cart') }}
+                                </x-checkout-button>
+                                <div class="inline-flex items-center">
+                                    <button type="button" id="decrement-button"
+                                        data-input-counter-decrement="counter-input-{{ $product->name }}"
+                                        class="flex-shrink-0 bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+                                        <svg class="w-2.5 h-2.5 text-gray-900 dark:text-white" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="M1 1h16" />
+                                        </svg>
+                                    </button>
+                                    <x-number-input id="counter-input-{{ $product->name }}" data-input-counter
+                                        data-input-counter-min="1" data-input-counter-max="{{$product->Quantity}}" name="quantity"
+                                        value="1" class="max-w-[2.5rem]" required />
+
+                                    <button type="button" id="increment-button"
+                                        data-input-counter-increment="counter-input-{{ $product->name }}"
+                                        class="flex-shrink-0 bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+                                        <svg class="w-2.5 h-2.5 text-gray-900 dark:text-white" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="M9 1v16M1 9h16" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </form>
+
 
 
                         </div>

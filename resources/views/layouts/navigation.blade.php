@@ -65,7 +65,8 @@
                     @endrole
                     <li class="shrink-0">
                         <div class="hidden sm:-my-px sm:ms-2 sm:flex">
-                            <x-nav-link :href="url('/show_deposits')" :active="request()->routeIs('show_deposits')"> {{ __('Deposits')
+                            <x-nav-link :href="url('/show_deposits')" :active="request()->routeIs('show_deposits')"> {{
+                                __('Deposits')
                                 }}
                             </x-nav-link>
                         </div>
@@ -112,20 +113,33 @@
 
                 <div id="myCartDropdown1"
                     class="hidden z-10 mx-auto max-w-sm space-y-4 overflow-hidden rounded-lg bg-white p-4 antialiased shadow-lg dark:bg-gray-800">
+                    @if(session()->has('cart'))
 
+                    @if(!empty(session('cart')))
+                    @php
+                    $total = 0
+                    @endphp
+                    @foreach(session('cart') as $key => $value)
+                    @php
+                    $total += $value['unitPrice'] * $value['quantity'];
+                    @endphp
 
                     <div class="grid grid-cols-2">
                         <div>
-                            <a href="#"
-                                class="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline">Apple
-                                iPhone 15</a>
-                            <p class="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">$599</p>
+                            <a href=""
+                                class="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline">{{$value['name']}}</a>
+                            <p class="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">
+                                {{$value['unitPrice'].' CDF'}}</p>
                         </div>
 
                         <div class="flex items-center justify-end gap-6">
-                            <p class="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">Qty: 1</p>
+                            <p class="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">{{__('Qty')}}:
+                                {{$value['quantity']}}</p>
 
-                            <button data-tooltip-target="tooltipRemoveItem1a" type="button"
+
+
+
+                            <a data-tooltip-target="tooltipRemoveItem1a" href="d"
                                 class="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600">
                                 <span class="sr-only"> Remove </span>
                                 <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -134,7 +148,7 @@
                                         d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"
                                         clip-rule="evenodd" />
                                 </svg>
-                            </button>
+                            </a>
                             <div id="tooltipRemoveItem1a" role="tooltip"
                                 class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
                                 Remove item
@@ -142,126 +156,18 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
 
-                    <div class="grid grid-cols-2">
-                        <div>
-                            <a href="#"
-                                class="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline">Apple
-                                iPad Air</a>
-                            <p class="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">$499</p>
-                        </div>
 
-                        <div class="flex items-center justify-end gap-6">
-                            <p class="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">Qty: 1</p>
 
-                            <button data-tooltip-target="tooltipRemoveItem2a" type="button"
-                                class="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600">
-                                <span class="sr-only"> Remove </span>
-                                <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd"
-                                        d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                            <div id="tooltipRemoveItem2a" role="tooltip"
-                                class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
-                                Remove item
-                                <div class="tooltip-arrow" data-popper-arrow></div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="grid grid-cols-2">
-                        <div>
-                            <a href="#"
-                                class="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline">Apple
-                                Watch SE</a>
-                            <p class="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">$598</p>
-                        </div>
+                    <a href="{{route('cart')}}" title=""
+                        class="inline-flex items-center rounded-lg bg-green-700 px-5 py-2.5 text-sm font-medium text-white dark:text-white hover:bg-green-800 focus:outline-none focus:ring-4  focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 mx-1"
+                        role="button"> {{ __('Show the cart') }}</a>
+                    @else
 
-                        <div class="flex items-center justify-end gap-6">
-                            <p class="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">Qty: 2</p>
-
-                            <button data-tooltip-target="tooltipRemoveItem3b" type="button"
-                                class="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600">
-                                <span class="sr-only"> Remove </span>
-                                <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd"
-                                        d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                            <div id="tooltipRemoveItem3b" role="tooltip"
-                                class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
-                                Remove item
-                                <div class="tooltip-arrow" data-popper-arrow></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2">
-                        <div>
-                            <a href="#"
-                                class="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline">Sony
-                                Playstation 5</a>
-                            <p class="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">$799</p>
-                        </div>
-
-                        <div class="flex items-center justify-end gap-6">
-                            <p class="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">Qty: 1</p>
-
-                            <button data-tooltip-target="tooltipRemoveItem4b" type="button"
-                                class="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600">
-                                <span class="sr-only"> Remove </span>
-                                <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd"
-                                        d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                            <div id="tooltipRemoveItem4b" role="tooltip"
-                                class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
-                                Remove item
-                                <div class="tooltip-arrow" data-popper-arrow></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2">
-                        <div>
-                            <a href="#"
-                                class="truncate text-sm font-semibold leading-none text-gray-900 dark:text-white hover:underline">Apple
-                                iMac 20"</a>
-                            <p class="mt-0.5 truncate text-sm font-normal text-gray-500 dark:text-gray-400">$8,997</p>
-                        </div>
-
-                        <div class="flex items-center justify-end gap-6">
-                            <p class="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">Qty: 3</p>
-
-                            <button data-tooltip-target="tooltipRemoveItem5b" type="button"
-                                class="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600">
-                                <span class="sr-only"> Remove </span>
-                                <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    fill="currentColor" viewBox="0 0 24 24">
-                                    <path fill-rule="evenodd"
-                                        d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm7.7-3.7a1 1 0 0 0-1.4 1.4l2.3 2.3-2.3 2.3a1 1 0 1 0 1.4 1.4l2.3-2.3 2.3 2.3a1 1 0 0 0 1.4-1.4L13.4 12l2.3-2.3a1 1 0 0 0-1.4-1.4L12 10.6 9.7 8.3Z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                            <div id="tooltipRemoveItem5b" role="tooltip"
-                                class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
-                                Remove item
-                                <div class="tooltip-arrow" data-popper-arrow></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="{{route('show_cart')}}" title=""
-                        class="mb-2 me-2 inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                        role="button"> Proceed to Checkout </a>
+                    @endif
+                    @endif
                 </div>
 
                 @if (Route::has('login'))
@@ -305,17 +211,20 @@
                                     {{ __('Delivery Adresses') }}
                                 </x-dropdown-link>
                             </li>
+                            <li>
+                                <!-- Authentication -->
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+
+                                    <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                        {{ __('Log Out') }}
+                                    </x-dropdown-link>
+                                </form>
+                            </li>
                         </ul>
 
-                        <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
 
-                            <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Log Out') }}
-                            </x-dropdown-link>
-                        </form>
                     </div>
                     @else
                     <div class="hidden sm:-my-px sm:ms-2 sm:flex">
@@ -398,7 +307,8 @@
                 @endrole
                 <li>
                     <div class="pt-2 pb-3 space-y-1">
-                        <x-responsive-nav-link :href="route('show_deposits')" :active="request()->routeIs('show_deposits')">
+                        <x-responsive-nav-link :href="route('show_deposits')"
+                            :active="request()->routeIs('show_deposits')">
                             {{ __('Deposits') }}
                         </x-responsive-nav-link>
                     </div>
@@ -417,6 +327,26 @@
                         </x-responsive-nav-link>
                     </div>
                 </li>
+                @if (Route::has('login'))
+                @guest
+                <li>
+                    <div class="pt-2 pb-3 space-y-1">
+                        <x-responsive-nav-link :href="route('login')" :active="request()->routeIs('login')">
+                            {{ __('Log in') }}
+                        </x-responsive-nav-link>
+                    </div>
+                </li>
+
+                @if (Route::has('register'))
+                <div class="sm:-my-px sm:ms-2 sm:flex">
+                    <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
+                        {{ __('Register') }}
+                    </x-nav-link>
+                </div>
+                @endif
+                @endguest
+                @endif
+
 
 
             </ul>
