@@ -38,18 +38,11 @@ Route::resources([
     'productsImages' => ProductImageController::class,
 ]);
 
-Route::resource('home', HomeController::class)->only([
-    'index', 'show'
-]);
-
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout')->middleware('auth');
+Route::get('/show_deposits', [HomeController::class, 'show_deposits'])->name('show_deposits');
+Route::get('/order.today', [HomeController::class, 'today_deals'])->name('order.today');
 Route::get('/category/{id_cat}', [HomeController::class, 'show_product_by_category'])->name('product_by_category');
-
-Route::get('/carts', function () {
-    return view('home.cart');
-})->name('carts');
-
 
 Route::get('/cart', [CartController::class, 'show'])->name('cart');
 Route::post('/cart/add/{product}', [CartController::class, 'add'])->name('cart.add');
@@ -57,20 +50,17 @@ Route::get('/cart/remove/{product}', [CartController::class, 'remove'])->name('c
 Route::get('/cart/empty', [CartController::class, 'empty'])->name('cart.empty');
 
 
-Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout')->middleware('auth');
 
 
-Route::get('/show_deposits', [HomeController::class, 'show_deposits'])->name('show_deposits');
-
-Route::get('/show_product/{id}', function ($id) {
+Route::get('/product.show/{id}', function ($id) {
     $product = Product::findOrFail($id);
     $categories = Categorie::all();
     $sellUnits = SellUnit::all();
     $images = ProductImage::all();
     return view('home.show_product', compact('product', 'categories', 'sellUnits', 'images'));
-})->name('show_product');
+})->name('product.show');
 
-Route::get('/show_product_by_deposit/{id}', function ($id) {
+Route::get('/deposit/{id}', function ($id) {
     if ($id)
         $deposit = Deposit::findOrFail($id);
 
@@ -80,20 +70,8 @@ Route::get('/show_product_by_deposit/{id}', function ($id) {
     $sellUnits = SellUnit::all();
     $images = ProductImage::all();
     return view('welcome', compact('products', 'categories', 'sellUnits', 'images', 'deposits', 'deposit'));
-})->name('show_product_by_deposit');
+})->name('deposit');
 
-
-/* Route::get('/', function () {
-    return view('welcome');
-})->name('home'); */
-
-
-
-
-/*
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard'); */
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

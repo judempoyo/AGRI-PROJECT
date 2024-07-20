@@ -63,7 +63,7 @@
                         @foreach ($images as $image )
                         @if ($image->product_id == $product->id)
 
-                        <a href="{{ URL::to('/show_product/'.$product->id) }}">
+                        <a href="{{ URL::to('/product.show/'.$product->id) }}">
                             <img class="mx-auto h-full dark:hidden"
                                 src="{{asset('storage/images/uploads/products/'.$image->image )}}"
                                 alt="{{ $image->image }}" />
@@ -120,7 +120,7 @@
 
 
 
-                        <a href="{{ URL::to('/show_product/'.$product->id) }}"
+                        <a href="{{ URL::to('/product.show/'.$product->id) }}"
                             class="text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white">{{$product->name}}
                             @foreach ($sellUnits as $sellUnit )
                             @if ($sellUnit->id == $product->sell_unit_id)

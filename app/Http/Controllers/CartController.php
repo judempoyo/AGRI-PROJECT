@@ -64,7 +64,7 @@ class CartController extends Controller
     {
         session()->forget('cart');
 
-        return redirect()->back();
+        return redirect(route('home'));
     }
 
     /* protected $cartReposirtory;

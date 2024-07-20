@@ -9,7 +9,7 @@
 
                 <div
                     class="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-                    <a href="{{ URL::to('/show_product_by_deposit/'.$deposit->id) }}">
+                    <a href="{{ URL::to('/deposit/'.$deposit->id) }}">
                         <div class="h-56 w-full">
 
 

@@ -54,7 +54,7 @@
                     <tbody>
                         @foreach ($deposits as $deposit)
                         <tr
-                            class="dark:border-gray-700 bg-white hover:bg-gray-600 dark:hover:bg-gray-600 dark:bg-gray-800 border-b">
+                            class="dark:border-gray-700 bg-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:bg-gray-800 border-b">
 
                             <td class="px-6 py-4">{{ ++$i }}</td>
                             <th scope="row"
@@ -72,7 +72,8 @@
 
                                     </x-view-button>
                                     @can('update_deposit')
-                                    <x-edit-button class="ms-3 mb-3 " href="{{ URL::to('deposits/'.$deposit->id.'/edit')}}">
+                                    <x-edit-button class="ms-3 mb-3 "
+                                        href="{{ URL::to('deposits/'.$deposit->id.'/edit')}}">
 
                                     </x-edit-button>
                                     @endcan

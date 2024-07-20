@@ -26,7 +26,7 @@
                     @role('customer')
                     <li class="shrink-0">
                         <div class="hidden sm:-my-px sm:ms-2 sm:flex">
-                            <x-nav-link :href="url('/home')" :active="request()->routeIs('becomeGrower')"> {{
+                            <x-nav-link :href="url('/')" :active="request()->routeIs('becomeGrower')"> {{
                                 __('Become a
                                 grower') }}
                             </x-nav-link>
@@ -74,7 +74,7 @@
 
                     <li class="shrink-0">
                         <div class="hidden sm:-my-px sm:ms-2 sm:flex">
-                            <x-nav-link :href="url('/home')" :active="request()->routeIs('grower')"> {{ __('Grower
+                            <x-nav-link :href="url('/')" :active="request()->routeIs('grower')"> {{ __('Grower
                                 space')
                                 }}
                             </x-nav-link>
@@ -83,7 +83,8 @@
 
                     <li class="shrink-0">
                         <div class="hidden sm:-my-px sm:ms-2 sm:flex">
-                            <x-nav-link :href="url('/')" :active="request()->routeIs('grower')"> {{ __('Today\'s Deals')
+                            <x-nav-link :href="url('/order.today')" :active="request()->routeIs('order.today')"> {{
+                                __('Today\'s Deals')
                                 }}
                             </x-nav-link>
                         </div>
@@ -114,8 +115,9 @@
                 <div id="myCartDropdown1"
                     class="hidden z-10 mx-auto max-w-sm space-y-4 overflow-hidden rounded-lg bg-white p-4 antialiased shadow-lg dark:bg-gray-800">
                     @if(session()->has('cart'))
+                    @php //dd(session('cart'))@endphp
 
-                    @if(!empty(session('cart')))
+                    @if(session('cart') != [])
                     @php
                     $total = 0
                     @endphp
@@ -139,7 +141,8 @@
 
 
 
-                            <a data-tooltip-target="tooltipRemoveItem1a" href="d"
+                            <a data-tooltip-target="tooltipRemoveItem1a"
+                                href="{{ URL::to('/cart/remove/'.$value['id']) }}"
                                 class="text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-600">
                                 <span class="sr-only"> Remove </span>
                                 <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -165,7 +168,12 @@
                         class="inline-flex items-center rounded-lg bg-green-700 px-5 py-2.5 text-sm font-medium text-white dark:text-white hover:bg-green-800 focus:outline-none focus:ring-4  focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 mx-1"
                         role="button"> {{ __('Show the cart') }}</a>
                     @else
+                    <div class="grid grid-cols-2">
+                        <p class="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">
+                            {{__('Your cart is empty')}}</p>
 
+                    </div>
+                    <x-create-button href="{{route('home')}}" title=""> {{ __('Go to shopping') }}</x-create-button>
                     @endif
                     @endif
                 </div>
@@ -322,7 +330,7 @@
                 </li>
                 <li>
                     <div class="pt-2 pb-3 space-y-1">
-                        <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('becomeGrower')">
+                        <x-responsive-nav-link :href="route('order.today')" :active="request()->routeIs('order.today')">
                             {{ __('Today\'s Deals') }}
                         </x-responsive-nav-link>
                     </div>
@@ -338,11 +346,13 @@
                 </li>
 
                 @if (Route::has('register'))
-                <div class="sm:-my-px sm:ms-2 sm:flex">
-                    <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
-                        {{ __('Register') }}
-                    </x-nav-link>
-                </div>
+                <li>
+                    <div class="pt-2 pb-3 space-y-1">
+                        <x-responsive-nav-link :href="route('register')" :active="request()->routeIs('register')">
+                            {{ __('Register') }}
+                        </x-responsive-nav-link>
+                    </div>
+                </li>
                 @endif
                 @endguest
                 @endif

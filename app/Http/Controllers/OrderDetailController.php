@@ -29,7 +29,16 @@ class OrderDetailController extends Controller
      */
     public function store(StoreOrderDetailRequest $request)
     {
-        //
+        $orderDetail = OrderDetail::create([
+            'unitPrice' => $request->unitPrice,
+            'quantity' => $request->quantity,
+            'subTotal' => $request->unitPrice * $request->quantity,
+            /*'product_id' => $request->id,
+             'order_id' => $request->order_id, */
+
+        ]);
+
+        $orderDetail->save();
     }
 
     /**
@@ -61,6 +70,8 @@ class OrderDetailController extends Controller
      */
     public function destroy(OrderDetail $orderDetail)
     {
-        //
+        $orderDetail->delete();
+
+        return redirect()->back();
     }
 }

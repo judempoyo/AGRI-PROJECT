@@ -15,15 +15,16 @@ class Order extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'ref',
         'date',
         'total',
+        'name',
+        'email',
+        'phone',
         'payment_method',
         'delivery_method',
         'delivery_adress',
         'state',
         'customer_id',
-        'grower_id',
     ];
 
     public function user()

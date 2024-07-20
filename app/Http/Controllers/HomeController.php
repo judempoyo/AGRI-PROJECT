@@ -8,6 +8,7 @@ use App\Models\Deposit;
 use App\Models\Categorie;
 use App\Models\SellUnit;
 use App\Models\ProductImage;
+use App\Models\Order;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
@@ -38,21 +39,13 @@ class HomeController extends Controller
         $deposits = Deposit::all();
         return View('home.show_deposits', compact('deposits'));
     }
-    public function add_to_cart(Request $request)
+    public function today_deals()
     {
 
-        /* if ($request->session()->has('panier')) {
-            //$request->session()->forget('panier');
-        } else {
-            $request->session()->put('panier', []);
+        $orders = Order::all()->where('customer_id', Auth::user()->id)
+                            ->where('date',today());
 
-            $request->session()->push('panier', [
-                'product_id' => 1,
-                'quantity' => 2,
-                'unit_price' => 1500,
-                'subTotal' => (int)'unit_price' * (int)'quantity'
-            ]);
-        } */
+        return view('home.today_deals', compact('orders'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function show_product_by_category($id_cat)

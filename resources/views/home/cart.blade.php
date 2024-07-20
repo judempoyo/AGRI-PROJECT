@@ -2,8 +2,22 @@
 
 
     <section class="bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
-        @if(session()->has('cart'))
-        @if(!empty(session('cart')))
+        @php
+        dd(session())
+        @endphp
+
+        @elseif (session()->missing('cart'))
+        <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">{{ __('you dont have anything in
+                your cart') }}</h2>
+            <div class="my-4">
+                <x-create-button href="{{route('home')}}">
+                    {{ __('Go to home') }}
+                </x-create-button>
+            </div>
+        </div>
+        @elseif(session()->has('cart'))
+        @if((session('cart') !== null ))
 
         <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
             <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">{{ __('Shopping Cart') }}</h2>
@@ -122,16 +136,7 @@
                 </div>
             </div>
         </div>
-        @else
-        <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">{{ __('you dont have anything in
-                your cart') }}</h2>
-            <div class="my-4">
-                <x-create-button href="{{route('home')}}">
-                    {{ __('Go to home') }}
-                </x-create-button>
-            </div>
-        </div>
+        
         @endif
         @endif
     </section>

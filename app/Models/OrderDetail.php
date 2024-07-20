@@ -18,6 +18,8 @@ class OrderDetail extends Model
         'quantity',
         'unitPrice',
         'subTotal',
+        'product_id',
+        'order_id',
     ];
 
     public function order()

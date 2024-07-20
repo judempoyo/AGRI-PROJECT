@@ -29,9 +29,6 @@
                                 N°
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                {{ __('Ref')}}
-                            </th>
-                            <th scope="col" class="px-6 py-3">
                                 {{ __('Date')}}
                             </th>
                             <th scope="col" class="px-6 py-3">
@@ -41,11 +38,24 @@
                                 {{ __('State')}}
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                {{ __('Customer')}}
+                                {{ __('name')}}
+                            </th>
+
+                            <th scope="col" class="px-6 py-3">
+                                {{ __('Phone')}}
+                            </th>
+
+                            <th scope="col" class="px-6 py-3">
+                                {{ __('Adress')}}
+                            </th>
+
+                            <th scope="col" class="px-6 py-3">
+                                {{ __('Payment method')}}
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                {{ __('Grower')}}
+                                {{ __('Delivery method')}}
                             </th>
+
                             <th scope="col" class="px-6 py-3">
                                 <span class="sr-only">Action
                             </th>
@@ -54,17 +64,19 @@
                     <tbody>
                         @foreach ($orders as $order)
                         <tr
-                            class="dark:border-gray-700 bg-white hover:bg-gray-600 dark:hover:bg-gray-600 dark:bg-gray-800 border-b">
+                            class="dark:border-gray-700 bg-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:bg-gray-800 border-b">
 
                             <td class="px-6 py-4">{{ ++$i }}</td>
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">{{
-                                $order->ref }}</th>
-                            <td class="px-6 py-4">{{ $order->date }}</td>
+                                $order->date }}</th>
                             <td class="px-6 py-4">{{ $order->total }}</td>
                             <td class="px-6 py-4">{{ $order->state }}</td>
-                            <td class="px-6 py-4">{{ $order->customer_id }}</td>
-                            <td class="px-6 py-4">{{ $order->grower_id }}</td>
+                            <td class="px-6 py-4">{{ $order->name }}</td>
+                            <td class="px-6 py-4">{{ $order->phone }}</td>
+                            <td class="px-6 py-4">{{ $order->delivery_adress }}</td>
+                            <td class="px-6 py-4">{{ $order->payment_method }}</td>
+                            <td class="px-6 py-4">{{ $order->delivery_method }}</td>
                             <td class="text-right px-6 py-4">
 
                                 <form action="{{ route('orders.destroy',$order->id) }}" method="POST">

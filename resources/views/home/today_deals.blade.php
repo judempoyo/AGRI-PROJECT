@@ -1,29 +1,27 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-            {{ __('Product') }}
+            {{ __('order') }}
         </h2>
     </x-slot>
-
-
 
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
 
-            @can('create_product')
+            @can('create_order')
             <div class="row text-gray-800 dark:text-gray-200 w-ful flex justify-end">
-                <x-create-button class="ms-3 mb-3 " :href="route('products.create')">
-                    {{__('Create product')}}
+                <x-create-button class="ms-3 mb-3 " :href="route('orders.create')">
+                    {{__('Create order')}}
                 </x-create-button>
             </div>
             @endcan
 
 
-            @can('view_product')
+            @can('view_order')
             <div class="relative shadow-md sm:rounded-lg overflow-x-auto">
                 <table class="rtl:text-right w-full text-gray-500 text-left text-sm dark:text-gray-400">
                     <caption class="caption-top">
-                        {{ __('List of your available product')}}
+                        {{ __('List of your tody\'s order')}}
                     </caption>
                     <thead class="bg-gray-50 dark:bg-gray-700 text-gray-700 text-xs dark:text-gray-400 uppercase">
                         <tr>
@@ -31,80 +29,69 @@
                                 N°
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                {{ __('Name')}}
+                                {{ __('Date')}}
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                {{ __('Description')}}
+                                {{ __('Total')}}
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                {{ __('price')}}
+                                {{ __('State')}}
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                {{ __('Quantity')}}
+                                {{ __('name')}}
+                            </th>
+
+                            <th scope="col" class="px-6 py-3">
+                                {{ __('Phone')}}
+                            </th>
+
+                            <th scope="col" class="px-6 py-3">
+                                {{ __('Adress')}}
+                            </th>
+
+                            <th scope="col" class="px-6 py-3">
+                                {{ __('Payment method')}}
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                {{ __('Deposit')}}
+                                {{ __('Delivery method')}}
                             </th>
-                            <th scope="col" class="px-6 py-3">
-                                {{ __('Category')}}
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                {{ __('Sell unit')}}
-                            </th>
+
                             <th scope="col" class="px-6 py-3">
                                 <span class="sr-only">Action
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($products as $product)
+                        @foreach ($orders as $order)
                         <tr
                             class="dark:border-gray-700 bg-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:bg-gray-800 border-b">
 
                             <td class="px-6 py-4">{{ ++$i }}</td>
                             <th scope="row"
                                 class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">{{
-                                $product->name }}</th>
-                            <td class="px-6 py-4">{{ $product->description }}</td>
-                            <td class="px-6 py-4">{{ $product->price }}</td>
-                            <td class="px-6 py-4">{{ $product->Quantity }}</td>
-                            <td class="px-6 py-4">
-                                @foreach($deposits as $deposit)
-                                @if($deposit->id == $product->deposit_id)
-                                {{ $deposit->name }}
-                                @endif
-                                @endforeach
-                            </td>
-                            <td class="px-6 py-4">
-                                @foreach($categories as $categorie)
-                                @if($categorie->id == $product->category_id)
-                                {{ $categorie->name }}
-                                @endif
-                                @endforeach
-                            </td>
-                            <td class="px-6 py-4">
-                                @foreach($sellUnits as $sellUnit)
-                                @if($sellUnit->id == $product->sell_unit_id)
-                                {{ $sellUnit->name }}
-                                @endif
-                                @endforeach
-                            </td>
+                                $order->date }}</th>
+                            <td class="px-6 py-4">{{ $order->total }}</td>
+                            <td class="px-6 py-4">{{ $order->state }}</td>
+                            <td class="px-6 py-4">{{ $order->name }}</td>
+                            <td class="px-6 py-4">{{ $order->phone }}</td>
+                            <td class="px-6 py-4">{{ $order->delivery_adress }}</td>
+                            <td class="px-6 py-4">{{ $order->payment_method }}</td>
+                            <td class="px-6 py-4">{{ $order->delivery_method }}</td>
                             <td class="text-right px-6 py-4">
 
-                                <form action="{{ route('products.destroy',$product->id) }}" method="POST">
-                                    <x-view-button class="ms-3 mb-3 " href="{{ URL::to('products/'.$product->id) }}">
+                                <form action="{{ route('orders.destroy',$order->id) }}" method="POST">
+                                    <x-view-button class="ms-3 mb-3 " href="{{ URL::to('orders/'.$order->id) }}">
 
                                     </x-view-button>
-                                    @can('update_product')
-                                    <x-edit-button class="ms-3 mb-3 "
-                                        href="{{ URL::to('products/'.$product->id.'/edit')}}">
+                                    @can('update_order')
+                                    <x-edit-button class="ms-3 mb-3 " href="{{ URL::to('orders/'.$order->id.'/edit')}}">
 
                                     </x-edit-button>
                                     @endcan
                                     @csrf
                                     @method('DELETE')
 
-                                    @can('delete_product')
+                                    @can('delete_order')
 
 
                                     <x-delete-button class="ms-3 mb-3">
