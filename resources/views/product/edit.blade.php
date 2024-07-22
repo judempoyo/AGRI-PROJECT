@@ -85,17 +85,17 @@
                     <div class="mt-2 w-full flex">
                         <!-- category -->
                         <div class="mr-2 mt-2 w-full">
-                            <x-input-label for="category_id" :value="__('Category')" />
-                            <x-select id="category_id" class="block mt-1 w-full" name="category_id" autofocus
-                                autocomplete="category_id">
+                            <x-input-label for="categorie_id" :value="__('Category')" />
+                            <x-select id="categorie_id" class="block mt-1 w-full" name="categorie_id" autofocus
+                                autocomplete="categorie_id">
                                 <option value="" selected disabled>{{__('-- Select a categorie --')}}</option>
                                 @foreach($categories as $categorie)
-                                <option value="{{ $categorie->id }}" @if ($categorie->id == $product->category_id
+                                <option value="{{ $categorie->id }}" @if ($categorie->id == $product->categorie_id
                                     ){{'selected'}} @endif
                                     >{{$categorie->name}}</option>
                                 @endforeach
                             </x-select>
-                            <x-input-error :messages="$errors->get('category_id')" class="mt-2" />
+                            <x-input-error :messages="$errors->get('categorie_id')" class="mt-2" />
                         </div>
 
                         <!-- deposit-->

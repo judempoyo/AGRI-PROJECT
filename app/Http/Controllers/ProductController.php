@@ -23,17 +23,17 @@ class ProductController extends Controller
 
 
 
-    public function __construct(){
-
+    public function __construct()
+    {
     }
-    public function index() : View
+    public function index(): View
     {
         $products = Product::latest()->paginate(5)->where('user_id', Auth::user()->id);
         $deposits = Deposit::all()->where('user_id', Auth::user()->id);
         $categories = Categorie::all();
         $sellUnits = SellUnit::all();
 
-        return view('product.index', compact('products','deposits','categories','sellUnits'))->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('product.index', compact('products', 'deposits', 'categories', 'sellUnits'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -45,7 +45,7 @@ class ProductController extends Controller
         $categories = Categorie::all();
         $sellUnits = SellUnit::all();
 
-        return view('product.create',  compact('deposits','categories','sellUnits'));
+        return view('product.create',  compact('deposits', 'categories', 'sellUnits'));
     }
 
     /**
@@ -54,36 +54,23 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request)
     {
 
-        //$images = array();
-        //dd($request);
-        /* $request->validate([
-            'name' => ['required', 'string', 'max:50'],
-            'description' => ['required', 'string', 'max:200'],
-            'price' => ['required', 'decimal:2'],
-            'quantity' => ['required', 'int'],
-            'deposit_id' => ['required', 'iint'],
-            'category_id' => ['required', 'int'],
-            'sell_unit_id' => ['required', 'int'],
-            'user_id' => ['required']
-        ]); */
-
         $product = Product::create([
             'name' => $request->name,
             'description' => $request->description,
             'price' => $request->price,
             'quantity' => $request->quantity,
             'deposit_id' => $request->deposit_id,
-            'category_id' => $request->category_id,
+            'categorie_id' => $request->categorie_id,
             'sell_unit_id' => $request->sell_unit_id,
             'user_id' => $request->user_id,
-            
+
         ]);
 
         $product->save();
 
-        if($files = $request->file('images')) {
+        if ($files = $request->file('images')) {
             foreach ($files as $file) {
-                $name = time().'_'.$file->getClientOriginalName();
+                $name = time() . '_' . $file->getClientOriginalName();
                 $file->move('storage/images/uploads/products/', $name);
                 //$images[] = $name;
 
@@ -91,20 +78,8 @@ class ProductController extends Controller
                     'image' => $name,
                     'product_id' => $product->id,
                 ]);
-                
-
             }
         }
-
-        //dd($images);
-
-        
-
-        //dd($deposit);
-        //dd(Auth::user());
-        //Deposit::save()
-
-
 
         return redirect(route('products.index'));
     }
@@ -112,26 +87,26 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product) : View
+    public function show(Product $product): View
     {
         $product_id = $product->id;
-        $images = ProductImage::all()->where('product_id',$product_id);
+        $images = ProductImage::all()->where('product_id', $product_id);
         $deposits = Deposit::all()->where('user_id', Auth::user()->id);
         $categories = Categorie::all();
         $sellUnits = SellUnit::all();
-        return view('product.show', compact('product', 'images','categories','deposits','sellUnits'));
+        return view('product.show', compact('product', 'images', 'categories', 'deposits', 'sellUnits'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Product $product) : View
+    public function edit(Product $product): View
     {
         $deposits = Deposit::all()->where('user_id', Auth::user()->id);
         $categories = Categorie::all();
         $sellUnits = SellUnit::all();
 
-        return view('product.edit', compact('product', 'deposits','categories','sellUnits'));
+        return view('product.edit', compact('product', 'deposits', 'categories', 'sellUnits'));
     }
 
     /**
@@ -139,31 +114,17 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-
-        //dd($request);
-        /* $request->validate([
-            'name' => ['string', 'max:50'],
-            'description' => ['string', 'max:200'],
-            'price' => ['decimal:2'],
-            'quantity' => ['int'],
-            'deposit_id' => ['int'],
-            'category_id' => ['int'],
-            'sell_unit_id' => ['int'],
-        ]); */
-
         $product->update([
             'name' => $request->name,
             'description' => $request->description,
             'price' => $request->price,
             'quantity' => $request->quantity,
             'deposit_id' => $request->deposit_id,
-            'category_id' => $request->category_id,
+            'categorie_id' => $request->categorie_id,
             'sell_unit_id' => $request->sell_unit_id,
         ]);
 
         return redirect(route('products.index'));
-
-
     }
 
     /**

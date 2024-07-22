@@ -21,7 +21,7 @@ class Product extends Model
         'quantity',
         'sell_unit_id',
         'deposit_id',
-        'category_id',
+        'categorie_id',
         'user_id',
     ];
 

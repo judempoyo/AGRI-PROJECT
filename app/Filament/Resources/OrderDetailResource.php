@@ -17,7 +17,7 @@ class OrderDetailResource extends Resource
 {
     protected static ?string $model = OrderDetail::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-queue-list';
 
     public static function form(Form $form): Form
     {
@@ -73,7 +73,7 @@ class OrderDetailResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                //Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -93,8 +93,8 @@ class OrderDetailResource extends Resource
     {
         return [
             'index' => Pages\ListOrderDetails::route('/'),
-            'create' => Pages\CreateOrderDetail::route('/create'),
-            'edit' => Pages\EditOrderDetail::route('/{record}/edit'),
+            //'create' => Pages\CreateOrderDetail::route('/create'),
+            //'edit' => Pages\EditOrderDetail::route('/{record}/edit'),
         ];
     }
 }

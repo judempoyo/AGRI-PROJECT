@@ -11,7 +11,7 @@ class StoreAdressRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class StoreAdressRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'adress' => ['required', 'string', 'max:255'],
+            'city' => ['required', 'string', 'max:100'],
+            'state' => ['required', 'string', 'max:100'],
         ];
     }
 }

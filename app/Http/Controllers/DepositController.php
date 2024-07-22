@@ -37,18 +37,6 @@ class DepositController extends Controller
 
     public function store(StoreDepositRequest $request): RedirectResponse
     {
-
-        //dd($request);
-        /* 
-        $request->validate([
-            'name' => ['required', 'string', 'max:50', 'unique:' . Deposit::class],
-            'adress' => ['required', 'string', 'max:200'],
-            'country' => ['required', 'string', 'max:100'],
-            'area' => ['required', 'string', 'max:20'],
-            'maxCapacity' => ['required', 'string'],
-            'user_id' => ['required']
-        ]); */
-
         $file = $request->file('image');
         $name = time() . '_' . $file->getClientOriginalName();
         //dd($name);
@@ -64,17 +52,9 @@ class DepositController extends Controller
             'image' => $name,
             'maxCapacity' => $request->maxCapacity,
             'user_id' => $request->user_id,
-            /* 'created_at' => now(),
-            'updated_at' => now(), */
         ]);
 
         $deposit->save();
-
-        //dd($deposit);
-        //dd(Auth::user());
-        //Deposit::save()
-
-
 
         return redirect(route('deposits.index'));
     }
@@ -100,26 +80,12 @@ class DepositController extends Controller
      */
     public function update(UpdateDepositRequest $request, Deposit $deposit)
     {
-        /* $request->validate([
-            'name' => ['string', 'max:50'],
-            'adress' => ['string', 'max:200'],
-            'country' => ['string', 'max:100'],
-            'area' => ['string', 'max:20'],
-            'maxCapacity' => ['string'],
-        ]); */
-
-        //File::delete('storage/images/uploads/deposits/' . $deposit->image);
-        //dd($request);
+        File::delete('storage/images/uploads/deposits/' . $deposit->image);
         $file = $request->image;
-        //dd($file);
 
         $name = time() . '_' . $file->getClientOriginalName();
-        //dd($name);
 
         $file->move('storage/images/uploads/deposits/', $name);
-        //$images[] = $name;
-
-
 
         $deposit->update([
             'name' => $request->name,

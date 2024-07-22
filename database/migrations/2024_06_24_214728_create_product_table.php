@@ -18,7 +18,7 @@ return new class extends Migration
             $table->double('price');
             $table->integer('Quantity');
             $table->foreignId('deposit_id')->constrained('deposits')->cascadeOnDelete();
-            $table->foreignId('category_id')->constrained('categories')->cascadeOnDelete();
+            $table->foreignId('categorie_id')->constrained('categories')->cascadeOnDelete();
             $table->foreignId('sell_unit_id')->constrained('sell_units')->cascadeOnDelete();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();

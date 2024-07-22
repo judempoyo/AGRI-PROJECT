@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Adress;
 use App\Http\Requests\StoreAdressRequest;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\UpdateAdressRequest;
 
 class AdressController extends Controller
@@ -13,7 +14,9 @@ class AdressController extends Controller
      */
     public function index()
     {
-        //
+        $adresses = Adress::all()->where('user_id', Auth::user()->id);
+
+        return View('adresses.index', compact('adresses'));
     }
 
     /**
@@ -21,7 +24,7 @@ class AdressController extends Controller
      */
     public function create()
     {
-        //
+        return view('adresses.create');
     }
 
     /**
@@ -29,7 +32,16 @@ class AdressController extends Controller
      */
     public function store(StoreAdressRequest $request)
     {
-        //
+        $adress = Adress::create([
+            'adress' => $request->adress,
+            'city' => $request->city,
+            'state' => $request->state,
+            'user_id' => Auth::user()->id,
+        ]);
+
+        $adress->save();
+
+        return redirect(route('adresses.index'));
     }
 
     /**
@@ -45,7 +57,7 @@ class AdressController extends Controller
      */
     public function edit(Adress $adress)
     {
-        //
+        return view('adresses.edit', compact('adress'));
     }
 
     /**
@@ -53,7 +65,13 @@ class AdressController extends Controller
      */
     public function update(UpdateAdressRequest $request, Adress $adress)
     {
-        //
+        $adress->update([
+            'adress' => $request->adress,
+            'city' => $request->city,
+            'state' => $request->state,
+        ]);
+
+        return redirect()->back();
     }
 
     /**

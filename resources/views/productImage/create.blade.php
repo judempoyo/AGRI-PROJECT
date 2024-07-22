@@ -25,7 +25,7 @@
                         <img src="{{ asset('storage/images/uploads/products/')}}" width="500" height="500" alt="image"
                             class="">
                     </div>
-                    <input type="hidden" name="product_id" value="{{ $product_id }}">
+                    <input type="hidden" name="product_id" value="{{ $_GET['product_id'] }}">
                     <!-- image -->
                     <div class="m-0 mt-2 w-full">
                         <x-input-label for="image" :value="__('image')" />

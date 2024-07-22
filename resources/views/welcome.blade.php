@@ -143,7 +143,7 @@
                                 </svg>
                                 <p class="text-sm font-medium text-gray-500 dark:text-gray-400">
                                     @foreach ($categories as $categorie )
-                                    @if ($categorie->id == $product->category_id)
+                                    @if ($categorie->id == $product->categorie_id)
                                     {{ $categorie->name }}
                                     @break
                                     @endif
@@ -180,8 +180,7 @@
                             <form method="post" action="{{route('cart.add',$product)}}">
 
                                 @csrf
-                                <x-checkout-button 
-                                    class="">
+                                <x-checkout-button class="">
                                     <svg class="-ms-2 me-2 h-5 w-5" aria-hidden="true"
                                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                                         viewBox="0 0 24 24">
@@ -202,8 +201,8 @@
                                         </svg>
                                     </button>
                                     <x-number-input id="counter-input-{{ $product->name }}" data-input-counter
-                                        data-input-counter-min="1" data-input-counter-max="{{$product->Quantity}}" name="quantity"
-                                        value="1" class="max-w-[2.5rem]" required />
+                                        data-input-counter-min="1" data-input-counter-max="{{$product->Quantity}}"
+                                        name="quantity" value="1" class="max-w-[2.5rem]" required />
 
                                     <button type="button" id="increment-button"
                                         data-input-counter-increment="counter-input-{{ $product->name }}"

@@ -62,64 +62,69 @@
                                 </div>
                             </div>
 
-                            <div>
-                                <label for="delivery_adress"
-                                    class="block mb-2 font-medium text-gray-900 text-sm dark:text-white">
-                                    {{__('Adress')}}* </label>
-                                <input type="text" id="delivery_adress" name="delivery_adress"
-                                    class="block border-gray-300 focus:border-green-500 dark:focus:border-green-500 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 border rounded-lg w-full text-gray-900 text-sm focus:ring-green-500 dark:text-white dark:placeholder:text-gray-400 dark:focus:ring-green-500"
-                                    placeholder="Av rashidi N°20/Q. Kasapa/C. Annexe"
-                                    value="{{ old('delivery_adress') }}" />
-                                <x-input-error :messages="$errors->get('delivery_adress')" class="mt-2" />
-                            </div>
+                            <form method="post" action="{{ route('adresses.store') }}" id="saveAdress">
 
-                            <div>
-                                <div class="flex items-center gap-2 mb-2">
-                                    <label for="select-state-input-3"
-                                        class="block font-medium text-gray-900 text-sm dark:text-white">
-                                        {{__('State')}}* </label>
+
+                                <div>
+                                    <label for="delivery_adress"
+                                        class="block mb-2 font-medium text-gray-900 text-sm dark:text-white">
+                                        {{__('Adress')}}* </label>
+                                    <input type="text" id="delivery_adress" name="delivery_adress"
+                                        class="block border-gray-300 focus:border-green-500 dark:focus:border-green-500 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 border rounded-lg w-full text-gray-900 text-sm focus:ring-green-500 dark:text-white dark:placeholder:text-gray-400 dark:focus:ring-green-500"
+                                        placeholder="Av rashidi N°20/Q. Kasapa/C. Annexe"
+                                        value="{{ old('delivery_adress') }}" />
+                                    <x-input-error :messages="$errors->get('delivery_adress')" class="mt-2" />
                                 </div>
-                                <select id="select-state-input-3" name="state"
-                                    class="block border-gray-300 focus:border-green-500 dark:focus:border-green-500 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 border rounded-lg w-full text-gray-900 text-sm focus:ring-green-500 dark:text-white dark:placeholder:text-gray-400 dark:focus:ring-green-500">
-                                    <option selected value="Haut-katanga">Haut-katanga</option>
-                                    <option value="Lualaba">Lualaba</option>
-                                    <option value="haut-lomami">Haut-lomami</option>
-                                </select>
-                                <x-input-error :messages="$errors->get('state')" class="mt-2" />
-                            </div>
 
-                            <div>
-                                <div class="flex items-center gap-2 mb-2">
-                                    <label for="select-city-input-3"
-                                        class="block font-medium text-gray-900 text-sm dark:text-white">
-                                        {{__('City')}}*
-                                    </label>
+                                <div>
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <label for="select-state-input-3"
+                                            class="block font-medium text-gray-900 text-sm dark:text-white">
+                                            {{__('State')}}* </label>
+                                    </div>
+                                    <select id="select-state-input-3" name="state"
+                                        class="block border-gray-300 focus:border-green-500 dark:focus:border-green-500 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 border rounded-lg w-full text-gray-900 text-sm focus:ring-green-500 dark:text-white dark:placeholder:text-gray-400 dark:focus:ring-green-500">
+                                        <option selected value="Haut-katanga">Haut-katanga</option>
+                                        <option value="Lualaba">Lualaba</option>
+                                        <option value="haut-lomami">Haut-lomami</option>
+                                    </select>
+                                    <x-input-error :messages="$errors->get('state')" class="mt-2" />
                                 </div>
-                                <select id="select-city-input-3" name="city"
-                                    class="block border-gray-300 focus:border-green-500 dark:focus:border-green-500 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 border rounded-lg w-full text-gray-900 text-sm focus:ring-green-500 dark:text-white dark:placeholder:text-gray-400 dark:focus:ring-green-500">
-                                    <option selected value="Lubumbashi">Lubumbashi</option>
-                                    <option value="Kolwezi">Kolwezi</option>
-                                    <option value="Likasi">Likasi</option>
-                                    <option value="kamina">kamina</option>
-                                </select>
-                                <x-input-error :messages="$errors->get('city')" class="mt-2" />
-                            </div>
+
+                                <div>
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <label for="select-city-input-3"
+                                            class="block font-medium text-gray-900 text-sm dark:text-white">
+                                            {{__('City')}}*
+                                        </label>
+                                    </div>
+                                    <select id="select-city-input-3" name="city"
+                                        class="block border-gray-300 focus:border-green-500 dark:focus:border-green-500 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 border rounded-lg w-full text-gray-900 text-sm focus:ring-green-500 dark:text-white dark:placeholder:text-gray-400 dark:focus:ring-green-500">
+                                        <option selected value="Lubumbashi">Lubumbashi</option>
+                                        <option value="Kolwezi">Kolwezi</option>
+                                        <option value="Likasi">Likasi</option>
+                                        <option value="kamina">kamina</option>
+                                    </select>
+                                    <x-input-error :messages="$errors->get('city')" class="mt-2" />
+                                </div>
 
 
 
 
 
-                            <div class="sm:col-span-2">
-                                <button
-                                    class="focus:z-10 flex justify-center items-center gap-2 border-gray-200 dark:border-gray-600 bg-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:bg-gray-800 px-5 py-2.5 border rounded-lg w-full font-medium text-gray-900 text-sm hover:text-green-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:hover:text-white dark:text-gray-400 dark:focus:ring-gray-700">
-                                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="M5 12h14m-7 7V5" />
-                                    </svg>
-                                    {{__('Save address')}}
-                                </button>
-                            </div>
+                                {{-- <div class="sm:col-span-2">
+                                    <button type="submit"
+                                        class="focus:z-10 flex justify-center items-center gap-2 border-gray-200 dark:border-gray-600 bg-white hover:bg-gray-100 dark:hover:bg-gray-700 dark:bg-gray-800 px-5 py-2.5 border rounded-lg w-full font-medium text-gray-900 text-sm hover:text-green-700 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:hover:text-white dark:text-gray-400 dark:focus:ring-gray-700">
+                                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                            width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2" d="M5 12h14m-7 7V5" />
+                                        </svg>
+                                        {{__('Save address')}}
+                                    </button>
+                                </div> --}}
+                            </form>
+
                         </div>
                     </div>
 

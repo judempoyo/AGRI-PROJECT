@@ -215,7 +215,7 @@
                                 </x-dropdown-link>
                             </li>
                             <li>
-                                <x-dropdown-link :href="route('home')">
+                                <x-dropdown-link :href="route('adresses.index')">
                                     {{ __('Delivery Adresses') }}
                                 </x-dropdown-link>
                             </li>

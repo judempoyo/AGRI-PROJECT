@@ -78,9 +78,25 @@
 
     <div class="row text-gray-800 dark:text-gray-200 w-ful flex">
         <div class="row text-gray-800 dark:text-gray-200 w-ful flex">
-            <x-create-button class="ms-3 mb-3  mt-3" :href="route('productsImages.create')">
-                {{__('Add image')}}
-            </x-create-button>
+            <form action="{{route('productsImages.create')}}" method="get">
+                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                <x-primary-button class="ms-3 mb-3  mt-3" type="submit">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 12h14m-7 7V5" />
+                    </svg>
+                    {{__('Add image')}}
+                </x-primary-button>
+                {{--  <x-create-button class="ms-3 mb-3  mt-3" :href="route('productsImages.create')">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 12h14m-7 7V5" />
+                    </svg>
+                    {{__('Add image')}}
+                </x-create-button>  --}}
+                <form></form>
         </div>
     </div>
     <div class="w-full flex">

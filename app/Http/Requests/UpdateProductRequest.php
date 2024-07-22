@@ -27,7 +27,7 @@ class UpdateProductRequest extends FormRequest
             'price' => ['decimal:2'],
             'quantity' => ['int'],
             'deposit_id' => ['int'],
-            'category_id' => ['int'],
+            'categorie_id' => ['int'],
             'sell_unit_id' => ['int'],
         ];
     }

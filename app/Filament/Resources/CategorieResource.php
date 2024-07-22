@@ -26,12 +26,10 @@ class CategorieResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(50),
-                Forms\Components\TextInput::make('description')
+                Forms\Components\Textarea::make('description')
                     ->required()
-                    ->maxLength(250),
-                Forms\Components\FileUpload::make('image')
-                    ->image()
-                    ->required(),
+                    ->rows(5)
+                    ->maxLength(600),
             ]);
     }
 
@@ -43,7 +41,6 @@ class CategorieResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('description')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -57,7 +54,11 @@ class CategorieResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\ActionGroup::make([
+                    Tables\Actions\ViewAction::make(),
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\DeleteAction::make(),
+                ])
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

@@ -12,12 +12,13 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Spatie\Permission\Models\Role;
 
 class UserResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
     public static function form(Form $form): Form
     {
@@ -39,13 +40,14 @@ class UserResource extends Resource
                     ->maxLength(20),
                 Forms\Components\FileUpload::make('avatar')
                     ->image()
-                    ->required()
                     ->default('profile.gif'),
                 Forms\Components\DateTimePicker::make('email_verified_at'),
                 Forms\Components\TextInput::make('password')
                     ->password()
                     ->required()
                     ->maxLength(255),
+                Forms\Components\Select::make('role')
+                    ->options(Role::all()->pluck('name', 'id')),
             ]);
     }
 
@@ -61,7 +63,11 @@ class UserResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('phone')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('avatar'),
+                Tables\Columns\TextColumn::make('roles.name')
+                    ->sortable()
+                    ->searchable(),
+                Tables\Columns\ImageColumn::make('avatar')
+                    ->defaultImageUrl('storage/images/bg.jpg'),
                 Tables\Columns\TextColumn::make('email_verified_at')
                     ->dateTime()
                     ->sortable(),
@@ -78,7 +84,13 @@ class UserResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\ActionGroup::make([
+                    Tables\Actions\ViewAction::make(),
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\DeleteAction::make(),
+                ])
+
+
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

@@ -11,6 +11,11 @@
             @can('create_order')
             <div class="row text-gray-800 dark:text-gray-200 w-ful flex justify-end">
                 <x-create-button class="ms-3 mb-3 " :href="route('orders.create')">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 12h14m-7 7V5" />
+                    </svg>
                     {{__('Create order')}}
                 </x-create-button>
             </div>
