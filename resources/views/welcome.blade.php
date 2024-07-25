@@ -277,7 +277,7 @@
                         <span class="font-medium text-gray-900 text-sm dark:text-white">{{ __('All')}}</span>
                     </a>
                     @foreach($categories as $category)
-                    <a href="{{ URL::to('/category/'.$category->id) }}"
+                    <a href="{{ URL::to('/product.category/'.$category->id) }}"
                         class="flex items-center border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:hover:bg-gray-700 dark:bg-gray-800 px-4 py-2 border rounded-lg">
                         <svg class="w-4 h-4 text-gray-900 dark:text-white me-2 shrink-0" aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">

@@ -42,7 +42,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout')->middleware('auth');
 Route::get('/show_deposits', [HomeController::class, 'show_deposits'])->name('show_deposits');
 Route::get('/order.today', [HomeController::class, 'today_deals'])->name('order.today');
-Route::get('/category/{id_cat}', [HomeController::class, 'show_product_by_category'])->name('product_by_category');
+Route::get('/product.category/{id_cat}', [HomeController::class, 'show_product_by_category'])->name('product_by_category');
 
 Route::get('/cart', [CartController::class, 'show'])->name('cart');
 Route::post('/cart/add/{product}', [CartController::class, 'add'])->name('cart.add');

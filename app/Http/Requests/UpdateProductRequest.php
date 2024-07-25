@@ -24,7 +24,7 @@ class UpdateProductRequest extends FormRequest
         return [
             'name' => ['string', 'max:50'],
             'description' => ['string', 'max:1000'],
-            'price' => ['decimal:2'],
+            'price' => ['numeric'],
             'quantity' => ['int'],
             'deposit_id' => ['int'],
             'categorie_id' => ['int'],

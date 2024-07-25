@@ -28,7 +28,7 @@ class ProductController extends Controller
     }
     public function index(): View
     {
-        $products = Product::latest()->paginate(5)->where('user_id', Auth::user()->id);
+        $products = Product::all()->where('user_id', Auth::user()->id);
         $deposits = Deposit::all()->where('user_id', Auth::user()->id);
         $categories = Categorie::all();
         $sellUnits = SellUnit::all();

@@ -18,6 +18,9 @@ class OrderResource extends Resource
     protected static ?string $model = Order::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-shopping-bag';
+    protected static ?string $modelLabel = 'Commandes';
+    protected static ?string $navigationLabel = 'Commandes';
+    protected static ?string $navigationGroup = 'Commandes';
 
     public static function form(Form $form): Form
     {

@@ -18,6 +18,9 @@ class SellUnitResource extends Resource
     protected static ?string $model = SellUnit::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
+    protected static ?string $navigationLabel = 'Unites de vente';
+    protected static ?string $modelLabel = 'Unites de vente';
+    protected static ?string $navigationGroup = 'Produits';
 
     public static function form(Form $form): Form
     {

@@ -72,14 +72,14 @@
                         </div>
                     </li>
 
-                    <li class="shrink-0">
+                    {{-- <li class="shrink-0">
                         <div class="hidden sm:-my-px sm:ms-2 sm:flex">
                             <x-nav-link :href="url('/')" :active="request()->routeIs('grower')"> {{ __('Grower
                                 space')
                                 }}
                             </x-nav-link>
                         </div>
-                    </li>
+                    </li> --}}
 
                     <li class="shrink-0">
                         <div class="hidden sm:-my-px sm:ms-2 sm:flex">
@@ -99,12 +99,18 @@
                     <span class="sr-only">
                         Cart
                     </span>
+                    @if(session()->has('cart'))
+                    <p
+                        class="flex justify-center items-center  dark:bg-green-600 text-gray-900 dark:text-gray-200 p-3 rounded-full w-2 h-2 text-xs">
+                        {{ count(session('cart')) }}</p>
+                    @endif
+
                     <svg class="w-5 h-5 lg:me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
                         height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
                     </svg>
-                    <span class="hidden sm:flex">My Cart</span>
+
                     <svg class="hidden sm:flex w-4 h-4 text-gray-900 dark:text-white ms-1" aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -306,8 +312,8 @@
                 </li>
                 <li>
                     <div class="pt-2 pb-3 space-y-1">
-                        <x-responsive-nav-link :href="route('deposits.index')"
-                            :active="request()->routeIs('deposits.index')">
+                        <x-responsive-nav-link :href="route('products.index')"
+                            :active="request()->routeIs('products.index')">
                             {{ __('My Products') }}
                         </x-responsive-nav-link>
                     </div>
@@ -321,13 +327,13 @@
                         </x-responsive-nav-link>
                     </div>
                 </li>
-                <li>
+                {{-- <li>
                     <div class="pt-2 pb-3 space-y-1">
                         <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('becomeGrower')">
                             {{ __('Grower space') }}
                         </x-responsive-nav-link>
                     </div>
-                </li>
+                </li> --}}
                 <li>
                     <div class="pt-2 pb-3 space-y-1">
                         <x-responsive-nav-link :href="route('order.today')" :active="request()->routeIs('order.today')">

@@ -43,7 +43,7 @@ class HomeController extends Controller
     {
 
         $orders = Order::all()->where('customer_id', Auth::user()->id)
-                            ->where('date',today());
+            ->where('date', today());
 
         return view('home.today_deals', compact('orders'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -51,10 +51,7 @@ class HomeController extends Controller
     public function show_product_by_category($id_cat)
     {
         if ($id_cat != 0)
-            $products = Product::all()->where('category_id', $id_cat);
-
-
-
+            $products = Product::all()->where('categorie_id', $id_cat);
 
         $deposits = Deposit::all();
         $categories = Categorie::all();

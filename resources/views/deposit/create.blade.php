@@ -19,7 +19,7 @@
             @can('create_deposit')
 
             <div class="w-full  md:w-1/2 m-auto flex items-center justify-items-center justify-center">
-                <form method="post" action="{{ route('deposits.store') }}">
+                <form method="post" action="{{ route('deposits.store') }}" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                     <!-- Name -->

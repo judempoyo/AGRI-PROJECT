@@ -25,9 +25,15 @@ class ProductImageController extends Controller
      */
     public function store(StoreProductImageRequest $request)
     {
+        $file = $request->file('image');
+        $name = time() . '_' . $file->getClientOriginalName();
+        //dd($name);
+
+        $file->move('storage/images/uploads/products/', $name);
         //dd($request);
         $ProductImage = ProductImage::create([
-            'image' => $request->image,
+            'image' => $name,
+            'product_id' => $request->product_id,
 
         ]);
 

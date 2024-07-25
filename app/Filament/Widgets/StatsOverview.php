@@ -49,7 +49,7 @@ class StatsOverview extends BaseWidget
                 ])
                 /*  ->descriptionIcon('heroicon-s-trending-up') */
                 ->color('primary'),
-            stat::make('Total des ventes', Order::all()->sum(('total')))
+            stat::make('Total des ventes', Order::all()->sum(('total')) . ' CDF')
                 ->extraAttributes([
                     'class' => 'cursor-pointer'
                 ])
