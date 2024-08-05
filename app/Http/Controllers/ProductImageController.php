@@ -75,9 +75,6 @@ class ProductImageController extends Controller
             'image' => $name,
         ]);
 
-
-
-
         return back();
     }
 
