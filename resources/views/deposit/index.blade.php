@@ -4,11 +4,16 @@
             {{ __('Deposit') }}
         </h2>
     </x-slot>
-
+    @can('view_deposit')
+    @livewire('listDeposits')
+    @endcan
     <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
 
-            @can('create_deposit')
+            {{--
+            <livewire:DepositTable /> --}}
+
+            {{-- @can('create_deposit')
             <div class="row text-gray-800 dark:text-gray-200 w-ful flex justify-end">
                 <x-create-button class="ms-3 mb-3 " :href="route('deposits.create')">
                     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -19,11 +24,11 @@
                     {{__('Create deposit')}}
                 </x-create-button>
             </div>
-            @endcan
+            @endcan --}}
 
 
-            @can('view_deposit')
-            <div class="relative shadow-md sm:rounded-lg overflow-x-auto">
+            {{-- @can('view_deposit') --}}
+            {{-- <div class="relative shadow-md sm:rounded-lg overflow-x-auto">
                 <table class="rtl:text-right w-full text-gray-500 text-left text-sm dark:text-gray-400">
                     <caption class="caption-top">
                         {{ __('List of your available Deposit')}}
@@ -102,9 +107,9 @@
 
                     </tbody>
                 </table>
-            </div>
-            @endcan
-
+            </div> --}}
+            {{-- @endcan
+            --}}
         </div>
     </div>
 </x-app-layout>

@@ -5,9 +5,11 @@
         </h2>
     </x-slot>
 
+    @can('view_product')
+    @livewire('listProducts')
+    @endcan
 
-
-    <div class="py-12">
+    {{-- <div class="py-12">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
 
             @can('create_product')
@@ -130,5 +132,5 @@
             @endcan
 
         </div>
-    </div>
+    </div> --}}
 </x-app-layout>

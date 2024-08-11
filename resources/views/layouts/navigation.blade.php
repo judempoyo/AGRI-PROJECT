@@ -257,6 +257,7 @@
                     @endauth
                     @endif
 
+                    
 
 
                     <button type="button" data-collapse-toggle="ecommerce-navbar-menu-1"

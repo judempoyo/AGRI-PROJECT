@@ -8,12 +8,17 @@
         "php": "^8.2",
         "bezhansalleh/filament-shield": "^3.2",
         "filament/filament": "3.2.57",
+        "filament/tables": "3.2.57",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
-        "spatie/laravel-permission": "^6.7"
+        "ramonrietdijk/livewire-tables": "^4.2",
+        "rappasoft/laravel-livewire-tables": "^3.4",
+        "spatie/laravel-permission": "^6.7",
+        "yajra/laravel-datatables": "11"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
+        "ibex/crud-generator": "^2.1",
         "laravel-lang/lang": "^15.5",
         "laravel/breeze": "^2.0",
         "laravel/pint": "^1.13",
