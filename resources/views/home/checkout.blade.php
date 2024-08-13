@@ -22,13 +22,14 @@
             <div class="lg:flex lg:items-start lg:gap-12 xl:gap-16 mt-4 sm:mt-4">
                 <div class="flex-1 space-y-8 min-w-0">
                     <div class="space-y-4">
-                        <h2 class="font-semibold text-gray-900 text-xl dark:text-white">{{__('Delivery Details')}}</h2>
+                        <h2 class="font-semibold text-gray-900 text-xl dark:text-white">{{__('Détails de la
+                            livraison')}}</h2>
 
                         <div class="gap-4 grid grid-cols-1 sm:grid-cols-2">
                             <div>
                                 <label for="your_name"
-                                    class="block mb-2 font-medium text-gray-900 text-sm dark:text-white"> {{__('Your
-                                    name')}}
+                                    class="block mb-2 font-medium text-gray-900 text-sm dark:text-white"> {{__('Votre
+                                    nom')}}
                                 </label>
                                 <input type="text" id="your_name" name="name"
                                     class="block border-gray-300 focus:border-green-500 dark:focus:border-green-500 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 border rounded-lg w-full text-gray-900 text-sm focus:ring-green-500 dark:text-white dark:placeholder:text-gray-400 dark:focus:ring-green-500"
@@ -38,7 +39,7 @@
 
                             <div>
                                 <label for="your_email"
-                                    class="block mb-2 font-medium text-gray-900 text-sm dark:text-white"> {{ __('Your
+                                    class="block mb-2 font-medium text-gray-900 text-sm dark:text-white"> {{ __('Votre
                                     email') }}*
                                 </label>
                                 <input type="email" id="your_email" name="email"
@@ -49,7 +50,8 @@
 
                             <div>
                                 <label for="phone-input-3"
-                                    class="block mb-2 font-medium text-gray-900 text-sm dark:text-white"> Phone Number*
+                                    class="block mb-2 font-medium text-gray-900 text-sm dark:text-white"> Numéro de
+                                    telephone*
                                 </label>
                                 <div class="flex items-center">
 
@@ -68,7 +70,7 @@
                                 <div>
                                     <label for="delivery_adress"
                                         class="block mb-2 font-medium text-gray-900 text-sm dark:text-white">
-                                        {{__('Adress')}}* </label>
+                                        {{__('Adresse')}}* </label>
                                     <input type="text" id="delivery_adress" name="delivery_adress"
                                         class="block border-gray-300 focus:border-green-500 dark:focus:border-green-500 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 border rounded-lg w-full text-gray-900 text-sm focus:ring-green-500 dark:text-white dark:placeholder:text-gray-400 dark:focus:ring-green-500"
                                         placeholder="Av rashidi N°20/Q. Kasapa/C. Annexe"
@@ -80,7 +82,7 @@
                                     <div class="flex items-center gap-2 mb-2">
                                         <label for="select-state-input-3"
                                             class="block font-medium text-gray-900 text-sm dark:text-white">
-                                            {{__('State')}}* </label>
+                                            {{__('province')}}* </label>
                                     </div>
                                     <select id="select-state-input-3" name="state"
                                         class="block border-gray-300 focus:border-green-500 dark:focus:border-green-500 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 p-2.5 border rounded-lg w-full text-gray-900 text-sm focus:ring-green-500 dark:text-white dark:placeholder:text-gray-400 dark:focus:ring-green-500">
@@ -95,7 +97,7 @@
                                     <div class="flex items-center gap-2 mb-2">
                                         <label for="select-city-input-3"
                                             class="block font-medium text-gray-900 text-sm dark:text-white">
-                                            {{__('City')}}*
+                                            {{__('Ville')}}*
                                         </label>
                                     </div>
                                     <select id="select-city-input-3" name="city"
@@ -129,7 +131,7 @@
                     </div>
 
                     <div class="space-y-4">
-                        <h3 class="font-semibold text-gray-900 text-xl dark:text-white">{{__('Payment')}}</h3>
+                        <h3 class="font-semibold text-gray-900 text-xl dark:text-white">{{__('Paiement')}}</h3>
 
                         <div class="gap-4 grid grid-cols-1 md:grid-cols-3">
 
@@ -145,11 +147,10 @@
                                     <div class="text-sm ms-4">
                                         <label for="pay-on-delivery"
                                             class="font-medium text-gray-900 dark:text-white leading-none">
-                                            {{__('Payment on
-                                            delivery')}} </label>
+                                            {{__('Paiement lors de la livraison')}} </label>
                                         <p id="pay-on-delivery-text"
                                             class="mt-1 font-normal text-gray-500 text-xs dark:text-gray-400">+$15
-                                            {{ __('payment processing fee') }}</p>
+                                            {{ __('Frais de traitements des paiements') }}</p>
                                     </div>
                                 </div>
 
@@ -172,7 +173,7 @@
                                         </label>
                                         <p id="mobile-money-text"
                                             class="mt-1 font-normal text-gray-500 text-xs dark:text-gray-400">
-                                            {{__('Coming soon')}}</p>
+                                            {{__('Fonctionnqlité à venir')}}</p>
                                     </div>
                                 </div>
 
@@ -183,7 +184,8 @@
                     </div>
 
                     <div class="space-y-4">
-                        <h3 class="font-semibold text-gray-900 text-xl dark:text-white">{{__('Delivery Methods')}}</h3>
+                        <h3 class="font-semibold text-gray-900 text-xl dark:text-white">{{__('Mode de livraisoon')}}
+                        </h3>
 
                         <div class="gap-4 grid grid-cols-1 md:grid-cols-3">
                             <div
@@ -198,10 +200,10 @@
 
                                     <div class="text-sm ms-4">
                                         <label for="dhl" class="font-medium text-gray-900 dark:text-white leading-none">
-                                            {{__('Standard Delivery')}} </label>
+                                            {{__('Livraison standard')}} </label>
                                         <p id="dhl-text"
                                             class="mt-1 font-normal text-gray-500 text-xs dark:text-gray-400">$2 {{__('(
-                                            3-5 days )')}}</p>
+                                            3-5 Jours )')}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -218,10 +220,10 @@
                                     <div class="text-sm ms-4">
                                         <label for="fedex"
                                             class="font-medium text-gray-900 dark:text-white leading-none">
-                                            {{__('Express delivery')}}</label>
+                                            {{__('Livraison express')}}</label>
                                         <p id="fedex-text"
                                             class="mt-1 font-normal text-gray-500 text-xs dark:text-gray-400">$8 {{__('(
-                                            1-2 days )')}}</p>
+                                            1-2 Jours )')}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -262,7 +264,7 @@
                             </dl>
 
                             <dl class="flex items-center justify-between gap-4 py-4">
-                                <dt class="text-base font-normal text-gray-500 dark:text-gray-400">{{__('Tax')}}
+                                <dt class="text-base font-normal text-gray-500 dark:text-gray-400">{{__('Taxe')}}
                                 </dt>
                                 <dd class="text-base font-medium text-gray-900 dark:text-white">{{$tax .' CDF'}}
                                 </dd>
@@ -278,8 +280,8 @@
 
                     <div class="space-y-3">
                         <button type="submit"
-                            class="flex justify-center items-center bg-green-700 hover:bg-green-800 dark:hover:bg-green-700 dark:bg-green-600 px-5 py-2.5 rounded-lg w-full font-medium text-sm text-white focus:outline-none focus:ring-4 focus:ring-green-300 dark:focus:ring-green-800">{{__('Proceed
-                            to Payment')}}</button>
+                            class="flex justify-center items-center bg-green-700 hover:bg-green-800 dark:hover:bg-green-700 dark:bg-green-600 px-5 py-2.5 rounded-lg w-full font-medium text-sm text-white focus:outline-none focus:ring-4 focus:ring-green-300 dark:focus:ring-green-800">{{__('Proceder
+                            au paiement')}}</button>
 
 
                     </div>

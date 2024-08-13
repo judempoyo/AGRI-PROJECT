@@ -6,6 +6,8 @@ use App\Models\Adress;
 use App\Http\Requests\StoreAdressRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\UpdateAdressRequest;
+use Filament\Notifications\Notification;
+
 
 class AdressController extends Controller
 {
@@ -41,6 +43,11 @@ class AdressController extends Controller
 
         $adress->save();
 
+        Notification::make()
+            ->title('Adresse ajoutée avec succès')
+            ->success()
+            ->send();
+
         return redirect(route('adresses.index'));
     }
 
@@ -71,6 +78,11 @@ class AdressController extends Controller
             'state' => $request->state,
         ]);
 
+        Notification::make()
+            ->title('Adresse Modifié avec succès')
+            ->success()
+            ->send();
+
         return redirect()->back();
     }
 
@@ -79,6 +91,12 @@ class AdressController extends Controller
      */
     public function destroy(Adress $adress)
     {
-        //
+        $adress->delete();
+
+        Notification::make()
+            ->title('Adresse supprimé avec succès')
+            ->success()
+            ->send();
+        return redirect(route('adresses.index'));
     }
 }

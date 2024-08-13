@@ -19,25 +19,27 @@
 
                         <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                             <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                                {{ __('Accueil') }}
+                                {{ __('Home') }}
                             </x-nav-link>
                         </div>
                     </li>
                     @role('customer')
-                    {{-- <li class="shrink-0">
+                    <li class="shrink-0">
                         <div class="hidden sm:-my-px sm:ms-2 sm:flex">
                             <x-nav-link :href="url('/')" :active="request()->routeIs('becomeGrower')"> {{
-                                __('Devenir un producteur') }}
+                                __('Become a
+                                grower') }}
                             </x-nav-link>
                         </div>
-                    </li> --}}
+                    </li>
                     @endrole
                     @role('grower')
                     <li class="shrink-0">
                         <div class="hidden sm:-my-px sm:ms-2 sm:flex">
                             <x-nav-link :href="route('products.create')"
                                 :active="request()->routeIs('products.create')"> {{
-                                __('Ajouter un produit')
+                                __('Add
+                                a product')
                                 }}
                             </x-nav-link>
                         </div>
@@ -45,14 +47,16 @@
                     <li class="shrink-0">
                         <div class="hidden sm:-my-px sm:ms-2 sm:flex">
                             <x-nav-link :href="url('deposits')" :active="request()->routeIs('deposits.index')"> {{
-                                __('Mes espaces')
+                                __('My
+                                Space')
                                 }}
                             </x-nav-link>
                         </div>
                     <li class="shrink-0">
                         <div class="hidden sm:-my-px sm:ms-2 sm:flex">
                             <x-nav-link :href="url('products')" :active="request()->routeIs('products.index')"> {{
-                                __('Mes produits')
+                                __('My
+                                Products')
                                 }}
                             </x-nav-link>
                         </div>
@@ -62,7 +66,7 @@
                     <li class="shrink-0">
                         <div class="hidden sm:-my-px sm:ms-2 sm:flex">
                             <x-nav-link :href="url('/show_deposits')" :active="request()->routeIs('show_deposits')"> {{
-                                __('Dépots')
+                                __('Deposits')
                                 }}
                             </x-nav-link>
                         </div>
@@ -70,8 +74,8 @@
 
                     {{-- <li class="shrink-0">
                         <div class="hidden sm:-my-px sm:ms-2 sm:flex">
-                            <x-nav-link :href="url('/')" :active="request()->routeIs('grower')"> {{ __('Espace des
-                                produteurs')
+                            <x-nav-link :href="url('/')" :active="request()->routeIs('grower')"> {{ __('Grower
+                                space')
                                 }}
                             </x-nav-link>
                         </div>
@@ -80,7 +84,7 @@
                     <li class="shrink-0">
                         <div class="hidden sm:-my-px sm:ms-2 sm:flex">
                             <x-nav-link :href="url('/order.today')" :active="request()->routeIs('order.today')"> {{
-                                __('Mouvement du jour')
+                                __('Today\'s Deals')
                                 }}
                             </x-nav-link>
                         </div>
@@ -117,11 +121,11 @@
                 <div id="myCartDropdown1"
                     class="hidden z-10 mx-auto max-w-sm space-y-4 overflow-hidden rounded-lg bg-white p-4 antialiased shadow-lg dark:bg-gray-800">
                     @if(session()->has('cart'))
-                    {{-- @php //dd(session('cart'))@endphp --}}
+                    @php //dd(session('cart'))@endphp
 
-                    @if (session('cart') != [])
+                    @if(session('cart') != [])
                     @php
-                    $total = 0;
+                    $total = 0
                     @endphp
                     @foreach(session('cart') as $key => $value)
                     @php
@@ -137,7 +141,7 @@
                         </div>
 
                         <div class="flex items-center justify-end gap-6">
-                            <p class="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">{{__('Qté')}}:
+                            <p class="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">{{__('Qty')}}:
                                 {{$value['quantity']}}</p>
 
 
@@ -156,7 +160,7 @@
                             </a>
                             <div id="tooltipRemoveItem1a" role="tooltip"
                                 class="tooltip invisible absolute z-10 inline-block rounded-lg bg-gray-900 px-3 py-2 text-sm font-medium text-white opacity-0 shadow-sm transition-opacity duration-300 dark:bg-gray-700">
-                                Enelever l'element
+                                Remove item
                                 <div class="tooltip-arrow" data-popper-arrow></div>
                             </div>
                         </div>
@@ -168,22 +172,17 @@
 
                     <a href="{{route('cart')}}" title=""
                         class="inline-flex items-center rounded-lg bg-green-700 px-5 py-2.5 text-sm font-medium text-white dark:text-white hover:bg-green-800 focus:outline-none focus:ring-4  focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 mx-1"
-                        role="button"> {{ __('Voir le panier') }}</a>
-                    @elseif(session('cart') == [])
+                        role="button"> {{ __('Show the cart') }}</a>
+                    @else
                     <div class="grid grid-cols-2">
                         <p class="text-sm font-normal leading-none text-gray-500 dark:text-gray-400">
-                            {{__('Votre panier est vide')}}</p>
+                            {{__('Your cart is empty')}}</p>
 
                     </div>
-                    <x-create-button href="{{route('home')}}" title=""> {{ __('Continuer d\'y ajouter des produits') }}
-                    </x-create-button>
-
+                    <x-create-button href="{{route('home')}}" title=""> {{ __('Go to shopping') }}</x-create-button>
                     @endif
-                    
-                    
                     @endif
                 </div>
-
 
                 @if (Route::has('login'))
                 {{-- <nav class="flex justify-center flex-1 -mx-3 "> --}}
@@ -213,17 +212,17 @@
                             </li>
                             <li>
                                 <x-dropdown-link :href="route('orders.index')">
-                                    {{ __('Mes commandes') }}
+                                    {{ __('My orders') }}
                                 </x-dropdown-link>
                             </li>
                             <li>
                                 <x-dropdown-link :href="route('home')">
-                                    {{ __('parametres') }}
+                                    {{ __('Settings') }}
                                 </x-dropdown-link>
                             </li>
                             <li>
                                 <x-dropdown-link :href="route('adresses.index')">
-                                    {{ __('Mes adresses de livraison') }}
+                                    {{ __('Delivery Adresses') }}
                                 </x-dropdown-link>
                             </li>
                             <li>
@@ -233,7 +232,7 @@
 
                                     <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                        {{ __('Se deconnecter') }}
+                                        {{ __('Log Out') }}
                                     </x-dropdown-link>
                                 </form>
                             </li>
@@ -244,28 +243,28 @@
                     @else
                     <div class="hidden sm:-my-px sm:ms-2 sm:flex">
                         <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
-                            {{ __('Se connecter') }}
+                            {{ __('Log in') }}
                         </x-nav-link>
                     </div>
 
                     @if (Route::has('register'))
                     <div class="hidden sm:-my-px sm:ms-2 sm:flex">
                         <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
-                            {{ __('S\'inscrire') }}
+                            {{ __('Register') }}
                         </x-nav-link>
                     </div>
                     @endif
                     @endauth
                     @endif
 
-
+                    
 
 
                     <button type="button" data-collapse-toggle="ecommerce-navbar-menu-1"
                         aria-controls="ecommerce-navbar-menu-1" aria-expanded="false"
                         class="inline-flex lg:hidden items-center justify-center hover:bg-gray-100 rounded-md dark:hover:bg-gray-700 p-2 text-gray-900 dark:text-white">
                         <span class="sr-only">
-                            Ouvri le menu
+                            Open Menu
                         </span>
                         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
                             height="24" fill="none" viewBox="0 0 24 24">
@@ -282,25 +281,25 @@
                 <li>
                     <div class="pt-2 pb-3 space-y-1">
                         <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                            {{ __('Accueil') }}
+                            {{ __('Home') }}
                         </x-responsive-nav-link>
                     </div>
                 </li>
                 @role('customer')
-                {{-- <li>
+                <li>
                     <div class="pt-2 pb-3 space-y-1">
                         <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('becomeGrower')">
-                            {{ __('Devenir un producteur') }}
+                            {{ __('Become Grower') }}
                         </x-responsive-nav-link>
                     </div>
-                </li> --}}
+                </li>
                 @endrole
                 @role('grower')
                 <li>
                     <div class="pt-2 pb-3 space-y-1">
                         <x-responsive-nav-link :href="route('products.create')"
                             :active="request()->routeIs('products.create')">
-                            {{ __('Ajouter un produit') }}
+                            {{ __('Add product') }}
                         </x-responsive-nav-link>
                     </div>
                 </li>
@@ -308,7 +307,7 @@
                     <div class="pt-2 pb-3 space-y-1">
                         <x-responsive-nav-link :href="route('deposits.index')"
                             :active="request()->routeIs('deposits.index')">
-                            {{ __('MEs espaces') }}
+                            {{ __('My space') }}
                         </x-responsive-nav-link>
                     </div>
                 </li>
@@ -316,7 +315,7 @@
                     <div class="pt-2 pb-3 space-y-1">
                         <x-responsive-nav-link :href="route('products.index')"
                             :active="request()->routeIs('products.index')">
-                            {{ __('Mes produits') }}
+                            {{ __('My Products') }}
                         </x-responsive-nav-link>
                     </div>
                 </li>
@@ -325,21 +324,21 @@
                     <div class="pt-2 pb-3 space-y-1">
                         <x-responsive-nav-link :href="route('show_deposits')"
                             :active="request()->routeIs('show_deposits')">
-                            {{ __('Dépots') }}
+                            {{ __('Deposits') }}
                         </x-responsive-nav-link>
                     </div>
                 </li>
                 {{-- <li>
                     <div class="pt-2 pb-3 space-y-1">
                         <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('becomeGrower')">
-                            {{ __('Espace des producteurs') }}
+                            {{ __('Grower space') }}
                         </x-responsive-nav-link>
                     </div>
                 </li> --}}
                 <li>
                     <div class="pt-2 pb-3 space-y-1">
                         <x-responsive-nav-link :href="route('order.today')" :active="request()->routeIs('order.today')">
-                            {{ __('Mouvement du jour') }}
+                            {{ __('Today\'s Deals') }}
                         </x-responsive-nav-link>
                     </div>
                 </li>
@@ -348,7 +347,7 @@
                 <li>
                     <div class="pt-2 pb-3 space-y-1">
                         <x-responsive-nav-link :href="route('login')" :active="request()->routeIs('login')">
-                            {{ __('Se connecter') }}
+                            {{ __('Log in') }}
                         </x-responsive-nav-link>
                     </div>
                 </li>
@@ -357,7 +356,7 @@
                 <li>
                     <div class="pt-2 pb-3 space-y-1">
                         <x-responsive-nav-link :href="route('register')" :active="request()->routeIs('register')">
-                            {{ __('S\'inscrire') }}
+                            {{ __('Register') }}
                         </x-responsive-nav-link>
                     </div>
                 </li>

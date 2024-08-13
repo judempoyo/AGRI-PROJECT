@@ -12,6 +12,7 @@ use App\Http\Requests\UpdateProductRequest;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
+use Filament\Notifications\Notification;
 
 
 
@@ -81,6 +82,11 @@ class ProductController extends Controller
             }
         }
 
+        Notification::make()
+            ->title('Produit créer avec succès')
+            ->success()
+            ->send();
+
         return redirect(route('products.index'));
     }
 
@@ -124,7 +130,13 @@ class ProductController extends Controller
             'sell_unit_id' => $request->sell_unit_id,
         ]);
 
+        Notification::make()
+            ->title('Produit Modifié avec succès')
+            ->success()
+            ->send();
+
         return redirect(route('products.index'));
+        /* ->with('success', 'Produit modifié avec succès.'); */
     }
 
     /**
@@ -134,6 +146,10 @@ class ProductController extends Controller
     {
         $product->delete();
 
+        Notification::make()
+            ->title('Produit supprimé avec succès')
+            ->success()
+            ->send();
         return redirect(route('products.index'));
     }
 }

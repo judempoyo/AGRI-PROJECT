@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use App\Models\Deposit;
+use App\Models\Order;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Tables;
@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 
 
-class listDeposits extends Component implements HasForms, HasTable
+class listOrders extends Component implements HasForms, HasTable
 {
     use InteractsWithForms;
     use InteractsWithTable;
@@ -23,42 +23,42 @@ class listDeposits extends Component implements HasForms, HasTable
     public function table(Table $table): Table
     {
         return $table
-            ->query(Deposit::query()->where('user_id', Auth::user()->id))
+            ->query(Order::query()->where('customer_id', Auth::user()->id))
             ->headerActions([
                 Tables\Actions\CreateAction::make()
-                    ->label('Nouveau dépot')
-                    ->url(route('deposits.create')),
+                    ->label('Passez une commande')
+                    ->url(route('orders.create')),
             ])
             ->columns([
                 Tables\Columns\TextColumn::make('#')
                     ->sortable()
                     ->rowIndex(),
+                Tables\Columns\TextColumn::make('date')
+                    ->date()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('total')
+                    ->numeric()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('name')
-                    ->label('Nom')
+                    ->label('Client')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('adress')
-                    ->label('Adresse')
+                Tables\Columns\TextColumn::make('email')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('country')
-                    ->label('Province')
+                Tables\Columns\TextColumn::make('phone')
+                    ->label('Telephone')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('description')
-                    ->label('Description')
-                    ->searchable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('area')
-                    ->label('Surface')
+                Tables\Columns\TextColumn::make('payment_method')
+                    ->label('Mode de paiement')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image')
-                    ->label('image'),
-                Tables\Columns\TextColumn::make('maxCapacity')
-                    ->label('Capacité maximale')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('user.name')
-                    ->label('Propriétaire')
-                    ->numeric()
-                    ->sortable(),
+                Tables\Columns\TextColumn::make('delivery_method')
+                    ->label('mode de Livraison')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('delivery_adress')
+                    ->label('Adresse de livraison')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('state')
+                    ->label('Etat')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -75,14 +75,10 @@ class listDeposits extends Component implements HasForms, HasTable
                 Tables\Actions\ActionGroup::make([
                     Tables\Actions\ViewAction::make()
                         ->label('Voir')
-                        ->url(fn ($record): string => route('deposits.show', $record)),
+                        ->url(fn ($record): string => route('orders.show', $record)),
                     Tables\Actions\EditAction::make()
                         ->label('Modifier')
-                        ->url(fn ($record): string => route('deposits.edit', $record)),
-                    Tables\Actions\DeleteAction::make()
-                        ->label('Supprimer')
-                        ->requiresConfirmation()
-                        ->url(fn ($record): string => route('deposits.edit', $record)),
+                        ->url(fn ($record): string => route('orders.edit', $record)),
                 ])
             ])
             ->bulkActions([
@@ -92,8 +88,8 @@ class listDeposits extends Component implements HasForms, HasTable
             ]);
     }
 
-    /* public function render(): View
+    public function render(): View
     {
-        return view('deposit.index');
-    } */
+        return view('livewire.list-orders');
+    }
 }

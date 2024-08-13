@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-            {{ __('Show Product') }}
+            {{ __('Voir le Produit') }}
         </h2>
     </x-slot>
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -9,7 +9,7 @@
         @can('view_product')
         <div class="row text-gray-800 dark:text-gray-200 w-ful flex">
             <x-create-button class="ms-3 mb-3  mt-3" :href="route('products.index')">
-                {{__('Back')}}
+                {{__('Retour')}}
             </x-create-button>
         </div>
     </div>
@@ -46,7 +46,7 @@
                     </div>
                     <div class="sm:flex sm:items-center sm:gap-4 mt-4">
                         <p class="font-extrabold text-2xl text-gray-900 sm:text-3xl dark:text-white ">
-                            {{ __('Avalaible Quantity : ').$product->Quantity
+                            {{ __('Quantité disponible : ').$product->Quantity
                             }}
                         </p>
                     </div>
@@ -55,7 +55,7 @@
                         <p class="text-sm text-gray-900 sm:text-3xl dark:text-white ">
                             @foreach ($deposits as $deposit )
                             @if ($deposit->id == $product->deposit_id)
-                            {{ __('Deposit : ').$deposit->name }}
+                            {{ __('Dépot : ').$deposit->name }}
                             @break
                             @endif
                             @endforeach
@@ -86,16 +86,16 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M5 12h14m-7 7V5" />
                     </svg>
-                    {{__('Add image')}}
+                    {{__('Ajouter une image')}}
                 </x-primary-button>
-                {{--  <x-create-button class="ms-3 mb-3  mt-3" :href="route('productsImages.create')">
+                {{-- <x-create-button class="ms-3 mb-3  mt-3" :href="route('productsImages.create')">
                     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                         fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M5 12h14m-7 7V5" />
                     </svg>
                     {{__('Add image')}}
-                </x-create-button>  --}}
+                </x-create-button> --}}
                 <form></form>
         </div>
     </div>

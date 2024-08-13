@@ -6,11 +6,11 @@
 
         @if (session()->missing('cart'))
         <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">{{ __('you dont have anything in
-                your cart') }}</h2>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">{{ __('Votre panie est vide') }}
+            </h2>
             <div class="my-4">
                 <x-create-button href="{{route('home')}}">
-                    {{ __('Go to home') }}
+                    {{ __('Rentrer à l\'acceuil ') }}
                 </x-create-button>
             </div>
         </div>
@@ -69,7 +69,7 @@
                                                     stroke-linejoin="round" stroke-width="2"
                                                     d="M6 18 17.94 6M18 18 6.06 6" />
                                             </svg>
-                                            {{ __('Remove') }}
+                                            {{ __('Enlever') }}
                                         </a>
                                     </div>
                                 </div>
@@ -84,7 +84,8 @@
                 <div class="mx-auto mt-6 max-w-4xl flex-1 space-y-6 lg:mt-0 lg:w-full">
                     <div
                         class="space-y-4 rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 sm:p-6">
-                        <p class="text-xl font-semibold text-gray-900 dark:text-white">{{__('Order summary')}}</p>
+                        <p class="text-xl font-semibold text-gray-900 dark:text-white">{{__('Detail de la commande')}}
+                        </p>
 
                         <div class="space-y-4">
                             <div class="space-y-2">
@@ -99,7 +100,7 @@
                                 $totalTTC = $total * 1.05
                                 @endphp
                                 <dl class="flex items-center justify-between gap-4">
-                                    <dt class="text-base font-normal text-gray-500 dark:text-gray-400">{{__('Tax')}}
+                                    <dt class="text-base font-normal text-gray-500 dark:text-gray-400">{{__('Taxe')}}
                                     </dt>
                                     <dd class="text-base font-medium text-gray-900 dark:text-white">{{$tax .' CDF'}}
                                     </dd>
@@ -114,14 +115,14 @@
                         </div>
 
                         <a href="{{route('checkout')}}"
-                            class="flex w-full items-center justify-center rounded-lg bg-green-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">{{__('Proceed
-                            to Checkout')}}</a>
+                            class="flex w-full items-center justify-center rounded-lg bg-green-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">{{__('Passez
+                            à la caisse')}}</a>
 
                         <div class="flex items-center justify-center gap-2">
-                            <span class="text-sm font-normal text-gray-500 dark:text-gray-400"> or </span>
+                            <span class="text-sm font-normal text-gray-500 dark:text-gray-400"> Ou </span>
                             <a href="{{ route('home') }}" title=""
                                 class="inline-flex items-center gap-2 text-sm font-medium text-green-700 underline hover:no-underline dark:text-green-500">
-                                {{ __('Continue Shopping') }}
+                                {{ __('Continuez vos achats') }}
                                 <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -134,7 +135,7 @@
                 </div>
             </div>
         </div>
-        
+
         @endif
         @endif
     </section>

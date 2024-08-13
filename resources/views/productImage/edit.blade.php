@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-            {{ __('Edit Product image') }}
+            {{ __('Modiier une image du produit') }}
         </h2>
     </x-slot>
 
@@ -11,7 +11,7 @@
 
             <div class="row text-gray-800 dark:text-gray-200 w-ful flex">
                 <x-create-button class="ms-3 mb-3 " :href="route('products.index')">
-                    {{__('Product list')}}
+                    {{__('Liste des produits')}}
                 </x-create-button>
             </div>
 
@@ -37,7 +37,7 @@
                     </div>
 
                     <x-primary-button class="ms-4 mt-4">
-                        {{ __('Update') }}
+                        {{ __('Modifier') }}
                     </x-primary-button>
 
 

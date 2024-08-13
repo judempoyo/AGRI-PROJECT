@@ -9,6 +9,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\File;
+use Filament\Notifications\Notification;
+
 
 
 class DepositController extends Controller
@@ -56,6 +58,10 @@ class DepositController extends Controller
 
         $deposit->save();
 
+        Notification::make()
+            ->title('Dépot crée avec succès')
+            ->success()
+            ->send();
         return redirect(route('deposits.index'));
     }
 
@@ -97,6 +103,11 @@ class DepositController extends Controller
             'maxCapacity' => $request->maxCapacity,
         ]);
 
+        Notification::make()
+            ->title('Dépot Modifié avec succès')
+            ->success()
+            ->send();
+
         return redirect(route('deposits.index'));
     }
 
@@ -106,6 +117,11 @@ class DepositController extends Controller
     public function destroy(Deposit $deposit)
     {
         $deposit->delete();
+
+        Notification::make()
+            ->title('Dépot supprimé avec succès')
+            ->success()
+            ->send();
 
         return redirect(route('deposits.index'));
     }

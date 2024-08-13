@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-            {{ __('Add Product image') }}
+            {{ __('Ajouter une image du produit') }}
         </h2>
     </x-slot>
 
@@ -12,7 +12,7 @@
 
             <div class="row text-gray-800 dark:text-gray-200 w-ful flex">
                 <x-create-button class="ms-3 mb-3 " :href="route('products.index')">
-                    {{__('Product list')}}
+                    {{__('liste des produits')}}
                 </x-create-button>
             </div>
 
@@ -55,7 +55,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-            {{ __('Add Product image') }}
+            {{ __('Ajouter une image') }}
         </h2>
     </x-slot>
 
@@ -64,7 +64,7 @@
 
             <div class="row text-gray-800 dark:text-gray-200 w-ful flex">
                 <x-create-button class="ms-3 mb-3 " :href="route('products.index')">
-                    {{__('Back')}}
+                    {{__('Retour')}}
                 </x-create-button>
             </div>
 

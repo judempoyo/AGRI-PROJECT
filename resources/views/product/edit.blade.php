@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-            {{ __('Update Product') }}
+            {{ __('Modfier un Produit') }}
         </h2>
     </x-slot>
 
@@ -17,7 +17,7 @@
             @can('view_product')
             <div class="row text-gray-800 dark:text-gray-200 w-ful flex">
                 <x-create-button class="ms-3 mb-3 " :href="route('products.index')">
-                    {{__('Back')}}
+                    {{__('Retour')}}
                 </x-create-button>
             </div>
             @endcan
@@ -32,7 +32,7 @@
                     @method('put')
                     <!-- Name -->
                     <div class="m-0 mt-2 w-full">
-                        <x-input-label for="name" :value="__('Name')" />
+                        <x-input-label for="name" :value="__('Nom')" />
                         <x-text-input id="name" class="block mt-1 w-full" type="text" name="name"
                             value="{{ $product->name }}" autofocus autocomplete="name" />
                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
@@ -50,7 +50,7 @@
                     <div class="w-full mt-2 flex">
                         <!-- price -->
                         <div class="mr-1 mt-2 w-full">
-                            <x-input-label for="price" :value="__('Price')" />
+                            <x-input-label for="price" :value="__('Prix')" />
                             <x-text-input id="price" class="block mt-1 w-full" type="number" step="0.01" name="price"
                                 value="{{ $product->price }}" autofocus autocomplete="price" />
                             <x-input-error :messages="$errors->get('price')" class="mt-2" />
@@ -59,7 +59,7 @@
 
                         <!-- quantity  -->
                         <div class="mr-1 mt-2 w-full">
-                            <x-input-label for="quantity" :value="__('Quantity')" />
+                            <x-input-label for="quantity" :value="__('Quantité')" />
                             <x-text-input id="quantity" class="block mt-1 w-full" type="number" min="1" name="quantity"
                                 value="{{ $product->Quantity }}" autocomplete="quantity" />
                             <x-input-error :messages="$errors->get('quantity')" class="mt-2" />
@@ -67,10 +67,11 @@
 
                         <!-- sell_unit  -->
                         <div class="mt-2 w-full">
-                            <x-input-label for="sell_unit_id" :value="__('Sell unit')" />
+                            <x-input-label for="sell_unit_id" :value="__('Unité de vente')" />
                             <x-select id="sell_unit_id" class="block mt-1 w-full" name="sell_unit_id"
                                 autocomplete="sell_unit_id">
-                                <option value="" selected disabled>{{__('-- Select a sell unit --')}}</option>
+                                <option value="" selected disabled>{{__('-- Selectionnez une unité de vente --')}}
+                                </option>
                                 @foreach($sellUnits as $sellUnit)
                                 <option value="{{ $sellUnit->id }}" @if ($sellUnit->id == $product->sell_unit_id
                                     ){{'selected'}} @endif
@@ -85,10 +86,10 @@
                     <div class="mt-2 w-full flex">
                         <!-- category -->
                         <div class="mr-2 mt-2 w-full">
-                            <x-input-label for="categorie_id" :value="__('Category')" />
+                            <x-input-label for="categorie_id" :value="__('Categorie')" />
                             <x-select id="categorie_id" class="block mt-1 w-full" name="categorie_id" autofocus
                                 autocomplete="categorie_id">
-                                <option value="" selected disabled>{{__('-- Select a categorie --')}}</option>
+                                <option value="" selected disabled>{{__('-- Selectionnez une categorie --')}}</option>
                                 @foreach($categories as $categorie)
                                 <option value="{{ $categorie->id }}" @if ($categorie->id == $product->categorie_id
                                     ){{'selected'}} @endif
@@ -100,10 +101,10 @@
 
                         <!-- deposit-->
                         <div class="mt-2 w-full">
-                            <x-input-label for="deposit_id" :value="__('Deposit')" />
+                            <x-input-label for="deposit_id" :value="__('Dépot')" />
                             <x-select id="deposit_id" class="block mt-1 w-full" name="deposit_id" autofocus
                                 autocomplete="deposit_id">
-                                <option value="" selected disabled>{{__('-- Select a categorie --')}}</option>
+                                <option value="" selected disabled>{{__('-- Selectionnez un dépot --')}}</option>
                                 @foreach($deposits as $deposit)
                                 <option value="{{ $deposit->id }}" @if ($deposit->id == $product->deposit_id
                                     ){{'selected'}} @endif
@@ -120,7 +121,7 @@
                     @can('update_product')
 
                     <x-primary-button class="ms-4 mt-4">
-                        {{ __('Update') }}
+                        {{ __('Modifier') }}
                     </x-primary-button>
                     @endcan
 

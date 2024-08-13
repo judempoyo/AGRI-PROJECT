@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-            {{ __('Create Deposit') }}
+            {{ __('Créer un Dépot') }}
         </h2>
     </x-slot>
 
@@ -11,7 +11,7 @@
             @can('view_deposit')
             <div class="row text-gray-800 dark:text-gray-200 w-ful flex">
                 <x-create-button class="ms-3 mb-3 " :href="route('deposits.index')">
-                    {{__('Back')}}
+                    {{__('Retour')}}
                 </x-create-button>
             </div>
             @endcan
@@ -24,14 +24,14 @@
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                     <!-- Name -->
                     <div class="m-0 mt-2 w-full">
-                        <x-input-label for="name" :value="__('Name')" />
+                        <x-input-label for="name" :value="__('Nom')" />
                         <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"
                             autofocus autocomplete="name" />
                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
                     </div>
                     <!-- adress -->
                     <div class="m-0 mt-2 w-full">
-                        <x-input-label for="adress" :value="__('Adress')" />
+                        <x-input-label for="adress" :value="__('Adresse')" />
                         <x-text-input id="adress" class="block mt-1 w-full" type="text" name="adress"
                             :value="old('adress')" autofocus autocomplete="adress" />
                         <x-input-error :messages="$errors->get('adress')" class="mt-2" />
@@ -40,7 +40,7 @@
 
                     <!-- country  -->
                     <div class="mt-2">
-                        <x-input-label for="country" :value="__('Country')" />
+                        <x-input-label for="country" :value="__('province')" />
                         <x-text-input id="country" class="block mt-1 w-full" type="text" name="country"
                             :value="old('country')" autocomplete="country" />
                         <x-input-error :messages="$errors->get('country')" class="mt-2" />
@@ -58,7 +58,7 @@
                     <div class="mt-2 md:flex md:flex-row">
                         <!-- area -->
                         <div class="m-0 mt-2 w-full md:w-1/2">
-                            <x-input-label for="area" :value="__('Area')" />
+                            <x-input-label for="area" :value="__('Surface')" />
                             <x-text-input id="area" class="block mt-1 w-full" type="text" name="area"
                                 :value="old('area')" autofocus autocomplete="area" />
                             <x-input-error :messages="$errors->get('area')" class="mt-2" />
@@ -66,7 +66,7 @@
 
                         <!-- maxCapacity -->
                         <div class="m-0 mt-2 w-full md:w-1/2">
-                            <x-input-label for="maxCapacity" :value="__('Max Capacity')" />
+                            <x-input-label for="maxCapacity" :value="__('Capacité maximale')" />
 
                             <x-text-input id="maxCapacity" class="block mt-1 w-full" type="number" name="maxCapacity"
                                 :value="old('maxCapacity')" required autocomplete="new-maxCapacity" />
@@ -87,7 +87,7 @@
                     @can('create_deposit')
 
                     <x-primary-button class="ms-4 mt-4">
-                        {{ __('Create') }}
+                        {{ __('Créer') }}
                     </x-primary-button>
                     @endcan
 

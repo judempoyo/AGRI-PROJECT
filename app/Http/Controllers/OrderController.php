@@ -9,6 +9,8 @@ use App\Http\Requests\UpdateOrderRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use Filament\Notifications\Notification;
+
 
 class OrderController extends Controller
 {
@@ -72,6 +74,10 @@ class OrderController extends Controller
         }
 
 
+        Notification::make()
+            ->title('Commande passée avec succès')
+            ->success()
+            ->send();
         return redirect(route('cart.empty'));
     }
 
