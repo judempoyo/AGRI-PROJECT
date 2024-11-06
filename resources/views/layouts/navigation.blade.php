@@ -4,6 +4,7 @@
             <!-- Logo -->
             <div class="flex items-center space-x-8">
                 <div class="shrink-0">
+                    
                     <a href="{{ route('home') }}">
                         <x-application-logo
                             class="inline-block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
@@ -15,6 +16,17 @@
                 </div>
 
                 <ul class="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 sm:justify-center">
+                    @role('grower')
+                    <li class="shrink-0">
+                        <div class="hidden sm:-my-px sm:ms-2 sm:flex">
+                            <x-nav-link :href="route('dashboard')"
+                                :active="request()->routeIs('dashboard')"> {{
+                                __('Tableau de bord')
+                                }}
+                            </x-nav-link>
+                        </div>
+                    </li>
+                    @endrole
                     <li>
 
                         <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
@@ -179,8 +191,8 @@
                     </x-create-button>
 
                     @endif
-                    
-                    
+
+
                     @endif
                 </div>
 

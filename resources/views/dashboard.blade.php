@@ -5,25 +5,9 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            @role('admin')
-            <div class="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __('Admin ' . Auth::user()->name . " Vous etes connecté!!") }}
+    <div class="py-12 mx-auto max-w-7xl sm:px-8 lg:px-10">
+        <livewire:StatsOverview />
 
-                </div>
-            </div>
-            @else
-            <div class="overflow-hidden bg-white shadow-sm dark:bg-gray-800 sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __(Auth::user()->name . " Vous etes connecté!!") }}
 
-                </div>
-            </div>
-            {{-- <img src="{{ asset('storage/'.Auth::user()->avatar) }}" alt="" srcset=""> --}}
-            @endrole
-
-        </div>
     </div>
 </x-app-layout>

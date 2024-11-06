@@ -173,7 +173,7 @@
                                         </label>
                                         <p id="mobile-money-text"
                                             class="mt-1 font-normal text-gray-500 text-xs dark:text-gray-400">
-                                            {{__('Fonctionnqlité à venir')}}</p>
+                                            {{__('Fonctionnalité à venir')}}</p>
                                     </div>
                                 </div>
 

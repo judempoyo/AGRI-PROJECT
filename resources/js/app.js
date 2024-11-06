@@ -2,7 +2,7 @@ import './bootstrap';
 
 import 'flowbite';
 
-/* import '../../vendor/rappasoft/laravel-livewire-tables/resources/imports/laravel-livewire-tables-all' */
+/* import '../../vendor/filament/tables/resources/js/index'  */
 
 import Alpine from 'alpinejs';
 

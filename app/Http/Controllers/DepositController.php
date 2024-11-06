@@ -86,12 +86,14 @@ class DepositController extends Controller
      */
     public function update(UpdateDepositRequest $request, Deposit $deposit)
     {
-        File::delete('storage/images/uploads/deposits/' . $deposit->image);
-        $file = $request->image;
+        if (!empty($request->image)) {
+            File::delete('storage/images/uploads/deposits/' . $deposit->image);
+            $file = $request->image;
 
-        $name = time() . '_' . $file->getClientOriginalName();
+            $name = time() . '_' . $file->getClientOriginalName();
 
-        $file->move('storage/images/uploads/deposits/', $name);
+            $file->move('storage/images/uploads/deposits/', $name);
+        }
 
         $deposit->update([
             'name' => $request->name,
@@ -99,9 +101,14 @@ class DepositController extends Controller
             'country' => $request->country,
             'description' => $request->description,
             'area' => $request->area,
-            'image' => $name,
             'maxCapacity' => $request->maxCapacity,
         ]);
+
+        if (!empty($file)) {
+            $deposit->update([
+                'image' => $name,
+            ]);
+        }
 
         Notification::make()
             ->title('Dépot Modifié avec succès')

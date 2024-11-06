@@ -20,7 +20,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = Product::latest()->paginate(8);
+        $products = Product::latest()->simplePaginate(8);
         $deposits = Deposit::all();
         $categories = Categorie::all();
         $sellUnits = SellUnit::all();

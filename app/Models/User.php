@@ -54,7 +54,7 @@ class User extends Authenticatable implements FilamentUser
 
     public function getFilamentAvatarUrl(): ?string
     {
-        return $this->avatar;
+        return asset('storage/' . $this->avatar);
     }
 
     public function canAccessPanel(\Filament\Panel $panel): bool

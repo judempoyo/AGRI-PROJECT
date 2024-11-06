@@ -14,7 +14,6 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 
-
 class listOrders extends Component implements HasForms, HasTable
 {
     use InteractsWithForms;
@@ -57,8 +56,18 @@ class listOrders extends Component implements HasForms, HasTable
                     ->label('Adresse de livraison')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('state')
-                    ->label('Etat')
-                    ->searchable(),
+                    ->badge()
+                    ->color(
+                        fn (string $state): string => match ($state) {
+                            'en attente' => 'gray',
+                            'en cours' => 'warning',
+                            'annule' => 'danger',
+                            'livre' => 'success'
+                        }
+
+                    )
+                    ->searchable()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

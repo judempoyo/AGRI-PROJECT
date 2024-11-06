@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\Product;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use Illuminate\Http\RedirectResponse;
@@ -68,6 +69,12 @@ class OrderController extends Controller
                     'product_id' => $value['id'],
                     'order_id' => $order,
                 ]);
+
+                $product = Product::FindOrFail($value['id']);
+
+                $product->Quantity -= $value['quantity'];
+                $product->save();
+
 
                 //$orderDetail->save();
             }
